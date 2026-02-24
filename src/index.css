@@ -41,3 +41,21 @@
 .glass-card {
   @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
 }
+
+.bank-row {
+  will-change: opacity, transform;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1), visibility 300ms linear;
+}
+
+.bank-row.animate {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.bank-row-delay-0 { transition-delay: 60ms; }
+.bank-row-delay-1 { transition-delay: 150ms; }
+.bank-row-delay-2 { transition-delay: 240ms; }
