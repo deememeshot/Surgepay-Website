@@ -34,21 +34,43 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 96; // 24 * 4 = 96px (scroll-mt-24)
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center">
+        <a href="#hero" onClick={scrollToTop} className="flex items-center gap-2 group cursor-pointer">
+          <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
             <Zap className="text-white w-5 h-5 fill-current" />
           </div>
           <span className="text-xl font-bold tracking-tight text-slate-900">Surgepay</span>
-        </div>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#how-it-works" className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
-          <a href="#features" className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">Features</a>
-          <a href="#security" className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">Security</a>
+          <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
           <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
             Start on WhatsApp
           </button>
@@ -69,9 +91,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
-            <a href="#how-it-works" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-slate-900">How it works</a>
-            <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-slate-900">Features</a>
-            <a href="#security" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-slate-900">Security</a>
+            <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
             <button className="bg-whatsapp text-white px-6 py-4 rounded-xl font-bold text-center mt-2">
               Start on WhatsApp
             </button>
@@ -357,12 +377,17 @@ export default function App() {
     { title: "Payment & Success" }
   ];
 
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen font-sans">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-24 px-6 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-32 pb-24 px-6 overflow-hidden scroll-mt-24">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
           <div className="absolute top-20 left-10 w-64 h-64 bg-whatsapp/10 rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-whatsapp/5 rounded-full blur-3xl" />
@@ -378,14 +403,16 @@ export default function App() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm">
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Backed by</span>
                 <div className="flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#FF4B4B]">
-                    <path d="M12 2L2 22H6L12 8L18 22H22L12 2Z" fill="currentColor"/>
-                  </svg>
-                  <span className="text-xs font-black text-slate-900 tracking-tight">Antler</span>
+                  <div className="w-4 h-4 bg-[#FF4B4B] flex items-center justify-center rounded-[2px]">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5L5 19H8.5L12 12L15.5 19H19L12 5Z" fill="white"/>
+                    </svg>
+                  </div>
+                  <span className="text-[11px] font-black text-[#FF4B4B] tracking-widest uppercase">Antler</span>
                 </div>
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 leading-[1.05] mb-6 max-w-5xl mx-auto">
+            <h1 className="text-[1.85rem] leading-[1.2] md:text-7xl lg:text-8xl font-black tracking-tight text-slate-900 md:leading-[1.05] mb-6 max-w-[320px] md:max-w-5xl mx-auto">
               <span className="block">Sending money home</span>
               <span className="block">should be as simple</span>
               <span className="block">as a <span className="text-whatsapp">WhatsApp chat.</span></span>
@@ -443,7 +470,7 @@ export default function App() {
       </section>
 
       {/* Chat Experience Section */}
-      <section id="how-it-works" ref={scrollRef} className="relative h-[400vh] bg-slate-50">
+      <section id="how-it-works" ref={scrollRef} className="relative h-[400vh] bg-slate-50 scroll-mt-24">
         <div className="sticky top-0 min-h-screen flex flex-col justify-center py-12 md:py-20 px-6 overflow-hidden">
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-8 md:mb-10">
@@ -510,7 +537,7 @@ export default function App() {
       </section>
 
       {/* Value Proposition */}
-      <section id="features" className="py-20 px-6 bg-white">
+      <section id="benefits" className="py-20 px-6 bg-white scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-slate-100">
@@ -546,7 +573,7 @@ export default function App() {
       </section>
 
       {/* Trust & Security */}
-      <section id="security" className="py-20 px-6 bg-slate-50 relative overflow-hidden">
+      <section id="security" className="py-20 px-6 bg-slate-50 relative overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Trust & Security</h2>
@@ -562,8 +589,8 @@ export default function App() {
               <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Active Users</div>
             </div>
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center">
-              <div className="text-5xl md:text-7xl font-black text-whatsapp mb-2">100,000+</div>
-              <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Transfers Completed</div>
+              <div className="text-5xl md:text-7xl font-black text-whatsapp mb-2">$10M+</div>
+              <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Transferred</div>
             </div>
           </div>
 
@@ -585,7 +612,7 @@ export default function App() {
       </section>
 
       {/* Why WhatsApp */}
-      <section className="py-20 bg-whatsapp px-6 relative overflow-hidden">
+      <section id="why-whatsapp" className="py-20 bg-whatsapp px-6 relative overflow-hidden scroll-mt-24">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 text-white">
@@ -753,12 +780,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center">
+              <a href="#hero" onClick={scrollToTop} className="flex items-center gap-2 mb-6 group cursor-pointer w-fit">
+                <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
                   <Zap className="text-white w-5 h-5 fill-current" />
                 </div>
                 <span className="text-2xl font-bold tracking-tight text-slate-900">Surgepay</span>
-              </div>
+              </a>
               <p className="text-slate-500 max-w-sm leading-relaxed">
                 Send money from the US to India instantly using WhatsApp. The simplest way to support your loved ones back home.
               </p>
@@ -784,21 +811,21 @@ export default function App() {
               <div className="text-[11px] text-slate-400 leading-relaxed">
                 <p className="font-bold mb-2 uppercase tracking-wider text-slate-500">Disclaimers</p>
                 <p className="mb-4">
-                  1. Surgepay is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds.
+                  1. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds.
                 </p>
                 <p>
-                  2. Surgepay works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
+                  2. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 leading-relaxed">
                 <p className="font-bold mb-2 uppercase tracking-wider text-slate-500">All rights reserved</p>
                 <p>
-                  Surgepay is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Surgepay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
+                  <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Surgepay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
                 </p>
               </div>
             </div>
             <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-              <span>© 2026 Surgepay. All rights reserved.</span>
+              <span>© 2026 <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors">Surgepay</a>. All rights reserved.</span>
               <div className="flex gap-6 items-center">
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4" />
