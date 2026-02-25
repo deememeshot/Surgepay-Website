@@ -879,15 +879,12 @@ export default function App() {
               { name: "UAE", code: "ae", status: "COMING SOON" },
               { name: "Saudi Arabia", code: "sa", status: "COMING SOON" },
               { name: "Singapore", code: "sg", status: "COMING SOON" }
-            ].map((corridor, i) => (
+            ].map((corridor) => (
               <motion.div
                 key={corridor.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -5 }}
-                className={`p-6 rounded-3xl border transition-all flex flex-col items-center gap-4 ${
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                className={`p-6 rounded-3xl border flex flex-col items-center gap-4 ${
                   corridor.status === "LIVE" 
                     ? "bg-white border-whatsapp/20 shadow-xl shadow-whatsapp/5 scale-105 z-10" 
                     : "bg-slate-50 border-slate-100 opacity-80"
