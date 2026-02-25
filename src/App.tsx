@@ -71,9 +71,12 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
-          <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-            Start on WhatsApp
-          </button>
+          <div className="relative group">
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[8px] font-black uppercase tracking-widest text-whatsapp/60 whitespace-nowrap">Coming soon</span>
+            <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+              Start on WhatsApp
+            </button>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -92,9 +95,12 @@ const Navbar = () => {
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
             <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
-            <button className="bg-whatsapp text-white px-6 py-4 rounded-xl font-bold text-center mt-2">
-              Start on WhatsApp
-            </button>
+            <div className="flex flex-col items-center gap-1 mt-2">
+              <span className="text-[8px] font-black uppercase tracking-widest text-whatsapp/60">Coming soon</span>
+              <button className="w-full bg-whatsapp text-white px-6 py-4 rounded-xl font-bold text-center">
+                Start on WhatsApp
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -581,10 +587,13 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-5"
           >
-            <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-3 group">
-              Start on WhatsApp 
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-whatsapp/60">Coming soon</span>
+              <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-3 group">
+                Start on WhatsApp 
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
             <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-12 py-6 rounded-2xl font-bold text-xl transition-all border border-slate-200 text-center">
               See how it works
             </a>
@@ -658,7 +667,7 @@ export default function App() {
 
       {/* Chat Experience Section */}
       <section id="how-it-works" ref={scrollRef} className={`relative bg-white scroll-mt-24 ${isMobile ? 'py-20' : 'h-[400vh]'}`}>
-        <div className={`${isMobile ? 'relative' : 'sticky top-0 h-screen'} flex flex-col justify-center py-8 md:py-12 px-6 overflow-hidden`}>
+        <div className={`${isMobile ? 'relative' : 'sticky top-0 h-screen'} flex flex-col justify-center pt-16 pb-8 md:pt-24 md:pb-12 px-6 overflow-hidden`}>
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-6 md:mb-8">
               <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-2 md:mb-4">Experience the magic</h2>
@@ -987,9 +996,12 @@ export default function App() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Send money in minutes, not days.</h2>
           <p className="text-xl text-slate-600 mb-8">No fees. No hassle. Just a simple chat.</p>
-          <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-8 py-4 md:px-12 md:py-6 rounded-2xl md:rounded-3xl font-black text-lg md:text-2xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-2 md:gap-3 mx-auto">
-            Start on WhatsApp <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
-          </button>
+          <div className="flex flex-col items-center gap-3">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-whatsapp/60">Coming soon</span>
+            <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-8 py-4 md:px-12 md:py-6 rounded-2xl md:rounded-3xl font-black text-lg md:text-2xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-2 md:gap-3 mx-auto">
+              Start on WhatsApp <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1009,17 +1021,9 @@ export default function App() {
               </p>
             </div>
             <div>
-              <h4 className="font-bold text-slate-900 mb-6">Links</h4>
-              <ul className="flex flex-col gap-4 text-slate-500">
-                <li><a href="#" className="hover:text-whatsapp transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="hover:text-whatsapp transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-whatsapp transition-colors">Compliance & AML</a></li>
-              </ul>
-            </div>
-            <div>
               <h4 className="font-bold text-slate-900 mb-6">Contact</h4>
               <ul className="flex flex-col gap-4 text-slate-500">
-                <li><a href="mailto:support@surgepay.com" className="hover:text-whatsapp transition-colors">support@surgepay.com</a></li>
+                <li><a href="mailto:support@surgpay.xyz" className="hover:text-whatsapp transition-colors">support@surgpay.xyz</a></li>
               </ul>
             </div>
           </div>
@@ -1043,7 +1047,7 @@ export default function App() {
               </div>
             </div>
             <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-              <span>© 2026 <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors">Surgepay</a>. All rights reserved.</span>
+              <span>© 2026 SURGEPAY PTE LTD. All rights reserved.</span>
               <div className="flex gap-6 items-center">
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4" />
