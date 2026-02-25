@@ -371,6 +371,7 @@ export default function App() {
   
   const scrollRef = useRef<HTMLElement>(null);
   const phoneContainerRef = useRef<HTMLDivElement>(null);
+  const swipeRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -403,6 +404,52 @@ export default function App() {
     }
 
     return () => observer.disconnect();
+  }, [isMobile]);
+
+  // Mobile Swipe Gesture Lock: Prevents vertical scroll when horizontal intent is detected
+  useEffect(() => {
+    const el = swipeRef.current;
+    if (!el || !isMobile) return;
+
+    let startX = 0;
+    let startY = 0;
+    let isHorizontal = false;
+    let isFirstMove = true;
+
+    const onTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isHorizontal = false;
+      isFirstMove = true;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (isFirstMove) {
+        const dx = Math.abs(e.touches[0].clientX - startX);
+        const dy = Math.abs(e.touches[0].clientY - startY);
+        
+        // If horizontal movement is greater than vertical, lock the scroll
+        if (dx > dy && dx > 5) {
+          isHorizontal = true;
+        }
+        isFirstMove = false;
+      }
+
+      if (isHorizontal) {
+        // Prevent vertical page scroll during horizontal swipe
+        if (e.cancelable) {
+          e.preventDefault();
+        }
+      }
+    };
+
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+
+    return () => {
+      el.removeEventListener('touchstart', onTouchStart);
+      el.removeEventListener('touchmove', onTouchMove);
+    };
   }, [isMobile]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -550,21 +597,21 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 pt-8 border-t border-slate-100 grid grid-cols-1 sm:flex sm:flex-wrap justify-center gap-x-12 gap-y-6 max-w-sm mx-auto sm:max-w-none"
           >
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
               <ShieldCheck className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Regulated Partners</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-center">Regulated Partners</span>
             </div>
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
               <Lock className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Bank-level Security</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-center">Bank-level Security</span>
             </div>
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
               <CheckCircle2 className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">KYC Compliant</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-center">KYC Compliant</span>
             </div>
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
               <MessageCircle className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">End-to-end Encrypted</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-center">End-to-end Encrypted</span>
             </div>
           </motion.div>
         </div>
@@ -649,18 +696,15 @@ export default function App() {
                 {/* Mobile Swipeable Phone */}
                 <div className="relative w-full flex flex-col items-center">
                   <motion.div 
+                    ref={swipeRef}
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={0.2}
-                    onDragStart={() => {
-                      document.body.style.overflow = 'hidden';
-                    }}
                     onDragEnd={(_, info) => {
-                      document.body.style.overflow = 'auto';
                       if (info.offset.x < -80) handleSwipe('left');
                       if (info.offset.x > 80) handleSwipe('right');
                     }}
-                    className="cursor-grab active:cursor-grabbing touch-none"
+                    className="cursor-grab active:cursor-grabbing touch-pan-y"
                   >
                     <WhatsAppScreen 
                       activeStep={activeScreen}
