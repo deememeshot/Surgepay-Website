@@ -423,12 +423,12 @@ export default function App() {
   });
 
   const handleSwipe = (dir: 'left' | 'right') => {
-    if (dir === 'left' && activeScreen < 3) {
+    if (dir === 'left') {
       setDirection('forward');
-      setActiveScreen(activeScreen + 1);
-    } else if (dir === 'right' && activeScreen > 0) {
+      setActiveScreen((prev) => (prev + 1) % 4);
+    } else if (dir === 'right') {
       setDirection('backward');
-      setActiveScreen(activeScreen - 1);
+      setActiveScreen((prev) => (prev - 1 + 4) % 4);
     }
   };
 
@@ -548,22 +548,22 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 pt-8 border-t border-slate-100 flex flex-wrap justify-center gap-x-12 gap-y-6"
+            className="mt-16 pt-8 border-t border-slate-100 grid grid-cols-1 sm:flex sm:flex-wrap justify-center gap-x-12 gap-y-6 max-w-sm mx-auto sm:max-w-none"
           >
-            <div className="flex items-center gap-2 text-slate-400">
-              <ShieldCheck className="w-5 h-5 text-whatsapp" />
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+              <ShieldCheck className="w-5 h-5 text-whatsapp shrink-0" />
               <span className="text-[10px] font-bold uppercase tracking-widest">Regulated Partners</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-400">
-              <Lock className="w-5 h-5 text-whatsapp" />
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+              <Lock className="w-5 h-5 text-whatsapp shrink-0" />
               <span className="text-[10px] font-bold uppercase tracking-widest">Bank-level Security</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-400">
-              <CheckCircle2 className="w-5 h-5 text-whatsapp" />
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+              <CheckCircle2 className="w-5 h-5 text-whatsapp shrink-0" />
               <span className="text-[10px] font-bold uppercase tracking-widest">KYC Compliant</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-400">
-              <MessageCircle className="w-5 h-5 text-whatsapp" />
+            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-start sm:justify-center">
+              <MessageCircle className="w-5 h-5 text-whatsapp shrink-0" />
               <span className="text-[10px] font-bold uppercase tracking-widest">End-to-end Encrypted</span>
             </div>
           </motion.div>
@@ -651,11 +651,16 @@ export default function App() {
                   <motion.div 
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
-                    onDragEnd={(_, info) => {
-                      if (info.offset.x < -50) handleSwipe('left');
-                      if (info.offset.x > 50) handleSwipe('right');
+                    dragElastic={0.2}
+                    onDragStart={() => {
+                      document.body.style.overflow = 'hidden';
                     }}
-                    className="cursor-grab active:cursor-grabbing"
+                    onDragEnd={(_, info) => {
+                      document.body.style.overflow = 'auto';
+                      if (info.offset.x < -80) handleSwipe('left');
+                      if (info.offset.x > 80) handleSwipe('right');
+                    }}
+                    className="cursor-grab active:cursor-grabbing touch-none"
                   >
                     <WhatsAppScreen 
                       activeStep={activeScreen}
