@@ -585,10 +585,10 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-5"
+            className="flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5"
           >
-            <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-whatsapp/60">Coming soon</span>
+            <div className="relative flex flex-col items-center w-full sm:w-auto">
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-black uppercase tracking-[0.2em] text-whatsapp/60 whitespace-nowrap">Coming soon</span>
               <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-3 group">
                 Start on WhatsApp 
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
