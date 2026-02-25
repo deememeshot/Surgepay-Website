@@ -604,23 +604,33 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 pt-8 border-t border-slate-100 grid grid-cols-1 sm:flex sm:flex-wrap justify-center gap-x-12 gap-y-6 max-w-sm mx-auto sm:max-w-none"
+            className="mt-16 pt-8 border-t border-slate-100 flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center gap-x-12 gap-y-4 sm:gap-y-6"
           >
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
-              <ShieldCheck className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-center">Regulated Partners</span>
-            </div>
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
-              <Lock className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-center">Bank-level Security</span>
-            </div>
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
-              <CheckCircle2 className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-center">KYC Compliant</span>
-            </div>
-            <div className="flex items-center gap-3 sm:gap-2 text-slate-400 justify-center">
-              <MessageCircle className="w-5 h-5 text-whatsapp shrink-0" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-center">End-to-end Encrypted</span>
+            <div className="flex flex-col items-start gap-y-4 sm:flex-row sm:items-center sm:gap-x-12 sm:gap-y-0">
+              <div className="flex items-center gap-4 text-slate-400">
+                <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-whatsapp" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest">Regulated Partners</span>
+              </div>
+              <div className="flex items-center gap-4 text-slate-400">
+                <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                  <Lock className="w-5 h-5 text-whatsapp" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest">Bank-level Security</span>
+              </div>
+              <div className="flex items-center gap-4 text-slate-400">
+                <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-whatsapp" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest">KYC Compliant</span>
+              </div>
+              <div className="flex items-center gap-4 text-slate-400">
+                <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                  <MessageCircle className="w-5 h-5 text-whatsapp" />
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-widest">End-to-end Encrypted</span>
+              </div>
             </div>
           </motion.div>
         </div>
