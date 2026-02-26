@@ -71,12 +71,9 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
-          <div className="relative group">
-            <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[8px] font-black uppercase tracking-widest text-whatsapp/60 whitespace-nowrap">Coming soon</span>
-            <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-              Start on WhatsApp
-            </button>
-          </div>
+          <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+            Start on WhatsApp
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -95,12 +92,9 @@ const Navbar = () => {
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
             <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
-            <div className="flex flex-col items-center gap-1 mt-2">
-              <span className="text-[8px] font-black uppercase tracking-widest text-whatsapp/60">Coming soon</span>
-              <button className="w-full bg-whatsapp text-white px-6 py-4 rounded-xl font-bold text-center">
-                Start on WhatsApp
-              </button>
-            </div>
+            <button className="w-full bg-whatsapp text-white px-6 py-4 rounded-xl font-bold text-center mt-2">
+              Start on WhatsApp
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
