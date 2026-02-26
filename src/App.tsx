@@ -111,36 +111,12 @@ const Navbar = () => {
 interface WhatsAppScreenProps {
   activeStep: number;
   direction: 'forward' | 'backward';
+  rate: number;
+  isLive: boolean;
 }
 
-const WhatsAppScreen = ({ activeStep, direction }: WhatsAppScreenProps) => {
+const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenProps) => {
   const [animateBanks, setAnimateBanks] = useState(false);
-  const [rate, setRate] = useState(83.20);
-  const [isLive, setIsLive] = useState(false);
-
-  useEffect(() => {
-    const fetchRate = async () => {
-      try {
-        // Using Frankfurter API (free, reliable, no key needed)
-        const response = await fetch('https://api.frankfurter.app/latest?from=USD&to=INR');
-        const data = await response.json();
-        if (data.rates && data.rates.INR) {
-          // Add a tiny random offset to make it feel "live" if it's exactly the same
-          // but keep it stable. Actually, just use the real rate.
-          setRate(data.rates.INR);
-          setIsLive(true);
-        }
-      } catch (error) {
-        console.error('Failed to fetch exchange rate:', error);
-        // Fallback is the initial state 83.20
-      }
-    };
-
-    fetchRate();
-    // Update every 10 minutes
-    const interval = setInterval(fetchRate, 10 * 60 * 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     if (activeStep === 1) {
@@ -374,11 +350,32 @@ export default function App() {
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
   const [isPhoneFullyVisible, setIsPhoneFullyVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [rate, setRate] = useState(83.20);
+  const [isLive, setIsLive] = useState(false);
   
   const scrollRef = useRef<HTMLElement>(null);
   const phoneContainerRef = useRef<HTMLDivElement>(null);
   const swipeRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const fetchRate = async () => {
+      try {
+        const response = await fetch('https://api.frankfurter.app/latest?from=USD&to=INR');
+        const data = await response.json();
+        if (data.rates && data.rates.INR) {
+          setRate(data.rates.INR);
+          setIsLive(true);
+        }
+      } catch (error) {
+        console.error('Failed to fetch exchange rate:', error);
+      }
+    };
+
+    fetchRate();
+    const interval = setInterval(fetchRate, 10 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -728,6 +725,8 @@ export default function App() {
                     <WhatsAppScreen 
                       activeStep={activeScreen}
                       direction={direction}
+                      rate={rate}
+                      isLive={isLive}
                     />
                   </motion.div>
                   
@@ -763,6 +762,8 @@ export default function App() {
                     <WhatsAppScreen 
                       activeStep={activeScreen}
                       direction={direction}
+                      rate={rate}
+                      isLive={isLive}
                     />
                   </div>
                   
@@ -900,7 +901,7 @@ export default function App() {
             <div className="bg-[#efe7de] backdrop-blur-xl border border-white/20 p-8 rounded-[3rem] shadow-2xl flex flex-col gap-4 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat">
               <div className="whatsapp-bubble-left">Hey! Ready to send money?</div>
               <div className="whatsapp-bubble-right">Yes, sending $500 to Mom</div>
-              <div className="whatsapp-bubble-left">Great! Rate is ₹83.20. Confirm?</div>
+              <div className="whatsapp-bubble-left">Great! Rate is ₹{rate.toFixed(2)}. Confirm?</div>
               <div className="whatsapp-bubble-right">Confirm ✅</div>
             </div>
           </div>
