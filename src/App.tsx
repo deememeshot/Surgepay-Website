@@ -341,6 +341,7 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState(0);
+  const [targetStep, setTargetStep] = useState(0);
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
   const [isPhoneFullyVisible, setIsPhoneFullyVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -388,11 +389,12 @@ export default function App() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsPhoneFullyVisible(entry.intersectionRatio >= 0.99);
+        // More lenient threshold to handle various browser scroll behaviors
+        setIsPhoneFullyVisible(entry.intersectionRatio >= 0.7);
       },
       {
-        threshold: [0, 0.5, 0.99, 1.0],
-        rootMargin: "0px"
+        threshold: [0, 0.2, 0.5, 0.7, 0.9, 1.0],
+        rootMargin: "-5% 0px"
       }
     );
 
@@ -450,21 +452,42 @@ export default function App() {
   }, [isMobile]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (isMobile) return; // Disable scroll-based steps on mobile
+    if (isMobile) return;
 
     // Detect direction
     const dir = latest > lastScrollY.current ? 'forward' : 'backward';
     setDirection(dir);
     lastScrollY.current = latest;
 
-    // Only advance steps if the phone is fully visible in the viewport
-    if (isPhoneFullyVisible || latest < 0.05 || latest > 0.95) {
-      const step = Math.min(Math.floor(latest * 4), 3);
-      if (step !== activeScreen) {
-        setActiveScreen(step);
-      }
+    // Use specific thresholds for each step to prevent jumping
+    // We map the 0-1 progress to 4 distinct steps
+    let newStep = 0;
+    if (latest > 0.8) newStep = 3;
+    else if (latest > 0.55) newStep = 2;
+    else if (latest > 0.3) newStep = 1;
+    else if (latest < 0.1) newStep = 0;
+
+    // Only update target if we are reasonably within the section visibility
+    if (isPhoneFullyVisible || latest < 0.1 || latest > 0.9) {
+      setTargetStep(newStep);
     }
   });
+
+  // Sequential transition logic: ensures we move through steps 1-by-1
+  useEffect(() => {
+    if (isMobile) return;
+
+    if (activeScreen !== targetStep) {
+      const timer = setTimeout(() => {
+        setActiveScreen(prev => {
+          if (targetStep > prev) return prev + 1;
+          if (targetStep < prev) return prev - 1;
+          return prev;
+        });
+      }, 150); // 150ms delay creates a clear sequential transition even on fast scrolls
+      return () => clearTimeout(timer);
+    }
+  }, [targetStep, activeScreen, isMobile]);
 
   const handleSwipe = (dir: 'left' | 'right') => {
     if (dir === 'left') {
@@ -653,7 +676,7 @@ export default function App() {
             {[
               { icon: <Lock className="w-8 h-8" />, title: "Bank-grade security", desc: "Your data is always encrypted." },
               { icon: <ShieldCheck className="w-8 h-8" />, title: "Identity verification", desc: "Strict KYC for every user." },
-              { icon: <Globe className="w-8 h-8" />, title: "Encrypted comms", desc: "Pin-based login for every sessions." },
+              { icon: <Globe className="w-8 h-8" />, title: "Encrypted comms", desc: "Pin-based login for every session." },
               { icon: <Users className="w-8 h-8" />, title: "Trusted partners", desc: "Regulated financial infrastructure." }
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition-all">
@@ -671,7 +694,7 @@ export default function App() {
         <div className={`${isMobile ? 'relative' : 'sticky top-0 h-screen'} flex flex-col justify-center pt-16 pb-8 md:pt-24 md:pb-12 px-6 overflow-hidden`}>
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-2 md:mb-4">Experience the magic</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-2 md:mb-4">Experience the Magic</h2>
               <p className="text-lg text-slate-600">Four simple steps to send money home.</p>
             </div>
 
@@ -859,7 +882,7 @@ export default function App() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">No app to download</h4>
-                  <p className="text-white/80">Just send a message and you're done</p>
+                  <p className="text-white/80">Just send a message and you're done.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -868,7 +891,7 @@ export default function App() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Works like a normal conversation</h4>
-                  <p className="text-white/80">Simple, familiar, and fast</p>
+                  <p className="text-white/80">Simple, familiar, and fast.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -877,7 +900,7 @@ export default function App() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Built for real people</h4>
-                  <p className="text-white/80">No complicated steps or forms</p>
+                  <p className="text-white/80">No complicated steps or forms.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -885,8 +908,8 @@ export default function App() {
                   <Sparkles className="text-white w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">AI powered recurring transfers</h4>
-                  <p className="text-white/80">Just say who you want to send, confirm and boom, sent</p>
+                  <h4 className="text-xl font-bold mb-2">AI powered transfers</h4>
+                  <p className="text-white/80">Just type who you want to send again, and it's done.</p>
                 </div>
               </div>
             </div>
@@ -931,7 +954,7 @@ export default function App() {
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">Available corridors</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">Available Corridors</h2>
             <p className="text-slate-500 font-medium">More countries launching soon.</p>
           </div>
 
@@ -1028,7 +1051,7 @@ export default function App() {
             <div>
               <h4 className="font-bold text-slate-900 mb-6">Contact</h4>
               <ul className="flex flex-col gap-4 text-slate-500">
-                <li><a href="mailto:support@surgpay.xyz" className="hover:text-whatsapp transition-colors">support@surgpay.xyz</a></li>
+                <li><a href="mailto:support@surgepay.xyz" className="hover:text-whatsapp transition-colors">support@surgepay.xyz</a></li>
               </ul>
             </div>
           </div>
