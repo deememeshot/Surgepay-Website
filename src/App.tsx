@@ -599,18 +599,22 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5"
+            className="flex flex-col items-center justify-center gap-5"
           >
-            <div className="relative flex flex-col items-center w-full sm:w-auto">
-              <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-black uppercase tracking-[0.2em] text-whatsapp/60 whitespace-nowrap">Coming soon</span>
-              <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-3 group">
-                Start on WhatsApp 
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </button>
+            <div className="flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5 w-full sm:w-auto">
+              <div className="relative flex flex-col items-center w-full sm:w-auto">
+                <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-3 group">
+                  Start on WhatsApp 
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+              <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-12 py-6 rounded-2xl font-bold text-xl transition-all border border-slate-200 text-center">
+                See how it works
+              </a>
             </div>
-            <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-12 py-6 rounded-2xl font-bold text-xl transition-all border border-slate-200 text-center">
-              See how it works
-            </a>
+            <div className="mt-4 text-sm text-slate-600 font-medium">
+              Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
+            </div>
           </motion.div>
 
           {/* Trust Signals Bar */}
@@ -955,16 +959,18 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">Available Corridors</h2>
-            <p className="text-slate-500 font-medium">More countries launching soon.</p>
+            <p className="text-slate-500 font-medium">
+              Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { name: "US", code: "us", status: "LIVE" },
-              { name: "Canada", code: "ca", status: "COMING SOON" },
-              { name: "UAE", code: "ae", status: "COMING SOON" },
-              { name: "Saudi Arabia", code: "sa", status: "COMING SOON" },
-              { name: "Singapore", code: "sg", status: "COMING SOON" }
+              { name: "Canada", code: "ca", status: "BETA" },
+              { name: "UAE", code: "ae", status: "BETA" },
+              { name: "Saudi Arabia", code: "sa", status: "BETA" },
+              { name: "Singapore", code: "sg", status: "BETA" }
             ].map((corridor) => (
               <motion.div
                 key={corridor.name}
@@ -1024,11 +1030,13 @@ export default function App() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Send money in minutes, not days.</h2>
           <p className="text-xl text-slate-600 mb-8">No fees. No hassle. Just a simple chat.</p>
-          <div className="flex flex-col items-center gap-3">
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-whatsapp/60">Coming soon</span>
+          <div className="flex flex-col items-center gap-6">
             <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-8 py-4 md:px-12 md:py-6 rounded-2xl md:rounded-3xl font-black text-lg md:text-2xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-2 md:gap-3 mx-auto">
               Start on WhatsApp <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
             </button>
+            <div className="text-sm text-slate-600 font-medium">
+              Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
+            </div>
           </div>
         </div>
       </section>
