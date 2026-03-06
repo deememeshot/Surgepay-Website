@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
             <Zap className="text-white w-5 h-5 fill-current" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">Surgepay</span>
+          <span className="text-xl font-bold tracking-tight text-slate-900">Searchpay</span>
         </a>
 
         {/* Desktop Nav */}
@@ -150,7 +150,7 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
           </div>
         </div>
         <div className="flex-1">
-          <div className="text-white text-[14px] font-bold leading-tight">Surgepay</div>
+          <div className="text-white text-[14px] font-bold leading-tight">Searchpay</div>
           <div className="text-white/70 text-[10px]">online</div>
         </div>
         <div className="flex gap-3 text-white/90">
@@ -184,7 +184,7 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
                 <div className="whatsapp-timestamp">10:43 AM <CheckCircle2 className="w-2.5 h-2.5 text-blue-400" /></div>
               </div>
               <div className="whatsapp-bubble-left bg-white border-l-4 border-whatsapp !p-3">
-                <div className="text-[10px] font-bold text-whatsapp mb-1">SURGEPAY QUOTE</div>
+                <div className="text-[10px] font-bold text-whatsapp mb-1">SEARCHPAY QUOTE</div>
                 <div className="flex justify-between text-xs mb-1">
                   <span className="text-slate-500">You send:</span>
                   <span className="font-bold">$700</span>
@@ -1050,7 +1050,7 @@ export default function App() {
                 <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
                   <Zap className="text-white w-5 h-5 fill-current" />
                 </div>
-                <span className="text-2xl font-bold tracking-tight text-slate-900">Surgepay</span>
+                <span className="text-2xl font-bold tracking-tight text-slate-900">Searchpay</span>
               </a>
               <p className="text-slate-500 max-w-sm leading-relaxed">
                 Send money from the US to India instantly using WhatsApp. The simplest way to support your loved ones back home.
@@ -1069,21 +1069,21 @@ export default function App() {
               <div className="text-[11px] text-slate-400 leading-relaxed">
                 <p className="font-bold mb-2 uppercase tracking-wider text-slate-500">Disclaimers</p>
                 <p className="mb-4">
-                  1. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds.
+                  1. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Searchpay</a> is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Searchpay does not hold or custody customer funds.
                 </p>
                 <p>
-                  2. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
+                  2. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Searchpay</a> works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 leading-relaxed">
                 <p className="font-bold mb-2 uppercase tracking-wider text-slate-500">All rights reserved</p>
                 <p>
-                  <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Surgepay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
+                  <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Searchpay</a> is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Searchpay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
                 </p>
               </div>
             </div>
             <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-              <span>© 2026 SURGEPAY PTE LTD. All rights reserved.</span>
+              <span>© 2026 SEARCHPAY PTE LTD. All rights reserved.</span>
               <div className="flex gap-6 items-center">
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4" />
