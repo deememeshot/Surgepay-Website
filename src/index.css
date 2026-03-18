@@ -94,6 +94,59 @@
 .bank-row-delay-1 { transition-delay: 150ms; }
 .bank-row-delay-2 { transition-delay: 240ms; }
 
+/* Hero gradient — Apple-style centered radial glow */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(37,211,102,0.07) 0%, rgba(37,211,102,0.02) 40%, transparent 70%);
+}
+
+/* Realistic iPhone frame */
+.phone-frame {
+  position: relative;
+  border-radius: 3rem;
+  border: 6px solid #1a1a1a;
+  background: #1a1a1a;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.1) inset,
+    0 25px 60px -12px rgba(0,0,0,0.25),
+    0 12px 25px -8px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 22px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  z-index: 50;
+}
+
+/* Side buttons */
+.phone-button-left {
+  position: absolute;
+  left: -8px;
+  width: 3px;
+  background: #2a2a2a;
+  border-radius: 2px 0 0 2px;
+}
+
+.phone-button-right {
+  position: absolute;
+  right: -8px;
+  width: 3px;
+  background: #2a2a2a;
+  border-radius: 0 2px 2px 0;
+}
+
+/* CTA section subtle glow */
+.cta-gradient {
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(37,211,102,0.06) 0%, transparent 70%);
+}
+
 /* Legal page content styles — Apple-like clean typography */
 .legal-content {
   @apply text-slate-600 leading-relaxed;

@@ -127,43 +127,54 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
   const stepTransition = direction === 'forward' ? { duration: 0.3 } : { duration: 0 };
 
   return (
-    <div className={`w-full max-w-[280px] md:max-w-[300px] max-h-full aspect-[9/19.5] bg-[#efe7de] rounded-[3rem] border-[10px] border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col relative transition-all duration-500`}>
-      {/* Status Bar */}
-      <div className="h-7 bg-[#075e54] w-full flex justify-between items-center px-6 pt-1">
-        <div className="text-[11px] text-white font-bold">9:41</div>
-        <div className="flex gap-1.5 items-center">
-          <div className="w-3.5 h-2 bg-white/30 rounded-sm relative overflow-hidden">
-            <div className="absolute inset-0 bg-white w-2/3" />
-          </div>
-          <div className="flex gap-0.5">
-            <div className="w-0.5 h-1 bg-white" />
-            <div className="w-0.5 h-1.5 bg-white" />
-            <div className="w-0.5 h-2 bg-white" />
-          </div>
-        </div>
-      </div>
-      
-      {/* Chat Header */}
-      <div className="bg-[#075e54] p-3 py-2 flex items-center gap-2">
-        <div className="w-9 h-9 bg-slate-200 rounded-full flex items-center justify-center overflow-hidden border border-white/10">
-          <div className="w-full h-full bg-whatsapp flex items-center justify-center">
-            <Zap className="text-white w-5 h-5 fill-current" />
-          </div>
-        </div>
-        <div className="flex-1">
-          <div className="text-white text-[14px] font-semibold leading-tight">Surgepay</div>
-          <div className="text-white/70 text-[10px]">online</div>
-        </div>
-        <div className="flex gap-3 text-white/90">
-          <div className="w-1 h-1 bg-white rounded-full" />
-          <div className="w-1 h-1 bg-white rounded-full" />
-          <div className="w-1 h-1 bg-white rounded-full" />
-        </div>
-      </div>
+    <div className="phone-frame w-full max-w-[280px] md:max-w-[300px] max-h-full aspect-[9/19.5] overflow-hidden flex flex-col relative transition-all duration-500">
+      {/* Dynamic Island */}
+      {/* (handled by .phone-frame::before in CSS) */}
 
-      {/* Chat Body */}
-      <div className="flex-1 p-3 flex flex-col gap-2 overflow-y-auto bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat">
-        <div className="relative w-full h-full">
+      {/* Side Buttons */}
+      <div className="phone-button-left" style={{ top: '80px', height: '28px' }} />
+      <div className="phone-button-left" style={{ top: '120px', height: '48px' }} />
+      <div className="phone-button-left" style={{ top: '178px', height: '48px' }} />
+      <div className="phone-button-right" style={{ top: '130px', height: '56px' }} />
+
+      {/* Screen Content */}
+      <div className="w-full h-full rounded-[calc(3rem-6px)] overflow-hidden flex flex-col bg-[#efe7de]">
+        {/* Status Bar */}
+        <div className="h-8 bg-[#075e54] w-full flex justify-between items-center px-6 pt-2">
+          <div className="text-[11px] text-white font-medium">9:41</div>
+          <div className="flex gap-1.5 items-center">
+            <div className="w-3.5 h-2 bg-white/30 rounded-sm relative overflow-hidden">
+              <div className="absolute inset-0 bg-white w-2/3" />
+            </div>
+            <div className="flex gap-0.5">
+              <div className="w-0.5 h-1 bg-white" />
+              <div className="w-0.5 h-1.5 bg-white" />
+              <div className="w-0.5 h-2 bg-white" />
+            </div>
+          </div>
+        </div>
+        
+        {/* Chat Header */}
+        <div className="bg-[#075e54] p-3 py-2 flex items-center gap-2">
+          <div className="w-9 h-9 bg-slate-200 rounded-full flex items-center justify-center overflow-hidden border border-white/10">
+            <div className="w-full h-full bg-whatsapp flex items-center justify-center">
+              <Zap className="text-white w-5 h-5 fill-current" />
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="text-white text-[14px] font-semibold leading-tight">Surgepay</div>
+            <div className="text-white/70 text-[10px]">online</div>
+          </div>
+          <div className="flex gap-3 text-white/90">
+            <div className="w-1 h-1 bg-white rounded-full" />
+            <div className="w-1 h-1 bg-white rounded-full" />
+            <div className="w-1 h-1 bg-white rounded-full" />
+          </div>
+        </div>
+
+        {/* Chat Body */}
+        <div className="flex-1 p-3 flex flex-col gap-2 overflow-y-auto bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat">
+          <div className="relative w-full h-full">
           {/* Step 1 */}
           <div className={activeStep === 0 ? 'block' : 'hidden'}>
             <motion.div 
@@ -328,13 +339,14 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
       </div>
 
       {/* Chat Input */}
-      <div className="p-2 pb-4 bg-transparent flex gap-1.5 items-center">
+      <div className="p-2 pb-5 bg-transparent flex gap-1.5 items-center">
         <div className="flex-1 bg-white rounded-full h-9 px-4 flex items-center text-slate-400 text-[12px] shadow-sm">
           Type a message
         </div>
         <div className="w-9 h-9 bg-[#128c7e] rounded-full flex items-center justify-center shadow-sm">
           <MessageCircle className="text-white w-5 h-5" />
         </div>
+      </div>
       </div>
     </div>
   );
@@ -532,10 +544,7 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-32 pb-24 px-6 overflow-hidden scroll-mt-24">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-whatsapp/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-whatsapp/5 rounded-full blur-3xl" />
-        </div>
+        <div className="absolute inset-0 hero-gradient -z-10" />
 
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
@@ -1023,10 +1032,7 @@ export default function App() {
 
       {/* Final CTA */}
       <section className="py-24 px-6 text-center relative overflow-hidden bg-white">
-        <div className="absolute top-0 left-0 w-full h-full -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-whatsapp/5" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-whatsapp/10 rounded-full blur-[120px]" />
-        </div>
+        <div className="absolute inset-0 cta-gradient -z-10" />
         
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4">Send money in minutes, not days.</h2>
@@ -1042,67 +1048,30 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-50 pt-20 pb-10 px-6 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div className="lg:col-span-2">
-              <a href="#hero" onClick={scrollToTop} className="flex items-center gap-2 mb-6 group cursor-pointer w-fit">
-                <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-                  <Zap className="text-white w-5 h-5 fill-current" />
-                </div>
-                <span className="text-2xl font-semibold tracking-tight text-slate-900">Surgepay</span>
-              </a>
-              <p className="text-slate-500 max-w-sm leading-relaxed">
-                Send money from the US to India instantly using WhatsApp. The simplest way to support your loved ones back home.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium text-slate-900 mb-6">Contact</h4>
-              <ul className="flex flex-col gap-4 text-slate-500">
-                <li><a href="mailto:support@surgepay.xyz" className="hover:text-whatsapp transition-colors">support@surgepay.xyz</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium text-slate-900 mb-6">Legal</h4>
-              <ul className="flex flex-col gap-4 text-slate-500">
-                <li><Link to="/terms" className="hover:text-whatsapp transition-colors">Terms</Link></li>
-                <li><Link to="/privacy" className="hover:text-whatsapp transition-colors">Privacy</Link></li>
-              </ul>
-            </div>
+      {/* Footer — Apple-style minimal */}
+      <footer className="bg-white border-t border-slate-200/80">
+        {/* Navigation Links */}
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs text-slate-500">
+            <a href="mailto:support@surgepay.xyz" className="hover:text-slate-900 transition-colors">Contact</a>
+            <Link to="/terms" className="hover:text-slate-900 transition-colors">Terms</Link>
+            <Link to="/privacy" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
           </div>
-          
-          <div className="pt-10 border-t border-slate-200">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              <div className="text-[11px] text-slate-400 leading-relaxed">
-                <p className="font-medium mb-2 uppercase tracking-wider text-slate-500">Disclaimers</p>
-                <p className="mb-4">
-                  1. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-medium">Surgepay</a> is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds.
-                </p>
-                <p>
-                  2. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-medium">Surgepay</a> works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
-                </p>
-              </div>
-              <div className="text-[11px] text-slate-400 leading-relaxed">
-                <p className="font-medium mb-2 uppercase tracking-wider text-slate-500">All rights reserved</p>
-                <p>
-                  <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-medium">Surgepay</a> is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Surgepay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
-                </p>
-              </div>
-            </div>
-            <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-              <span>© 2026 SURGEPAY PTE LTD. All rights reserved.</span>
-              <div className="flex gap-6 items-center">
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4" />
-                  <span>US to India</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Regulated Partners</span>
-                </div>
-              </div>
-            </div>
+        </div>
+
+        {/* Disclaimers */}
+        <div className="border-t border-slate-100">
+          <div className="max-w-5xl mx-auto px-6 py-5">
+            <p className="text-[11px] text-slate-400 leading-relaxed">
+              Surgepay is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds. All money transmission, foreign exchange, payment processing, and identity verification services are provided by our licensed partner entities. Users must be 18 years or older to use the service. Transfers are subject to applicable laws, regulations, and partner terms. Additional terms and conditions may apply.
+            </p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-slate-100">
+          <div className="max-w-5xl mx-auto px-6 py-4 text-[11px] text-slate-400">
+            © 2026 SURGEPAY PTE LTD. All rights reserved.
           </div>
         </div>
       </footer>
