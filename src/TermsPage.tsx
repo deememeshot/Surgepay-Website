@@ -4,6 +4,7 @@ import { Zap, ArrowLeft } from 'lucide-react';
 
 export default function TermsPage() {
   useEffect(() => {
+    document.title = 'Terms and Conditions — Surgepay';
     window.scrollTo(0, 0);
   }, []);
 

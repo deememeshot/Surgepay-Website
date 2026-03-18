@@ -4,6 +4,7 @@ import { Zap, ArrowLeft } from 'lucide-react';
 
 export default function PrivacyPage() {
   useEffect(() => {
+    document.title = 'Privacy Policy — Surgepay';
     window.scrollTo(0, 0);
   }, []);
 
