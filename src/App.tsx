@@ -592,7 +592,85 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-32 pb-24 px-6 overflow-hidden scroll-mt-24">
-        <div className="absolute inset-0 hero-gradient -z-10" />
+        {/* Animated Globe Background */}
+        <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
+          <div className="hero-gradient absolute inset-0" />
+          <svg 
+            viewBox="0 0 800 800" 
+            className="absolute w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] opacity-[0.06]"
+            fill="none"
+          >
+            {/* Globe circle */}
+            <circle cx="400" cy="400" r="300" stroke="currentColor" strokeWidth="1" className="text-slate-900" />
+            {/* Latitude lines */}
+            <ellipse cx="400" cy="400" rx="300" ry="80" stroke="currentColor" strokeWidth="0.6" className="text-slate-900" />
+            <ellipse cx="400" cy="400" rx="300" ry="180" stroke="currentColor" strokeWidth="0.6" className="text-slate-900" />
+            <ellipse cx="400" cy="400" rx="300" ry="260" stroke="currentColor" strokeWidth="0.6" className="text-slate-900" />
+            {/* Longitude lines */}
+            <ellipse cx="400" cy="400" rx="80" ry="300" stroke="currentColor" strokeWidth="0.6" className="text-slate-900" />
+            <ellipse cx="400" cy="400" rx="180" ry="300" stroke="currentColor" strokeWidth="0.6" className="text-slate-900" />
+            <ellipse cx="400" cy="400" rx="260" ry="300" stroke="currentColor" strokeWidth="0.6" className="text-slate-900" />
+          </svg>
+          
+          {/* Corridor Arcs */}
+          <svg 
+            viewBox="0 0 800 600" 
+            className="absolute w-[900px] h-[700px] md:w-[1100px] md:h-[850px]"
+            fill="none"
+          >
+            {/* Future corridors (very faint) */}
+            {/* Canada → India */}
+            <path d="M220 200 Q400 80 560 240" stroke="#25D366" strokeWidth="1" strokeDasharray="4 6" opacity="0.08" />
+            {/* UAE → India */}
+            <path d="M480 340 Q520 280 560 240" stroke="#25D366" strokeWidth="1" strokeDasharray="4 6" opacity="0.08" />
+            {/* Saudi → India */}
+            <path d="M440 330 Q500 260 560 240" stroke="#25D366" strokeWidth="1" strokeDasharray="4 6" opacity="0.08" />
+            {/* Singapore → India */}
+            <path d="M620 360 Q600 280 560 240" stroke="#25D366" strokeWidth="1" strokeDasharray="4 6" opacity="0.08" />
+            
+            {/* Main corridor: US → India (glowing, animated) */}
+            <path 
+              d="M200 260 Q400 100 560 240" 
+              stroke="url(#corridorGlow)" 
+              strokeWidth="2" 
+              opacity="0.5"
+              className="corridor-arc"
+            />
+            {/* Animated dot traveling along the arc */}
+            <circle r="3" fill="#25D366" opacity="0.8">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M200 260 Q400 100 560 240" />
+            </circle>
+            <circle r="6" fill="#25D366" opacity="0.2">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M200 260 Q400 100 560 240" />
+            </circle>
+            
+            {/* US endpoint — pulsing */}
+            <circle cx="200" cy="260" r="4" fill="#25D366" opacity="0.6" />
+            <circle cx="200" cy="260" r="4" fill="#25D366" opacity="0.3">
+              <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* India endpoint — pulsing */}
+            <circle cx="560" cy="240" r="4" fill="#25D366" opacity="0.6" />
+            <circle cx="560" cy="240" r="4" fill="#25D366" opacity="0.3">
+              <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Endpoint labels */}
+            <text x="200" y="284" textAnchor="middle" fill="#25D366" fontSize="10" fontWeight="600" opacity="0.4">US</text>
+            <text x="560" y="264" textAnchor="middle" fill="#25D366" fontSize="10" fontWeight="600" opacity="0.4">IN</text>
+            
+            <defs>
+              <linearGradient id="corridorGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#25D366" stopOpacity="0.3" />
+                <stop offset="50%" stopColor="#25D366" stopOpacity="1" />
+                <stop offset="100%" stopColor="#25D366" stopOpacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
 
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
