@@ -1062,6 +1062,13 @@ export default function App() {
                 <li><a href="mailto:support@surgepay.xyz" className="hover:text-whatsapp transition-colors">support@surgepay.xyz</a></li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-bold text-slate-900 mb-6">Legal</h4>
+              <ul className="flex flex-col gap-4 text-slate-500">
+                <li><a href="#" className="hover:text-whatsapp transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-whatsapp transition-colors">Privacy</a></li>
+              </ul>
+            </div>
           </div>
           
           <div className="pt-10 border-t border-slate-200">
