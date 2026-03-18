@@ -545,14 +545,14 @@ export default function App() {
           >
             <div className="flex justify-center mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Backed by</span>
+                <span className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Backed by</span>
                 <div className="flex items-center gap-1.5">
                   <div className="w-4 h-4 bg-[#FF4B4B] flex items-center justify-center rounded-[2px]">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 5L5 19H8.5L12 12L15.5 19H19L12 5Z" fill="white"/>
                     </svg>
                   </div>
-                  <span className="text-[11px] font-black text-[#FF4B4B] tracking-widest uppercase">Antler</span>
+                  <span className="text-[11px] font-bold text-[#FF4B4B] tracking-widest uppercase">Antler</span>
                 </div>
               </div>
             </div>
@@ -561,7 +561,7 @@ export default function App() {
               <span className="block">should be as simple</span>
               <span className="block">as a <span className="text-whatsapp">WhatsApp chat.</span></span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-500 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
               From US to India. Instant transfers. Zero fees. Google rates.
             </p>
           </motion.div>
@@ -604,12 +604,12 @@ export default function App() {
           >
             <div className="flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5 w-full sm:w-auto">
               <div className="relative flex flex-col items-center w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-12 py-6 rounded-2xl font-semibold text-xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-3 group">
+                <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-2xl font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
                   Start on WhatsApp 
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
-              <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-12 py-6 rounded-2xl font-medium text-xl transition-all border border-slate-200 text-center">
+              <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-10 py-4 rounded-2xl font-medium text-lg transition-all border border-slate-200 text-center">
                 See how it works
               </a>
             </div>
@@ -630,25 +630,25 @@ export default function App() {
                 <div className="w-7 h-7 flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-5 h-5 text-whatsapp" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">Regulated Partners</span>
+                <span className="text-[10px] font-medium uppercase tracking-widest">Regulated Partners</span>
               </div>
               <div className="flex items-center gap-4 text-slate-400">
                 <div className="w-7 h-7 flex items-center justify-center shrink-0">
                   <Lock className="w-5 h-5 text-whatsapp" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">Bank-level Security</span>
+                <span className="text-[10px] font-medium uppercase tracking-widest">Bank-level Security</span>
               </div>
               <div className="flex items-center gap-4 text-slate-400">
                 <div className="w-7 h-7 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-5 h-5 text-whatsapp" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">KYC Compliant</span>
+                <span className="text-[10px] font-medium uppercase tracking-widest">KYC Compliant</span>
               </div>
               <div className="flex items-center gap-4 text-slate-400">
                 <div className="w-7 h-7 flex items-center justify-center shrink-0">
                   <MessageCircle className="w-5 h-5 text-whatsapp" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">End-to-end Encrypted</span>
+                <span className="text-[10px] font-medium uppercase tracking-widest">End-to-end Encrypted</span>
               </div>
             </div>
           </motion.div>
@@ -659,7 +659,7 @@ export default function App() {
       <section id="security" className="py-20 px-6 bg-slate-50 relative overflow-hidden scroll-mt-24">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-4">Trust & Security</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4">Trust & Security</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Your money and data are protected by bank-grade encryption and regulated financial infrastructure.
             </p>
@@ -668,12 +668,12 @@ export default function App() {
           {/* Dominant Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center">
-              <div className="text-5xl md:text-7xl font-semibold text-whatsapp mb-2">10,000+</div>
-              <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Active Users</div>
+              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">10,000+</div>
+              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Active Users</div>
             </div>
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center">
-              <div className="text-5xl md:text-7xl font-semibold text-whatsapp mb-2">$10M+</div>
-              <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Transferred</div>
+              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">$10M+</div>
+              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Transferred</div>
             </div>
           </div>
 
@@ -699,7 +699,7 @@ export default function App() {
         <div className={`${isMobile ? 'relative' : 'sticky top-0 h-screen'} flex flex-col justify-center pt-16 pb-8 md:pt-24 md:pb-12 px-6 overflow-hidden`}>
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-2 md:mb-4">Experience the Magic</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-2 md:mb-4">Experience the Magic</h2>
               <p className="text-lg text-slate-600">Four simple steps to send money home.</p>
             </div>
 
@@ -879,7 +879,7 @@ export default function App() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="flex-1 text-white">
-            <h2 className="text-4xl md:text-6xl font-semibold mb-10">Why WhatsApp?</h2>
+            <h2 className="text-3xl md:text-5xl font-semibold mb-10">Why WhatsApp?</h2>
             <div className="flex flex-col gap-10">
               <div className="flex gap-6">
                 <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center shrink-0">
@@ -933,7 +933,7 @@ export default function App() {
       {/* Simple Steps */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-10">Simple as 1, 2, 3, 4</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-10">Simple as 1, 2, 3, 4</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { step: "1", title: "Start chat on WhatsApp", icon: <MessageCircle /> },
@@ -1029,13 +1029,13 @@ export default function App() {
         </div>
         
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 mb-4">Send money in minutes, not days.</h2>
-          <p className="text-xl text-slate-600 mb-8">No fees. No hassle. Just a simple chat.</p>
+          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4">Send money in minutes, not days.</h2>
+          <p className="text-lg text-slate-500 mb-8">No fees. No hassle. Just a simple chat.</p>
           <div className="flex flex-col items-center gap-6">
-            <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-8 py-4 md:px-12 md:py-6 rounded-2xl md:rounded-3xl font-semibold text-lg md:text-2xl transition-all shadow-2xl shadow-whatsapp/30 flex items-center justify-center gap-2 md:gap-3 mx-auto">
-              Start on WhatsApp <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
+            <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 mx-auto">
+              Start on WhatsApp <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-            <div className="text-sm text-slate-600 font-medium">
+            <div className="text-sm text-slate-500 font-normal">
               Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
             </div>
           </div>
@@ -1075,18 +1075,18 @@ export default function App() {
           <div className="pt-10 border-t border-slate-200">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               <div className="text-[11px] text-slate-400 leading-relaxed">
-                <p className="font-bold mb-2 uppercase tracking-wider text-slate-500">Disclaimers</p>
+                <p className="font-medium mb-2 uppercase tracking-wider text-slate-500">Disclaimers</p>
                 <p className="mb-4">
-                  1. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds.
+                  1. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-medium">Surgepay</a> is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds.
                 </p>
                 <p>
-                  2. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
+                  2. <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-medium">Surgepay</a> works with licensed financial institutions and service providers to facilitate payments, identity verification, and bank connectivity. These partners are responsible for the underlying financial services and regulatory compliance. Users must be 18 years or older to use the service. Additional terms and conditions may apply.
                 </p>
               </div>
               <div className="text-[11px] text-slate-400 leading-relaxed">
-                <p className="font-bold mb-2 uppercase tracking-wider text-slate-500">All rights reserved</p>
+                <p className="font-medium mb-2 uppercase tracking-wider text-slate-500">All rights reserved</p>
                 <p>
-                  <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-bold">Surgepay</a> is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Surgepay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
+                  <a href="#hero" onClick={scrollToTop} className="hover:text-whatsapp transition-colors font-medium">Surgepay</a> is a financial technology company that facilitates international money transfers through trusted, regulated partners. We do not provide banking services directly. All transfers are subject to applicable laws, regulations, and partner terms. Surgepay does not take custody of user funds. Users are responsible for ensuring the accuracy of transaction details and complying with applicable requirements.
                 </p>
               </div>
             </div>
