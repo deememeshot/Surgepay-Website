@@ -128,9 +128,6 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
 
   return (
     <div className="phone-frame w-full max-w-[280px] md:max-w-[300px] max-h-full aspect-[9/19.5] overflow-hidden flex flex-col relative transition-all duration-500">
-      {/* Dynamic Island */}
-      {/* (handled by .phone-frame::before in CSS) */}
-
       {/* Side Buttons */}
       <div className="phone-button-left" style={{ top: '80px', height: '28px' }} />
       <div className="phone-button-left" style={{ top: '120px', height: '48px' }} />
@@ -139,41 +136,71 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
 
       {/* Screen Content */}
       <div className="w-full h-full rounded-[calc(3rem-6px)] overflow-hidden flex flex-col bg-[#efe7de]">
-        {/* Status Bar */}
-        <div className="h-8 bg-[#075e54] w-full flex justify-between items-center px-6 pt-2">
-          <div className="text-[11px] text-white font-medium">9:41</div>
-          <div className="flex gap-1.5 items-center">
-            <div className="w-3.5 h-2 bg-white/30 rounded-sm relative overflow-hidden">
-              <div className="absolute inset-0 bg-white w-2/3" />
-            </div>
-            <div className="flex gap-0.5">
-              <div className="w-0.5 h-1 bg-white" />
-              <div className="w-0.5 h-1.5 bg-white" />
-              <div className="w-0.5 h-2 bg-white" />
-            </div>
+        {/* iOS Status Bar */}
+        <div className="h-[44px] bg-[#075e54] w-full flex justify-between items-end px-5 pb-1.5 relative">
+          {/* Dynamic Island placeholder area */}
+          <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-[72px] h-[20px] bg-black rounded-full z-10" />
+          <div className="text-[13px] text-white font-semibold leading-none">9:41</div>
+          <div className="flex gap-1 items-center">
+            {/* Signal bars */}
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="none">
+              <rect x="0" y="8" width="3" height="3" rx="0.5" fill="white"/>
+              <rect x="4" y="5" width="3" height="6" rx="0.5" fill="white"/>
+              <rect x="8" y="2" width="3" height="9" rx="0.5" fill="white"/>
+              <rect x="12" y="0" width="3" height="11" rx="0.5" fill="white"/>
+            </svg>
+            {/* WiFi */}
+            <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
+              <path d="M7 10.5a1 1 0 100-2 1 1 0 000 2z" fill="white"/>
+              <path d="M4.5 7.5a3.5 3.5 0 015 0" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+              <path d="M2 5a7 7 0 0110 0" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+            </svg>
+            {/* Battery */}
+            <svg width="22" height="11" viewBox="0 0 22 11" fill="none">
+              <rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="white" strokeWidth="1"/>
+              <rect x="19.5" y="3" width="2" height="5" rx="1" fill="white"/>
+              <rect x="2" y="2" width="12" height="7" rx="1" fill="white"/>
+            </svg>
           </div>
         </div>
         
-        {/* Chat Header */}
-        <div className="bg-[#075e54] p-3 py-2 flex items-center gap-2">
-          <div className="w-9 h-9 bg-slate-200 rounded-full flex items-center justify-center overflow-hidden border border-white/10">
-            <div className="w-full h-full bg-whatsapp flex items-center justify-center">
-              <Zap className="text-white w-5 h-5 fill-current" />
-            </div>
+        {/* WhatsApp Header */}
+        <div className="bg-[#075e54] px-2 py-1.5 flex items-center gap-1.5">
+          {/* Back Arrow */}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0">
+            <path d="M15 18l-6-6 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          {/* Profile Pic */}
+          <div className="w-8 h-8 bg-whatsapp rounded-full flex items-center justify-center shrink-0">
+            <Zap className="text-white w-4 h-4 fill-current" />
           </div>
-          <div className="flex-1">
-            <div className="text-white text-[14px] font-semibold leading-tight">Surgepay</div>
-            <div className="text-white/70 text-[10px]">online</div>
+          {/* Name */}
+          <div className="flex-1 min-w-0">
+            <div className="text-white text-[14px] font-medium leading-tight truncate">Surgepay</div>
+            <div className="text-white/70 text-[11px] leading-tight">online</div>
           </div>
-          <div className="flex gap-3 text-white/90">
-            <div className="w-1 h-1 bg-white rounded-full" />
-            <div className="w-1 h-1 bg-white rounded-full" />
-            <div className="w-1 h-1 bg-white rounded-full" />
+          {/* Action Icons */}
+          <div className="flex items-center gap-3">
+            {/* Video */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="5" width="14" height="14" rx="2" stroke="white" strokeWidth="1.5"/>
+              <path d="M16 10l4-2.5v9L16 14" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            {/* Phone */}
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="white" strokeWidth="1.5"/>
+            </svg>
+            {/* Menu dots */}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="5" r="1.5" fill="white"/>
+              <circle cx="12" cy="12" r="1.5" fill="white"/>
+              <circle cx="12" cy="19" r="1.5" fill="white"/>
+            </svg>
           </div>
         </div>
 
         {/* Chat Body */}
-        <div className="flex-1 p-3 flex flex-col gap-2 overflow-y-auto bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat">
+        <div className="flex-1 p-2.5 flex flex-col gap-1.5 overflow-y-auto wa-chat-bg">
           <div className="relative w-full h-full">
           {/* Step 1 */}
           <div className={activeStep === 0 ? 'block' : 'hidden'}>
@@ -181,45 +208,45 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
               initial={direction === 'forward' ? { opacity: 0, y: 10 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={stepTransition}
-              className="flex flex-col gap-2"
+              className="flex flex-col gap-1.5"
             >
-              <div className="whatsapp-bubble-right">
+              <div className="wa-bubble-out">
                 Hi
-                <div className="whatsapp-timestamp">10:42 AM <CheckCircle2 className="w-2.5 h-2.5 text-blue-400" /></div>
+                <div className="wa-time-out">10:42 AM <span className="wa-read">✓✓</span></div>
               </div>
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 How much would you like to send?
-                <div className="whatsapp-timestamp">10:42 AM</div>
+                <div className="wa-time-in">10:42 AM</div>
               </div>
-              <div className="whatsapp-bubble-right">
+              <div className="wa-bubble-out">
                 $700
-                <div className="whatsapp-timestamp">10:43 AM <CheckCircle2 className="w-2.5 h-2.5 text-blue-400" /></div>
+                <div className="wa-time-out">10:43 AM <span className="wa-read">✓✓</span></div>
               </div>
-              <div className="whatsapp-bubble-left bg-white border-l-4 border-whatsapp !p-3">
-                <div className="text-[10px] font-bold text-whatsapp mb-1">SURGEPAY QUOTE</div>
-                <div className="flex justify-between text-xs mb-1">
+              <div className="wa-bubble-in border-l-[3px] border-whatsapp">
+                <div className="text-[10px] font-semibold text-whatsapp mb-1">SURGEPAY QUOTE</div>
+                <div className="flex justify-between text-[11px] mb-0.5">
                   <span className="text-slate-500">You send:</span>
-                  <span className="font-bold">$700</span>
+                  <span className="font-semibold">$700</span>
                 </div>
-                <div className="flex justify-between text-xs mb-1">
+                <div className="flex justify-between text-[11px] mb-0.5">
                   <span className="text-slate-500">Fees:</span>
-                  <span className="font-bold text-whatsapp">$0</span>
+                  <span className="font-semibold text-whatsapp">$0</span>
                 </div>
-                <div className="flex justify-between text-xs mb-1">
+                <div className="flex justify-between text-[11px] mb-0.5">
                   <span className="text-slate-500">Rate:</span>
-                  <span className="font-bold">
+                  <span className="font-semibold">
                     ₹{rate.toFixed(2)} 
                     <span className="ml-1 text-[8px] font-normal text-whatsapp">
-                      {isLive ? '● Live rate' : '(Google rate)'}
+                      {isLive ? '● Live' : '(Google)'}
                     </span>
                   </span>
                 </div>
-                <div className="h-px bg-slate-100 my-2" />
-                <div className="flex justify-between text-sm">
+                <div className="h-px bg-slate-200/60 my-1.5" />
+                <div className="flex justify-between text-[12px]">
                   <span className="text-slate-500">They receive:</span>
-                  <span className="font-black text-slate-900">₹{(700 * rate).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
+                  <span className="font-bold text-slate-900">₹{(700 * rate).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
                 </div>
-                <div className="whatsapp-timestamp">10:43 AM</div>
+                <div className="wa-time-in">10:43 AM</div>
               </div>
             </motion.div>
           </div>
@@ -230,30 +257,30 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
               initial={direction === 'forward' ? { opacity: 0, y: 10 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={stepTransition}
-              className="flex flex-col gap-2"
+              className="flex flex-col gap-1.5"
             >
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 Where do you want to send the money?
-                <div className="whatsapp-timestamp">10:44 AM</div>
+                <div className="wa-time-in">10:44 AM</div>
               </div>
-              <div className="flex flex-col gap-1.5 mt-1">
+              <div className="flex flex-col gap-1.5 mt-0.5">
                 {['HDFC Bank ••• 4821', 'SBI Bank ••• 1934', 'ICICI Bank ••• 7742'].map((bank, i) => (
                   <div 
                     key={bank}
-                    className={`bank-row p-2.5 rounded-lg border flex items-center justify-between text-[11px] font-medium cursor-pointer transition-all ${i === 0 ? 'bg-whatsapp/10 border-whatsapp text-whatsapp' : 'bg-white border-slate-200 text-slate-600'} ${animateBanks ? 'animate' : ''} bank-row-delay-${i}`}
+                    className={`bank-row p-2 rounded-lg border flex items-center justify-between text-[11px] font-medium cursor-pointer transition-all ${i === 0 ? 'bg-whatsapp/10 border-whatsapp text-whatsapp' : 'bg-white border-slate-200 text-slate-600'} ${animateBanks ? 'animate' : ''} bank-row-delay-${i}`}
                   >
                     {bank}
                     {i === 0 && <CheckCircle2 className="w-3.5 h-3.5" />}
                   </div>
                 ))}
               </div>
-              <div className="whatsapp-bubble-right mt-1">
+              <div className="wa-bubble-out mt-0.5">
                 HDFC Bank ••• 4821
-                <div className="whatsapp-timestamp">10:44 AM <CheckCircle2 className="w-2.5 h-2.5 text-blue-400" /></div>
+                <div className="wa-time-out">10:44 AM <span className="wa-read">✓✓</span></div>
               </div>
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 Please confirm recipient details
-                <div className="whatsapp-timestamp">10:44 AM</div>
+                <div className="wa-time-in">10:44 AM</div>
               </div>
             </motion.div>
           </div>
@@ -264,33 +291,33 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
               initial={direction === 'forward' ? { opacity: 0, y: 10 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={stepTransition}
-              className="flex flex-col gap-2"
+              className="flex flex-col gap-1.5"
             >
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 Connect your US bank account
-                <div className="whatsapp-timestamp">10:45 AM</div>
+                <div className="wa-time-in">10:45 AM</div>
               </div>
-              <div className="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center gap-2.5 shadow-sm">
-                <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
-                  <Banknote className="text-blue-600 w-4 h-4" />
+              <div className="p-2 bg-white rounded-lg border border-slate-200 flex items-center gap-2 shadow-sm">
+                <div className="w-7 h-7 bg-blue-50 rounded-md flex items-center justify-center">
+                  <Banknote className="text-blue-600 w-3.5 h-3.5" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-[11px] font-bold text-slate-900">Chase Bank ••• 9901</div>
-                  <div className="text-[9px] text-slate-500">Connected via Plaid</div>
+                  <div className="text-[11px] font-semibold text-slate-900">Chase Bank ••• 9901</div>
+                  <div className="text-[9px] text-slate-400">Connected via Plaid</div>
                 </div>
                 <CheckCircle2 className="text-whatsapp w-4 h-4" />
               </div>
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 Complete quick identity verification
-                <div className="whatsapp-timestamp">10:45 AM</div>
+                <div className="wa-time-in">10:45 AM</div>
               </div>
-              <div className="whatsapp-bubble-left flex items-center gap-2">
+              <div className="wa-bubble-in flex items-center gap-1.5">
                 Verifying… <motion.span animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: "linear" }} className="inline-block">⏳</motion.span>
-                <div className="whatsapp-timestamp">10:46 AM</div>
+                <div className="wa-time-in">10:46 AM</div>
               </div>
-              <div className="whatsapp-bubble-left bg-whatsapp text-white font-bold">
-                Verifying… ✅
-                <div className="whatsapp-timestamp !text-white/70">10:46 AM</div>
+              <div className="wa-bubble-in !bg-whatsapp !text-white font-semibold">
+                Verified ✅
+                <div className="wa-time-in !text-white/70">10:46 AM</div>
               </div>
             </motion.div>
           </div>
@@ -301,50 +328,71 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
               initial={direction === 'forward' ? { opacity: 0, y: 10 } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={stepTransition}
-              className="flex flex-col gap-2"
+              className="flex flex-col gap-1.5"
             >
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 Review your transfer
-                <div className="whatsapp-timestamp">10:47 AM</div>
+                <div className="wa-time-in">10:47 AM</div>
               </div>
               <div className="bg-white rounded-lg p-2.5 border border-slate-200 shadow-sm">
-                <div className="flex justify-between text-[11px] mb-1">
+                <div className="flex justify-between text-[11px] mb-0.5">
                   <span className="text-slate-500">$700 → ₹{(700 * rate).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span>
                 </div>
-                <div className="text-[10px] text-whatsapp font-bold">Fees: $0 • Rate: ₹{rate.toFixed(2)}</div>
+                <div className="text-[10px] text-whatsapp font-semibold">Fees: $0 • Rate: ₹{rate.toFixed(2)}</div>
               </div>
-              <div className="whatsapp-bubble-left">
+              <div className="wa-bubble-in">
                 Secure payment link generated
-                <div className="whatsapp-timestamp">10:47 AM</div>
+                <div className="wa-time-in">10:47 AM</div>
               </div>
-              <div className="w-full bg-whatsapp text-white py-2.5 rounded-lg font-semibold text-xs shadow-lg shadow-whatsapp/20 text-center">
+              <div className="w-full bg-whatsapp text-white py-2 rounded-lg font-semibold text-xs shadow-md text-center">
                 PAY $700
               </div>
-              <div className="whatsapp-bubble-right">
+              <div className="wa-bubble-out">
                 User taps Pay
-                <div className="whatsapp-timestamp">10:48 AM <CheckCircle2 className="w-2.5 h-2.5 text-blue-400" /></div>
+                <div className="wa-time-out">10:48 AM <span className="wa-read">✓✓</span></div>
               </div>
-              <div className="whatsapp-bubble-left bg-white border-l-4 border-whatsapp !p-3">
-                <div className="text-[10px] font-bold text-whatsapp mb-1">TRANSFER SUCCESSFUL</div>
-                <div className="text-[11px] text-slate-600 mb-2">₹{(700 * rate).toLocaleString('en-IN', { maximumFractionDigits: 0 })} is on its way to India.</div>
+              <div className="wa-bubble-in border-l-[3px] border-whatsapp">
+                <div className="text-[10px] font-semibold text-whatsapp mb-1">TRANSFER SUCCESSFUL</div>
+                <div className="text-[11px] text-slate-600 mb-1.5">₹{(700 * rate).toLocaleString('en-IN', { maximumFractionDigits: 0 })} is on its way to India.</div>
                 <div className="flex justify-between text-[10px]">
                   <span className="text-slate-400">Ref: SP-99281</span>
-                  <span className="text-whatsapp font-bold">Track Status</span>
+                  <span className="text-whatsapp font-semibold">Track Status</span>
                 </div>
-                <div className="whatsapp-timestamp">10:48 AM</div>
+                <div className="wa-time-in">10:48 AM</div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Chat Input */}
-      <div className="p-2 pb-5 bg-transparent flex gap-1.5 items-center">
-        <div className="flex-1 bg-white rounded-full h-9 px-4 flex items-center text-slate-400 text-[12px] shadow-sm">
-          Type a message
+      {/* WhatsApp Input Bar */}
+      <div className="wa-input-bar">
+        <div className="wa-input-field">
+          {/* Emoji */}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0">
+            <circle cx="12" cy="12" r="10" stroke="#8696A0" strokeWidth="1.5"/>
+            <circle cx="9" cy="10" r="1" fill="#8696A0"/>
+            <circle cx="15" cy="10" r="1" fill="#8696A0"/>
+            <path d="M8 14c1.333 1.333 2.667 2 4 2s2.667-.667 4-2" stroke="#8696A0" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+          <span className="flex-1 text-[13px] text-[#8696A0]">Type a message</span>
+          {/* Attach */}
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" className="shrink-0">
+            <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" stroke="#8696A0" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+          {/* Camera */}
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" className="shrink-0">
+            <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" stroke="#8696A0" strokeWidth="1.5"/>
+            <circle cx="12" cy="13" r="4" stroke="#8696A0" strokeWidth="1.5"/>
+          </svg>
         </div>
-        <div className="w-9 h-9 bg-[#128c7e] rounded-full flex items-center justify-center shadow-sm">
-          <MessageCircle className="text-white w-5 h-5" />
+        {/* Mic button */}
+        <div className="w-[38px] h-[38px] bg-[#00a884] rounded-full flex items-center justify-center shrink-0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <rect x="9" y="1" width="6" height="14" rx="3" fill="white"/>
+            <path d="M5 10v1a7 7 0 0014 0v-1" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+            <line x1="12" y1="18" x2="12" y2="22" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+          </svg>
         </div>
       </div>
       </div>
