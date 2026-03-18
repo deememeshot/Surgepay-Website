@@ -556,7 +556,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <h1 className="text-[1.85rem] leading-[1.2] md:text-7xl lg:text-8xl font-semibold tracking-tight text-slate-900 md:leading-[1.05] mb-6 max-w-[320px] md:max-w-5xl mx-auto">
+            <h1 className="text-[1.85rem] leading-[1.2] md:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 md:leading-[1.1] mb-6 max-w-[320px] md:max-w-4xl mx-auto">
               <span className="block">Sending money home</span>
               <span className="block">should be as simple</span>
               <span className="block">as a <span className="text-whatsapp">WhatsApp chat.</span></span>
