@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 32' width='160' height='32'>
+  <!-- Logomark (Zap icon in green square) -->
+  <rect width='32' height='32' rx='8' fill='#25D366'/>
+  <path d='M17.5 7L11 17h4.5L14.5 25L21 15h-4.5L17.5 7z' fill='white'/>
+  
+  <!-- Text: Surgepay -->
+  <text x='42' y='23' font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size='20' font-weight='600' letter-spacing='-0.03em' fill='#0F172A'>Surgepay</text>
+</svg>
