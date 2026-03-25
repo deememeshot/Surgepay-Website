@@ -417,10 +417,10 @@ export default function App() {
   useEffect(() => {
     const fetchRate = async () => {
       try {
-        const response = await fetch('https://api.frankfurter.app/latest?from=USD&to=INR');
+        const response = await fetch('/api/rate');
         const data = await response.json();
-        if (data.rates && data.rates.INR) {
-          setRate(data.rates.INR);
+        if (data.rate) {
+          setRate(data.rate);
           setIsLive(true);
         }
       } catch (error) {
