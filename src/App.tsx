@@ -72,9 +72,9 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
-          <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+          <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
             Start on WhatsApp
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -93,9 +93,9 @@ const Navbar = () => {
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
             <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
-            <button className="w-full bg-whatsapp text-white px-6 py-4 rounded-xl font-medium text-center mt-2">
+            <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block">
               Start on WhatsApp
-            </button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -739,10 +739,10 @@ export default function App() {
           >
             <div className="flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5 w-full sm:w-auto">
               <div className="relative flex flex-col items-center w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-2xl font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
+                <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-2xl font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
                   Start on WhatsApp 
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
               <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-10 py-4 rounded-2xl font-medium text-lg transition-all border border-slate-200 text-center">
                 See how it works
@@ -1164,9 +1164,9 @@ export default function App() {
           <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4">Send money in minutes, not days.</h2>
           <p className="text-lg text-slate-500 mb-8">No fees. No hassle. Just a simple chat.</p>
           <div className="flex flex-col items-center gap-6">
-            <button className="bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 mx-auto">
+            <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 mx-auto">
               Start on WhatsApp <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
+            </a>
             <div className="text-sm text-slate-500 font-normal">
               Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
             </div>
