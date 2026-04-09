@@ -73,7 +73,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
           <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-            Start on WhatsApp
+            I have an invite code
           </a>
         </div>
 
@@ -93,8 +93,8 @@ const Navbar = () => {
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
             <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
-            <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block">
-              Start on WhatsApp
+            <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block">
+              I have an invite code
             </a>
           </motion.div>
         )}
@@ -591,7 +591,7 @@ export default function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-32 pb-24 px-6 overflow-hidden scroll-mt-24">
+      <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
         {/* Animated Globe Background */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
           <div className="hero-gradient absolute inset-0" />
@@ -678,7 +678,11 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex justify-center mb-8">
+            <div className="flex flex-col items-center gap-3 mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e8fbf0] border border-[#bbf7d0] shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse"></div>
+                <span className="text-[10px] font-bold text-[#166534] tracking-widest uppercase">Private Beta — Invite Only</span>
+              </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm">
                 <span className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Backed by</span>
                 <div className="flex items-center gap-1.5">
@@ -691,12 +695,12 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <h1 className="text-[1.85rem] leading-[1.2] md:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 md:leading-[1.1] mb-6 max-w-[320px] md:max-w-4xl mx-auto">
+            <h1 className="text-[1.85rem] leading-[1.2] md:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 md:leading-[1.1] mb-3 max-w-[320px] md:max-w-4xl mx-auto">
               <span className="block">Sending money home</span>
               <span className="block">should be as simple</span>
               <span className="block">as a <span className="text-whatsapp">WhatsApp chat.</span></span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 mb-6 max-w-2xl mx-auto leading-relaxed">
               From US to India. Instant transfers. Zero fees. Google rates.
             </p>
           </motion.div>
@@ -705,7 +709,7 @@ export default function App() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center justify-center gap-6 mb-12"
+            className="flex items-center justify-center gap-6 mb-8"
           >
             <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm bg-slate-50">
               <img 
@@ -737,19 +741,17 @@ export default function App() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col items-center justify-center gap-5"
           >
-            <div className="flex flex-col sm:flex-row items-center sm:items-end justify-center gap-5 w-full sm:w-auto">
-              <div className="relative flex flex-col items-center w-full sm:w-auto">
-                <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-2xl font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
-                  Start on WhatsApp 
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-              <a href="#how-it-works" className="w-full sm:w-auto bg-slate-50 hover:bg-slate-100 text-slate-900 px-10 py-4 rounded-2xl font-medium text-lg transition-all border border-slate-200 text-center">
-                See how it works
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full md:w-auto">
+              <a href="mailto:support@surgepay.xyz" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-full font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
+                Request an Invite 
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp-light hover:bg-[#cff1b5] text-whatsapp-dark px-10 py-4 rounded-full font-medium text-lg transition-all text-center">
+                I have an invite code
               </a>
             </div>
-            <div className="mt-4 text-sm text-slate-600 font-medium">
-              Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
+            <div className="mt-4 text-base text-slate-400 font-medium">
+              <span className="font-bold text-slate-600">{230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+</span> people on the waitlist
             </div>
           </motion.div>
 
@@ -758,7 +760,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 pt-8 border-t border-slate-100 flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center gap-x-12 gap-y-4 sm:gap-y-6"
+            className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center gap-x-12 gap-y-4 sm:gap-y-6"
           >
             <div className="flex flex-col items-start gap-y-4 sm:flex-row sm:items-center sm:gap-x-12 sm:gap-y-0">
               <div className="flex items-center gap-4 text-slate-400">
@@ -1164,11 +1166,17 @@ export default function App() {
           <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-4">Send money in minutes, not days.</h2>
           <p className="text-lg text-slate-500 mb-8">No fees. No hassle. Just a simple chat.</p>
           <div className="flex flex-col items-center gap-6">
-            <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 mx-auto">
-              Start on WhatsApp <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
-            </a>
-            <div className="text-sm text-slate-500 font-normal">
-              Email us for beta access: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full md:w-auto">
+              <a href="mailto:support@surgepay.xyz" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 group mx-auto">
+                Request an Invite 
+                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp-light hover:bg-[#cff1b5] text-whatsapp-dark px-10 py-4 md:px-12 md:py-5 rounded-full font-medium text-lg md:text-xl transition-all text-center mx-auto">
+                I have an invite code
+              </a>
+            </div>
+            <div className="mt-2 text-base text-slate-400 font-medium">
+              <span className="font-bold text-slate-600">{230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+</span> people on the waitlist
             </div>
           </div>
         </div>
