@@ -739,7 +739,23 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
-        {/* Floating Badge Container (Removed floating badge) */}
+        {/* Floating Badge (Restored specifically for Desktop as requested) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="hidden md:block absolute md:top-[48%] md:left-[calc(50%-440px)] lg:left-[calc(50%-540px)] pointer-events-auto z-10"
+        >
+          <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-whatsapp shadow-[#16a34a]/30 shadow-xl cursor-default hover:scale-105 transition-transform border border-white/10">
+            <div className="w-2 h-2 rounded-full bg-white animate-pulse mt-1"></div>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-[11px] font-bold text-white tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
+              <span className="text-[9px] font-semibold text-white/80 tracking-widest uppercase leading-none">Invite Only</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Floating Badge Container (Empty) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
           <div className="relative w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] shrink-0">
           </div>
@@ -895,11 +911,11 @@ export default function App() {
                 Request an Invite 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <div className="relative flex flex-col items-center w-full sm:w-auto mt-2 sm:mt-0">
+              <div className="relative flex flex-col items-center w-full sm:w-auto">
                 <button onClick={() => setIsInviteModalOpen(true)} className="w-full sm:w-auto bg-white border-2 border-slate-300 text-slate-600 hover:border-[#25D366] hover:text-[#128C7E] px-10 py-4 rounded-full font-medium text-lg transition-all text-center shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98]">
                   I have an invite code
                 </button>
-                <div className="mt-2.5 flex items-center gap-2 pointer-events-none whitespace-nowrap">
+                <div className="mt-2.5 flex items-center gap-2 pointer-events-none whitespace-nowrap md:hidden">
                   <span className="text-[9px] font-bold text-[#166534] tracking-widest uppercase">Private Beta</span>
                   <span className="w-0.5 h-0.5 rounded-full bg-[#166534]/30"></span>
                   <span className="text-[9px] font-semibold text-[#166534]/60 tracking-widest uppercase">Invite Only</span>
