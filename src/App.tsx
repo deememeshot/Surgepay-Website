@@ -746,7 +746,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute top-[50%] left-[3%] md:top-[52%] md:left-[6%] lg:top-[52%] lg:left-[8%] pointer-events-auto"
+              className="absolute top-[100px] left-[24px] md:top-[52%] md:left-[6%] lg:top-[52%] lg:left-[8%] pointer-events-auto"
             >
               <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-whatsapp shadow-[#16a34a]/20 shadow-xl cursor-default hover:scale-105 transition-transform border border-white/10">
                 <div className="w-2 h-2 rounded-full bg-white animate-pulse mt-0.5 md:mt-1"></div>
