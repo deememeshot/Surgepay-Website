@@ -592,30 +592,6 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
-        {/* Floating Badge (Anchored strictly to globe dimensions) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
-          <div className="relative w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] shrink-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1, y: [-5, 5, -5] }}
-              transition={{ 
-                opacity: { duration: 0.8, delay: 0.5 },
-                scale: { duration: 0.8, delay: 0.5 },
-                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
-              }}
-              className="absolute top-[22%] left-[38%] md:top-[16%] md:left-auto md:right-[14%] lg:top-[16%] lg:right-[15%] pointer-events-auto"
-            >
-              <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-white/90 backdrop-blur-md border border-[#bbf7d0] shadow-[#16a34a]/10 shadow-lg cursor-default hover:scale-105 transition-transform">
-                <div className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse mt-0.5 md:mt-1"></div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[10px] md:text-[11px] font-bold text-[#166534] tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
-                  <span className="text-[8px] md:text-[9px] font-semibold text-[#166534]/70 tracking-widest uppercase leading-none">Invite Only</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
         {/* Animated Globe Background */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
           <div className="hero-gradient absolute inset-0" />
@@ -745,13 +721,45 @@ export default function App() {
             >
               <ArrowRight className="text-slate-300 w-8 h-8" />
             </motion.div>
-            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm bg-slate-50">
-              <img 
-                src="https://flagcdn.com/in.svg" 
-                alt="India Flag" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm bg-slate-50 shrink-0">
+                <img 
+                  src="https://flagcdn.com/in.svg" 
+                  alt="India Flag" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              
+              {/* Private Beta Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="hidden sm:flex items-start gap-2 px-3 py-2 rounded-xl bg-white/90 backdrop-blur-md border border-[#bbf7d0] shadow-[#16a34a]/10 shadow-sm cursor-default min-w-max"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-[#16a34a] animate-pulse mt-[3px]"></div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[9px] font-bold text-[#166534] tracking-widest uppercase leading-tight">Private Beta</span>
+                  <span className="text-[7px] font-semibold text-[#166534]/70 tracking-widest uppercase leading-tight">Invite Only</span>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Mobile Only Badge - Positioned below flags */}
+            <div className="sm:hidden absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2">
+               <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="flex items-start gap-2 px-3 py-2 rounded-xl bg-white/90 backdrop-blur-md border border-[#bbf7d0] shadow-[#16a34a]/10 shadow-sm cursor-default min-w-max"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-[#16a34a] animate-pulse mt-[3px]"></div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[9px] font-bold text-[#166534] tracking-widest uppercase leading-tight">Private Beta</span>
+                  <span className="text-[7px] font-semibold text-[#166534]/70 tracking-widest uppercase leading-tight">Invite Only</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -766,7 +774,7 @@ export default function App() {
                 Request an Invite 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp-light hover:bg-[#cff1b5] text-whatsapp-dark px-10 py-4 rounded-full font-medium text-lg transition-all text-center">
+              <a href="https://wa.me/18723127867?text=Hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white border-2 border-slate-200 text-slate-700 hover:border-whatsapp hover:text-whatsapp px-10 py-4 rounded-full font-medium text-lg transition-all text-center shadow-sm hover:shadow-md hover:-translate-y-[1px]">
                 I have an invite code
               </a>
             </div>
