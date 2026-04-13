@@ -592,6 +592,26 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
+        {/* Floating Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1, y: [-10, 10, -10] }}
+          transition={{ 
+            opacity: { duration: 0.8, delay: 0.5 },
+            scale: { duration: 0.8, delay: 0.5 },
+            y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+          }}
+          className="absolute top-[18%] right-[5%] md:top-[20%] md:right-[18%] lg:top-[22%] lg:right-[22%] z-10"
+        >
+          <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-white/90 backdrop-blur-md border border-[#bbf7d0] shadow-[#16a34a]/10 shadow-lg cursor-default hover:scale-105 transition-transform">
+            <div className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse mt-0.5 md:mt-1"></div>
+            <div className="flex flex-col gap-0.5">
+              <span className="text-[10px] md:text-[11px] font-bold text-[#166534] tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
+              <span className="text-[8px] md:text-[9px] font-semibold text-[#166534]/70 tracking-widest uppercase leading-none">Invite Only</span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Animated Globe Background */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
           <div className="hero-gradient absolute inset-0" />
@@ -678,12 +698,8 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex flex-col items-center gap-3 mb-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e8fbf0] border border-[#bbf7d0] shadow-sm">
-                <div className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse"></div>
-                <span className="text-[10px] font-bold text-[#166534] tracking-widest uppercase">Private Beta — Invite Only</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm">
+            <div className="flex flex-col items-center mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm transition-transform hover:scale-105 cursor-default">
                 <span className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Backed by</span>
                 <div className="flex items-center gap-1.5">
                   <div className="w-4 h-4 bg-[#FF4B4B] flex items-center justify-center rounded-[2px]">
@@ -804,13 +820,15 @@ export default function App() {
 
           {/* Dominant Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center">
-              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">10,000+</div>
-              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Active Users</div>
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
+              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">
+                {230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+
+              </div>
+              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Users on waitlist</div>
             </div>
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center">
-              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">$10M+</div>
-              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Transferred</div>
+            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
+              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">$1M+</div>
+              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Volume in pipeline</div>
             </div>
           </div>
 
