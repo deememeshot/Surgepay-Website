@@ -739,25 +739,23 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
-        {/* Floating Badge (Restored specifically for Desktop as requested) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="hidden md:block absolute md:top-[48%] md:left-[calc(50%-440px)] lg:left-[calc(50%-540px)] pointer-events-auto z-10"
-        >
-          <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-whatsapp shadow-[#16a34a]/30 shadow-xl cursor-default hover:scale-105 transition-transform border border-white/10">
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse mt-1"></div>
-            <div className="flex flex-col gap-0.5">
-              <span className="text-[11px] font-bold text-white tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
-              <span className="text-[9px] font-semibold text-white/80 tracking-widest uppercase leading-none">Invite Only</span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Floating Badge Container (Empty) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
+        {/* Floating Badge (Desktop Only, Static Top-Center) */}
+        <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-10">
           <div className="relative w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] shrink-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="absolute md:top-[48%] md:left-[calc(50%-440px)] lg:left-[calc(50%-540px)] pointer-events-auto"
+            >
+              <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-whatsapp shadow-[#16a34a]/30 shadow-xl cursor-default hover:scale-105 transition-transform border border-white/10 shrink-0 backdrop-blur-sm">
+                <div className="w-2 h-2 rounded-full bg-white animate-pulse mt-1 shrink-0"></div>
+                <div className="flex flex-col gap-0.5 whitespace-nowrap">
+                  <span className="text-[11px] font-bold text-white tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
+                  <span className="text-[9px] font-semibold text-white/80 tracking-widest uppercase leading-none">Invite Only</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
 
@@ -799,7 +797,7 @@ export default function App() {
             
             {/* Main corridor: US → India (glowing, animated) */}
             <path 
-              d="M200 260 Q400 100 560 240" 
+              d="M280 260 Q400 100 520 240" 
               stroke="url(#corridorGlow)" 
               strokeWidth="2" 
               opacity="0.5"
@@ -807,29 +805,29 @@ export default function App() {
             />
             {/* Animated dot traveling along the arc */}
             <circle r="3" fill="#25D366" opacity="0.8">
-              <animateMotion dur="3s" repeatCount="indefinite" path="M200 260 Q400 100 560 240" />
+              <animateMotion dur="3s" repeatCount="indefinite" path="M280 260 Q400 100 520 240" />
             </circle>
             <circle r="6" fill="#25D366" opacity="0.2">
-              <animateMotion dur="3s" repeatCount="indefinite" path="M200 260 Q400 100 560 240" />
+              <animateMotion dur="3s" repeatCount="indefinite" path="M280 260 Q400 100 520 240" />
             </circle>
             
             {/* US endpoint — pulsing */}
-            <circle cx="200" cy="260" r="4" fill="#25D366" opacity="0.6" />
-            <circle cx="200" cy="260" r="4" fill="#25D366" opacity="0.3">
+            <circle cx="280" cy="260" r="4" fill="#25D366" opacity="0.6" />
+            <circle cx="280" cy="260" r="4" fill="#25D366" opacity="0.3">
               <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
             </circle>
             
             {/* India endpoint — pulsing */}
-            <circle cx="560" cy="240" r="4" fill="#25D366" opacity="0.6" />
-            <circle cx="560" cy="240" r="4" fill="#25D366" opacity="0.3">
+            <circle cx="520" cy="240" r="4" fill="#25D366" opacity="0.6" />
+            <circle cx="520" cy="240" r="4" fill="#25D366" opacity="0.3">
               <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
             </circle>
             
             {/* Endpoint labels */}
-            <text x="200" y="284" textAnchor="middle" fill="#25D366" fontSize="10" fontWeight="600" opacity="0.4">US</text>
-            <text x="560" y="264" textAnchor="middle" fill="#25D366" fontSize="10" fontWeight="600" opacity="0.4">IN</text>
+            <text x="280" y="284" textAnchor="middle" fill="#25D366" fontSize="10" fontWeight="600" opacity="0.4">US</text>
+            <text x="520" y="264" textAnchor="middle" fill="#25D366" fontSize="10" fontWeight="600" opacity="0.4">IN</text>
             
             <defs>
               <linearGradient id="corridorGlow" x1="0%" y1="0%" x2="100%" y2="0%">
