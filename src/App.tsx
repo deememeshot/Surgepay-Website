@@ -1361,7 +1361,7 @@ export default function App() {
         {/* Navigation Links */}
         <div className="max-w-5xl mx-auto px-6 py-6">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs text-slate-500">
-            <a href="https://wa.me/918884500283?text=Hey%21%20I%20would%20like%20to%20try%20out%20Surgepay.%20Can%20you%20help%20me%20with%20the%20invite%20code%3F" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Contact</a>
+            <a href="mailto:support@surgepay.xyz" className="hover:text-slate-900 transition-colors">Contact</a>
             <Link to="/terms" className="hover:text-slate-900 transition-colors">Terms</Link>
             <Link to="/privacy" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
           </div>
