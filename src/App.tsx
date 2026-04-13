@@ -739,23 +739,9 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
-        {/* Floating Badge (Anchored strictly to globe dimensions) */}
+        {/* Floating Badge Container (Removed floating badge) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
           <div className="relative w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] shrink-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute top-[100px] left-[24px] md:top-[52%] md:left-[6%] lg:top-[52%] lg:left-[8%] pointer-events-auto"
-            >
-              <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-whatsapp shadow-[#16a34a]/20 shadow-xl cursor-default hover:scale-105 transition-transform border border-white/10">
-                <div className="w-2 h-2 rounded-full bg-white animate-pulse mt-0.5 md:mt-1"></div>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[10px] md:text-[11px] font-bold text-white tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
-                  <span className="text-[8px] md:text-[9px] font-semibold text-white/80 tracking-widest uppercase leading-none">Invite Only</span>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
 
@@ -863,7 +849,7 @@ export default function App() {
               <span className="block">should be as simple</span>
               <span className="block">as a <span className="text-whatsapp">WhatsApp chat.</span></span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-500 mb-6 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-500 font-medium mb-16 md:mb-12 max-w-2xl mx-auto leading-relaxed">
               From US to India. Instant transfers. Zero fees. Google rates.
             </p>
           </motion.div>
@@ -909,9 +895,16 @@ export default function App() {
                 Request an Invite 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <button onClick={() => setIsInviteModalOpen(true)} className="w-full sm:w-auto bg-white border-2 border-slate-300 text-slate-600 hover:border-[#25D366] hover:text-[#128C7E] px-10 py-4 rounded-full font-medium text-lg transition-all text-center shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98]">
-                I have an invite code
-              </button>
+              <div className="relative flex flex-col items-center w-full sm:w-auto mt-2 sm:mt-0">
+                <button onClick={() => setIsInviteModalOpen(true)} className="w-full sm:w-auto bg-white border-2 border-slate-300 text-slate-600 hover:border-[#25D366] hover:text-[#128C7E] px-10 py-4 rounded-full font-medium text-lg transition-all text-center shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98]">
+                  I have an invite code
+                </button>
+                <div className="mt-2.5 flex items-center gap-2 pointer-events-none whitespace-nowrap">
+                  <span className="text-[9px] font-bold text-[#166534] tracking-widest uppercase">Private Beta</span>
+                  <span className="w-0.5 h-0.5 rounded-full bg-[#166534]/30"></span>
+                  <span className="text-[9px] font-semibold text-[#166534]/60 tracking-widest uppercase">Invite Only</span>
+                </div>
+              </div>
             </div>
             <div className="mt-4 text-base text-slate-400 font-medium">
               <span className="font-bold text-slate-600">{230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+</span> people on the waitlist
