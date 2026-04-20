@@ -739,25 +739,7 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
-        {/* Floating Badge (Desktop Only, Static Top-Center) */}
-        <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-10">
-          <div className="relative w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] shrink-0">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute md:top-[48%] md:left-[calc(50%-440px)] lg:left-[calc(50%-540px)] pointer-events-auto"
-            >
-              <div className="flex items-start gap-2.5 px-4 py-3 rounded-2xl bg-whatsapp shadow-[#16a34a]/30 shadow-xl cursor-default hover:scale-105 transition-transform border border-white/10 shrink-0 backdrop-blur-sm">
-                <div className="w-2 h-2 rounded-full bg-white animate-pulse mt-1 shrink-0"></div>
-                <div className="flex flex-col gap-0.5 whitespace-nowrap">
-                  <span className="text-[11px] font-bold text-white tracking-widest uppercase leading-none mt-0.5">Private Beta</span>
-                  <span className="text-[9px] font-semibold text-white/80 tracking-widest uppercase leading-none">Invite Only</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+
 
         {/* Animated Globe Background */}
         <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden">
