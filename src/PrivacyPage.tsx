@@ -296,7 +296,7 @@ export default function PrivacyPage() {
       {/* Minimal Footer */}
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <span>© 2026 SURGEPAY PTE LTD. All rights reserved.</span>
+          <span>© 2026 SURGEPAYXYZ LLC. All rights reserved.</span>
           <div className="flex gap-6">
             <Link to="/terms" className="hover:text-whatsapp transition-colors font-medium">Terms</Link>
             <Link to="/privacy" className="hover:text-whatsapp transition-colors font-medium">Privacy</Link>
