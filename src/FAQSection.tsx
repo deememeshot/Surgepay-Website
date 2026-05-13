@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "How is SurgePay different from traditional banking systems?",
-    answer: "Traditional providers often charge hidden FX markups and slower settlement times. SurgePay uses a mix of traditional banking and stablecoin infrastructure to enable faster, more transparent transfers."
+    answer: "Traditional providers often charge hidden FX markups and slower settlement times. SurgePay uses a mix of traditional banking and stablecoin infrastructure in a compliant manner to enable faster, more transparent transfers."
   },
   {
     question: "How fast are transfers?",
@@ -57,10 +57,10 @@ export const FAQSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          
+
           {/* Left Column: Heading */}
           <div className="w-full lg:w-5/12 flex flex-col justify-start">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -85,9 +85,9 @@ export const FAQSection = () => {
             <div className="flex flex-col gap-4">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
-                
+
                 return (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -103,12 +103,12 @@ export const FAQSection = () => {
                         {faq.question}
                       </h3>
                       <div className={`shrink-0 ml-4 flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-200 ${isOpen ? 'border-whatsapp text-whatsapp bg-whatsapp/10' : 'border-white/10 text-slate-400 bg-white/5 group-hover:border-white/20 group-hover:text-slate-300'}`}>
-                        <ChevronDown 
-                          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`} 
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                         />
                       </div>
                     </button>
-                    
+
                     <AnimatePresence initial={false}>
                       {isOpen && (
                         <motion.div
