@@ -75,7 +75,7 @@ export const FAQSection = () => {
                 </span>
               </h2>
               <p className="text-lg text-slate-400 max-w-md">
-                Everything you need to know about SurgePay. Can't find the answer you're looking for? Feel free to <a href="mailto:support@surgepay.xyz" className="text-white font-medium hover:text-whatsapp transition-colors underline underline-offset-4 decoration-slate-700">contact our support team</a>.
+                Everything you need to know about SurgePay. Can't find the answer you're looking for? Feel free to <a href="https://wa.me/918884500283?text=Hi%2C%20I%20have%20questions%20around%20Surgepay.%20Could%20you%20please%20help%20me%3F" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-whatsapp transition-colors underline underline-offset-4 decoration-slate-700">contact our support team</a>.
               </p>
             </motion.div>
           </div>
