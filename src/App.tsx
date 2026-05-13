@@ -22,6 +22,7 @@ import {
   Banknote,
   Sparkles
 } from 'lucide-react';
+import { FAQSection } from './FAQSection';
 
 // --- Components ---
 
@@ -1310,7 +1311,8 @@ export default function App() {
         </div>
       </section>
 
-
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Final CTA */}
       <section className="py-24 px-6 text-center relative overflow-hidden bg-white">
