@@ -4,12 +4,12 @@ import { ChevronDown, MessageCircle } from 'lucide-react';
 
 const faqs = [
   {
-    question: "What is SurgePay?",
-    answer: "SurgePay is a WhatsApp first US to India remittance platform built for Indians in the US, offering instant transfers, Google matching rates, and zero hidden fees. No additional application downloads required."
+    question: "What is Surgepay?",
+    answer: "Surgepay is a WhatsApp first US to India remittance platform built for Indians in the US, offering instant transfers, Google matching rates, and zero hidden fees. No additional application downloads required."
   },
   {
-    question: "How is SurgePay different from traditional banking systems?",
-    answer: "Traditional providers often charge hidden FX markups and slower settlement times. SurgePay uses a mix of traditional banking and stablecoin infrastructure in a compliant manner to enable faster, more transparent transfers."
+    question: "How is Surgepay different from traditional banking systems?",
+    answer: "Traditional providers often charge hidden FX markups and slower settlement times. Surgepay uses a mix of traditional banking and stablecoin infrastructure in a compliant manner to enable faster, more transparent transfers."
   },
   {
     question: "How fast are transfers?",
@@ -20,7 +20,7 @@ const faqs = [
     answer: "No hidden fees. No surprise deductions. The rate you see is the rate you get. We aim to consistently offer rates matching or better than Google rates till December 31st 2027."
   },
   {
-    question: "Is SurgePay safe?",
+    question: "Is Surgepay safe?",
     answer: "Yes. We work with regulated banking and payment partners and follow strict KYC, AML, and compliance standards."
   },
   {
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "Can I send money to a third party account?",
-    answer: "No. Currently, SurgePay supports transfers only to your own Indian bank account from your own US bank account. You cannot transfer to another person's bank account."
+    answer: "No. Currently, Surgepay supports transfers only to your own Indian bank account from your own US bank account. You cannot transfer to another person's bank account."
   },
   {
     question: "Which Indian banks and account types are supported?",
@@ -75,7 +75,7 @@ export const FAQSection = () => {
                 </span>
               </h2>
               <p className="text-lg text-slate-400 max-w-md">
-                Everything you need to know about SurgePay. Can't find the answer you're looking for? Feel free to <a href="https://wa.me/918884500283?text=Hi%2C%20I%20have%20questions%20around%20Surgepay.%20Could%20you%20please%20help%20me%3F" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-whatsapp transition-colors underline underline-offset-4 decoration-slate-700">contact our support team</a>.
+                Everything you need to know about Surgepay. Can't find the answer you're looking for? Feel free to <a href="https://wa.me/918884500283?text=Hi%2C%20I%20have%20questions%20around%20Surgepay.%20Could%20you%20please%20help%20me%3F" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-whatsapp transition-colors underline underline-offset-4 decoration-slate-700">contact our support team</a>.
               </p>
             </motion.div>
           </div>

@@ -188,7 +188,7 @@ export default function TermsPage() {
             <h2>9. Tax Responsibilities</h2>
             <p>You are solely responsible for determining, calculating, collecting, reporting, and remitting all taxes applicable to transfers made through the Services, including but not limited to federal, state, and local taxes in the United States and any applicable taxes in India.</p>
             <p><strong>NRE/NRO Inward Remittances:</strong> Inward remittances from the United States to your own NRE or NRO bank account in India are generally not subject to Tax Deducted at Source (TDS), as these transfers represent your own funds remitted from abroad and do not constitute Indian-sourced income. However, tax laws are subject to change, and your overall tax obligations in India and the United States remain solely your responsibility.</p>
-            <p>SurgePay does not provide tax advice and is not responsible for determining your tax liability in any jurisdiction. You should consult a qualified tax advisor regarding your specific tax obligations.</p>
+            <p>Surgepay does not provide tax advice and is not responsible for determining your tax liability in any jurisdiction. You should consult a qualified tax advisor regarding your specific tax obligations.</p>
           </section>
 
           <section>
