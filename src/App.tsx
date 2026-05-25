@@ -26,7 +26,7 @@ import { FAQSection } from './FAQSection';
 
 // --- Components ---
 
-const Navbar = ({ onOpenInviteModal }: { onOpenInviteModal: () => void }) => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -73,16 +73,9 @@ const Navbar = ({ onOpenInviteModal }: { onOpenInviteModal: () => void }) => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
-          <div className="relative flex flex-col items-center">
-            <button onClick={onOpenInviteModal} className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
-              I have an invite code
-            </button>
-            <div className="absolute top-full mt-1.5 left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none whitespace-nowrap">
-              <span className="text-[8px] font-bold text-[#166534] tracking-widest uppercase">Private Beta</span>
-              <span className="w-0.5 h-0.5 rounded-full bg-[#166534]/30"></span>
-              <span className="text-[8px] font-semibold text-[#166534]/60 tracking-widest uppercase">Invite Only</span>
-            </div>
-          </div>
+          <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+            Send Now
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -101,9 +94,9 @@ const Navbar = ({ onOpenInviteModal }: { onOpenInviteModal: () => void }) => {
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
           >
             <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
-            <button onClick={() => { setIsMenuOpen(false); onOpenInviteModal(); }} className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block">
-              I have an invite code
-            </button>
+            <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block">
+              Send Now
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -111,143 +104,6 @@ const Navbar = ({ onOpenInviteModal }: { onOpenInviteModal: () => void }) => {
   );
 };
 
-// --- Invite Modal Component ---
-const InviteModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const [inviteCode, setInviteCode] = useState('');
-  const [errorVisible, setErrorVisible] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
-
-  // Prevent scrolling when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      // Reset state when opened
-      setInviteCode('');
-      setErrorVisible(false);
-      setIsVerified(false);
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [isOpen]);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const code = inviteCode.trim().toLowerCase();
-    if (code !== '') {
-      // Base64 encoding of 'welcomesp'
-      if (btoa(code) === 'd2VsY29tZXNw') {
-        setIsVerified(true);
-        setErrorVisible(false);
-      } else {
-        setErrorVisible(true);
-      }
-    }
-  };
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.5 }}
-            className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-6 sm:p-8 overflow-hidden"
-          >
-            <button 
-              onClick={onClose}
-              className="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            
-            <div className="flex flex-col items-center text-center mt-4">
-              {!isVerified ? (
-                <>
-                  <div className="flex items-center justify-center gap-2 mb-6">
-                    <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center">
-                      <Zap className="text-white w-5 h-5 fill-current" />
-                    </div>
-                    <span className="text-2xl font-semibold tracking-tight text-slate-900">Surgepay</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-2 tracking-tight">Enter your invite code</h3>
-                  <p className="text-slate-500 mb-8 max-w-[280px]">Surgepay is currently in private beta. Please enter your code to continue.</p>
-                  
-                  <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
-                    <div>
-                      <input
-                        type="text"
-                        value={inviteCode}
-                        onChange={(e) => {
-                          setInviteCode(e.target.value);
-                          setErrorVisible(false);
-                        }}
-                        placeholder="Enter 9-character code"
-                        className={`w-full px-5 py-4 bg-slate-50 border rounded-2xl outline-none font-medium text-center tracking-widest text-lg transition-all focus:ring-4 ${
-                          errorVisible 
-                            ? 'border-red-300 focus:border-red-500 focus:ring-red-100/50 text-red-900 placeholder:text-red-300' 
-                            : 'border-slate-200 focus:border-whatsapp focus:ring-whatsapp/20 text-slate-900 placeholder:text-slate-400'
-                        }`}
-                      />
-                      <AnimatePresence>
-                        {errorVisible && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                            animate={{ opacity: 1, height: 'auto', marginTop: 12 }}
-                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                            className="text-red-500 text-sm font-medium"
-                          >
-                            Invalid invite code. Try again.
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                    <button 
-                      type="submit"
-                      className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white font-medium py-4 rounded-full transition-all active:scale-[0.98] shadow-md shadow-whatsapp/20 mt-2"
-                    >
-                      Continue
-                    </button>
-                  </form>
-                  
-                  <div className="mt-8 pt-6 border-t border-slate-100 w-full text-slate-500 text-sm">
-                    Don't have an invite code? <br />
-                    <a href="https://wa.me/918884500283?text=Hey%21%20I%20would%20like%20to%20try%20out%20Surgepay.%20Can%20you%20help%20me%20with%20the%20invite%20code%3F" target="_blank" rel="noopener noreferrer" className="text-[#16a34a] font-semibold hover:text-[#15803d]">Request an Invite</a>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="w-16 h-16 bg-[#eafbf0] rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle2 className="w-8 h-8 text-whatsapp" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-2 tracking-tight">Invite Verified!</h3>
-                  <p className="text-slate-500 mb-8 max-w-[280px]">Welcome to the Surgepay private beta. You can now start using the service.</p>
-                  
-                  <a 
-                    href="https://wa.me/18723127867?text=hi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white font-medium py-4 rounded-full transition-all active:scale-[0.98] shadow-md shadow-whatsapp/20 mt-2 flex items-center justify-center gap-2"
-                  >
-                    Start on Whatsapp <ArrowRight className="w-5 h-5" />
-                  </a>
-                </>
-              )}
-            </div>
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
-  );
-};
 
 interface WhatsAppScreenProps {
   activeStep: number;
@@ -547,7 +403,6 @@ const WhatsAppScreen = ({ activeStep, direction, rate, isLive }: WhatsAppScreenP
 };
 
 export default function App() {
-  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
   const [activeScreen, setActiveScreen] = useState(0);
   const [targetStep, setTargetStep] = useState(0);
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
@@ -735,8 +590,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen font-sans">
-      <Navbar onOpenInviteModal={() => setIsInviteModalOpen(true)} />
-      <InviteModal isOpen={isInviteModalOpen} onClose={() => setIsInviteModalOpen(false)} />
+      <Navbar />
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-24 pb-8 px-6 overflow-hidden scroll-mt-24">
@@ -888,23 +742,13 @@ export default function App() {
             className="flex flex-col items-center justify-center gap-5"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full md:w-auto">
-              <a href="https://wa.me/918884500283?text=Hey%21%20I%20would%20like%20to%20try%20out%20Surgepay.%20Can%20you%20help%20me%20with%20the%20invite%20code%3F" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-full font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
-                Request an Invite 
+              <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 rounded-full font-medium text-lg transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-3 group">
+                Send Now 
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <div className="relative flex flex-col items-center w-full sm:w-auto">
-                <button onClick={() => setIsInviteModalOpen(true)} className="w-full sm:w-auto bg-white border-2 border-slate-300 text-slate-600 hover:border-[#25D366] hover:text-[#128C7E] px-10 py-4 rounded-full font-medium text-lg transition-all text-center shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98]">
-                  I have an invite code
-                </button>
-                <div className="mt-2.5 flex items-center gap-2 pointer-events-none whitespace-nowrap md:hidden">
-                  <span className="text-[9px] font-bold text-[#166534] tracking-widest uppercase">Private Beta</span>
-                  <span className="w-0.5 h-0.5 rounded-full bg-[#166534]/30"></span>
-                  <span className="text-[9px] font-semibold text-[#166534]/60 tracking-widest uppercase">Invite Only</span>
-                </div>
-              </div>
             </div>
             <div className="mt-4 text-base text-slate-400 font-medium">
-              <span className="font-bold text-slate-600">{230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+</span> people on the waitlist
+              <span className="font-bold text-slate-600">350+</span> people on the waitlist
             </div>
           </motion.div>
 
@@ -959,7 +803,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
               <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">
-                {230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+
+                350+
               </div>
               <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Users on waitlist</div>
             </div>
@@ -1253,7 +1097,7 @@ export default function App() {
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-3">Available Corridors</h2>
             <p className="text-slate-500 font-medium">
-              WhatsApp us for beta access: <a href="https://wa.me/918884500283?text=Hey%21%20I%20would%20like%20to%20try%20out%20Surgepay.%20Can%20you%20help%20me%20with%20the%20invite%20code%3F" target="_blank" rel="noopener noreferrer" className="text-whatsapp hover:underline">Request an Invite</a>
+              WhatsApp us to get started: <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="text-whatsapp hover:underline">Send Now</a>
             </p>
           </div>
 
@@ -1323,16 +1167,13 @@ export default function App() {
           <p className="text-lg text-slate-500 mb-8">No fees. No hassle. Just a simple chat.</p>
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full md:w-auto">
-              <a href="https://wa.me/918884500283?text=Hey%21%20I%20would%20like%20to%20try%20out%20Surgepay.%20Can%20you%20help%20me%20with%20the%20invite%20code%3F" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 group mx-auto">
-                Request an Invite 
+              <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-medium text-lg md:text-xl transition-all shadow-xl shadow-whatsapp/20 flex items-center justify-center gap-2 md:gap-3 group mx-auto">
+                Send Now 
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
               </a>
-              <button onClick={() => setIsInviteModalOpen(true)} className="w-full sm:w-auto bg-white border-2 border-slate-300 text-slate-600 hover:border-[#25D366] hover:text-[#128C7E] px-10 py-4 md:px-12 md:py-5 rounded-full font-medium text-lg md:text-xl transition-all text-center shadow-sm hover:shadow-md hover:-translate-y-[2px] active:scale-[0.98] mx-auto">
-                I have an invite code
-              </button>
             </div>
             <div className="mt-2 text-base text-slate-400 font-medium">
-              <span className="font-bold text-slate-600">{230 + Math.max(0, Math.floor((new Date().getTime() - new Date('2026-04-10T00:00:00Z').getTime()) / (1000 * 60 * 60 * 24)))}+</span> people on the waitlist
+              <span className="font-bold text-slate-600">350+</span> people on the waitlist
             </div>
           </div>
         </div>
