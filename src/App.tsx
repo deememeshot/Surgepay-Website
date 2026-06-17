@@ -675,9 +675,7 @@ export default function App() {
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
-                <div className="text-sm text-slate-700 font-medium mt-2">
-                  350+ people on the waitlist
-                </div>
+
               </div>
             </motion.div>
 
@@ -805,14 +803,8 @@ export default function App() {
           </div>
 
           {/* Dominant Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
-              <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">
-                350+
-              </div>
-              <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Users on waitlist</div>
-            </div>
-            <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
+          <div className="flex justify-center mb-12">
+            <div className="w-full max-w-md bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center transition-transform hover:-translate-y-1 hover:shadow-md cursor-default">
               <div className="text-5xl md:text-6xl font-semibold text-whatsapp mb-2">$1M+</div>
               <div className="text-sm font-medium text-slate-400 uppercase tracking-widest">Volume in pipeline</div>
             </div>
@@ -1175,9 +1167,7 @@ export default function App() {
                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-            <div className="mt-2 text-base text-slate-400 font-medium">
-              <span className="font-bold text-slate-600">350+</span> people on the waitlist
-            </div>
+
           </div>
         </div>
       </section>
