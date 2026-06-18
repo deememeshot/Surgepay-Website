@@ -1195,7 +1195,7 @@ export default function App() {
         {/* Copyright */}
         <div className="border-t border-slate-100">
           <div className="max-w-5xl mx-auto px-6 py-4 text-[11px] text-slate-400">
-            © 2026 SURGEPAYXYZ LLC. All rights reserved.
+            © 2026 SURGEPAY PTE. LTD. All rights reserved.
           </div>
         </div>
       </footer>

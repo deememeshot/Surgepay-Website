@@ -37,7 +37,7 @@ export default function TermsPage() {
         <article className="legal-content">
           <section>
             <h2>1. Introduction and Acceptance</h2>
-            <p>These Terms and Conditions of Service ("Terms," "Agreement") constitute a legally binding agreement between ("User," "you," "your") and SURGEPAYXYZ, LLC, a Delaware limited liability company doing business as Surgepay ("Surgepay," "Company," "we," "us," "our"), for governing your access to and use of the Surgepay platform, including our website located at https://surgepay.xyz, our WhatsApp-based interface, and all related services (collectively, the "Services").</p>
+            <p>These Terms and Conditions of Service ("Terms," "Agreement") constitute a legally binding agreement between ("User," "you," "your") and SURGEPAY PTE. LTD., a private company limited by shares doing business as Surgepay ("Surgepay," "Company," "we," "us," "our"), for governing your access to and use of the Surgepay platform, including our website located at https://surgepay.xyz, our WhatsApp-based interface, and all related services (collectively, the "Services").</p>
             <p><strong>IMPORTANT:</strong> By accessing, registering for, or using any of our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms, our <Link to="/privacy" className="text-whatsapp hover:underline">Privacy Policy</Link>, and any other supplemental terms applicable to specific features of the Services. If you do not agree to these Terms, you cannot access or use the Services.</p>
             <p>We reserve the right to modify these Terms at any time. If we make material changes that diminish your rights or increase your obligations, we will provide at least thirty (30) days' advance notice via WhatsApp, email, or by posting on our website. Your continued use of the Services after such notice constitutes acceptance of the modified Terms.</p>
           </section>
@@ -304,7 +304,7 @@ export default function TermsPage() {
             <p>Before initiating any formal dispute resolution process, you agree to first contact us at support@surgepay.xyz and attempt to resolve the dispute informally for a period of at least thirty (30) days.</p>
 
             <h3>20.2 Binding Arbitration</h3>
-            <p>IF INFORMAL RESOLUTION IS UNSUCCESSFUL, ANY DISPUTE SHALL BE RESOLVED BY BINDING ARBITRATION ADMINISTERED BY THE AMERICAN ARBITRATION ASSOCIATION ("AAA") UNDER ITS CONSUMER ARBITRATION RULES. The arbitration shall be conducted by a single arbitrator in the English language. The seat of arbitration shall be the State of Delaware.</p>
+            <p>IF INFORMAL RESOLUTION IS UNSUCCESSFUL, ANY DISPUTE SHALL BE RESOLVED BY BINDING ARBITRATION ADMINISTERED BY THE SINGAPORE INTERNATIONAL ARBITRATION CENTRE ("SIAC") UNDER ITS ARBITRATION RULES. The arbitration shall be conducted by a single arbitrator in the English language. The seat of arbitration shall be Singapore.</p>
 
             <h3>20.3 Class Action Waiver</h3>
             <p>YOU AND SURGEPAY AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING.</p>
@@ -315,7 +315,7 @@ export default function TermsPage() {
 
           <section>
             <h2>21. Governing Law</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law principles.</p>
+            <p>These Terms shall be governed by and construed in accordance with the laws of Singapore, without regard to its conflict of law principles.</p>
           </section>
 
           <section>
@@ -339,10 +339,9 @@ export default function TermsPage() {
           <section>
             <h2>28. Contact Information</h2>
             <div className="bg-slate-50 rounded-2xl p-6 mt-4">
-              <p className="mb-1"><strong>SURGEPAYXYZ, LLC</strong> (d/b/a Surgepay)</p>
-              <p className="mb-1">131 Continental Dr, Suite 305</p>
-              <p className="mb-1">Newark, Delaware 19713</p>
-              <p className="mb-1">New Castle County</p>
+              <p className="mb-1"><strong>SURGEPAY PTE. LTD.</strong> (d/b/a Surgepay)</p>
+              <p className="mb-1">20A Tanjong Pagar Road</p>
+              <p className="mb-1">Singapore 088443</p>
               <p className="mb-3">Email: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a></p>
               <p>Website: <a href="https://surgepay.xyz" className="text-whatsapp hover:underline">https://surgepay.xyz</a></p>
             </div>
@@ -353,7 +352,7 @@ export default function TermsPage() {
       {/* Minimal Footer */}
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <span>© 2026 SURGEPAYXYZ LLC. All rights reserved.</span>
+          <span>© 2026 SURGEPAY PTE. LTD. All rights reserved.</span>
           <div className="flex gap-6">
             <Link to="/terms" className="hover:text-whatsapp transition-colors font-medium">Terms</Link>
             <Link to="/privacy" className="hover:text-whatsapp transition-colors font-medium">Privacy</Link>

@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         <article className="legal-content">
           <section>
             <h2>1. Introduction</h2>
-            <p>This Privacy Policy ("Policy") describes how SURGEPAYXYZ, LLC, a Delaware limited liability company doing business as Surgepay ("Surgepay," "Company," "we," "us," "our"), collects, uses, discloses, retains, and protects your personal information when you access or use our website (https://surgepay.xyz), our WhatsApp-based interface, and all related services (collectively, the "Services").</p>
+            <p>This Privacy Policy ("Policy") describes how SURGEPAY PTE. LTD., a private company limited by shares doing business as Surgepay ("Surgepay," "Company," "we," "us," "our"), collects, uses, discloses, retains, and protects your personal information when you access or use our website (https://surgepay.xyz), our WhatsApp-based interface, and all related services (collectively, the "Services").</p>
             <p>By accessing or using our Services, you acknowledge that you have read, understood, and agree to the practices described in this Policy. If you do not agree to this Policy, you must not access or use the Services.</p>
             <p>This Policy should be read in conjunction with our <Link to="/terms" className="text-whatsapp hover:underline">Terms and Conditions of Service</Link>.</p>
           </section>
@@ -281,10 +281,9 @@ export default function PrivacyPage() {
           <section>
             <h2>16. Data Controller and Contact Information</h2>
             <div className="bg-slate-50 rounded-2xl p-6 mt-4">
-              <p className="mb-1"><strong>SURGEPAYXYZ, LLC</strong> (d/b/a Surgepay)</p>
-              <p className="mb-1">131 Continental Dr, Suite 305</p>
-              <p className="mb-1">Newark, Delaware 19713</p>
-              <p className="mb-1">New Castle County</p>
+              <p className="mb-1"><strong>SURGEPAY PTE. LTD.</strong> (d/b/a Surgepay)</p>
+              <p className="mb-1">20A Tanjong Pagar Road</p>
+              <p className="mb-1">Singapore 088443</p>
               <p className="mb-3">Email: <a href="mailto:support@surgepay.xyz" className="text-whatsapp hover:underline">support@surgepay.xyz</a></p>
               <p>Website: <a href="https://surgepay.xyz" className="text-whatsapp hover:underline">https://surgepay.xyz</a></p>
             </div>
@@ -296,7 +295,7 @@ export default function PrivacyPage() {
       {/* Minimal Footer */}
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <span>© 2026 SURGEPAYXYZ LLC. All rights reserved.</span>
+          <span>© 2026 SURGEPAY PTE. LTD. All rights reserved.</span>
           <div className="flex gap-6">
             <Link to="/terms" className="hover:text-whatsapp transition-colors font-medium">Terms</Link>
             <Link to="/privacy" className="hover:text-whatsapp transition-colors font-medium">Privacy</Link>
