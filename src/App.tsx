@@ -63,48 +63,53 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      <nav className={`fixed left-0 right-0 z-40 transition-all duration-300 top-0 ${isScrolled ? 'bg-white/94 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#hero" onClick={scrollToTop} className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-              <Zap className="text-white w-5 h-5 fill-current" />
-            </div>
-            <span className="text-xl font-semibold tracking-tight text-slate-900">Surgepay</span>
-          </a>
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 pointer-events-none transition-all duration-300">
+      <nav 
+        className={`pointer-events-auto flex items-center justify-between w-full max-w-5xl rounded-full transition-all duration-300 overflow-hidden ${
+          isScrolled 
+            ? 'bg-white/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/40 py-3 px-6' 
+            : 'bg-white/40 backdrop-blur-md shadow-sm border border-white/20 py-4 px-8'
+        }`}
+      >
+        {/* Logo */}
+        <a href="#hero" onClick={scrollToTop} className="flex items-center gap-2 group cursor-pointer shrink-0">
+          <div className="w-8 h-8 bg-whatsapp rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 shadow-sm">
+            <Zap className="text-white w-5 h-5 fill-current" />
+          </div>
+          <span className="text-xl font-semibold tracking-tight text-slate-900">Surgepay</span>
+        </a>
 
-          {/* Desktop Nav */}
+        {/* Right Button & Mobile Toggle */}
+        <div className="flex items-center gap-4 md:gap-8 shrink-0">
           <div className="hidden md:flex items-center gap-8">
             <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-sm font-medium text-slate-600 hover:text-whatsapp transition-colors">How it works</a>
             <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
               Send Now
             </a>
           </div>
-
-          {/* Mobile Toggle */}
-          <button className="md:hidden text-slate-900" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X /> : <Menu />}
+          <button className="md:hidden text-slate-900 bg-white/50 p-2 rounded-full" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
-            >
-              <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
-              <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block">
-                Send Now
-              </a>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
-    </>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            className="absolute top-20 left-4 right-4 bg-white/90 backdrop-blur-xl border border-white/50 p-6 rounded-3xl flex flex-col gap-4 md:hidden shadow-2xl pointer-events-auto origin-top"
+          >
+            <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')} className="text-lg font-medium text-slate-900">How it works</a>
+            <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-xl font-medium text-center mt-2 block shadow-md">
+              Send Now
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
@@ -645,16 +650,20 @@ export default function App() {
               className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start z-10"
             >
               <div className="flex flex-col items-center lg:items-start mb-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm transition-transform hover:scale-105 cursor-default">
-                  <span className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Backed by</span>
-                  <div className="flex items-center gap-1.5">
+                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm transition-transform hover:scale-105">
+                  <span className="text-[10px] font-medium text-slate-400 uppercase tracking-widest cursor-default">Backed by</span>
+                  <a href="https://www.antler.co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                     <div className="w-4 h-4 bg-[#FF4B4B] flex items-center justify-center rounded-[2px]">
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 5L5 19H8.5L12 12L15.5 19H19L12 5Z" fill="white" />
                       </svg>
                     </div>
                     <span className="text-[11px] font-bold text-[#FF4B4B] tracking-widest uppercase">Antler</span>
-                  </div>
+                  </a>
+                  <span className="text-[11px] font-medium text-slate-400 cursor-default">&</span>
+                  <a href="https://www.yzilabs.com" target="_blank" rel="noopener noreferrer" className="flex items-center hover:opacity-80 transition-opacity">
+                    <img src="/yzilabs-logo.png" alt="YZi Labs" className="h-[14px] w-auto object-contain" />
+                  </a>
                 </div>
               </div>
 
@@ -797,7 +806,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-4">Trust & Security</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto">
               Your money and data are protected by bank-grade encryption and regulated financial infrastructure.
             </p>
           </div>
