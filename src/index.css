@@ -212,6 +212,91 @@
   background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(37,211,102,0.06) 0%, transparent 70%);
 }
 
+/* ──────────────────────────────────────
+   Glassmorphism Design System
+   ────────────────────────────────────── */
+
+/* Section mesh gradient backgrounds — gives glass cards something to refract */
+.section-mesh {
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(236,253,245,0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(240,253,244,0.4) 0%, transparent 55%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Glass card — subtle: for secondary cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.06);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass card — medium: for prominent cards */
+.glass-card-md {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px -10px rgba(0, 0, 0, 0.07);
+}
+
+.glass-card-md:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Glass card — strong: for hero-level elements */
+.glass-card-lg {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass icon container */
+.glass-icon {
+  background: rgba(37, 211, 102, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Glass treatment for dark sections (FAQ, etc.) */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dark:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Decorative background orb — reusable */
+.glass-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+}
+
+/* Glass section transition smoothing */
+.glass-card,
+.glass-card-md,
+.glass-card-lg,
+.glass-dark {
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
 /* Legal page content styles — Apple-like clean typography */
 .legal-content {
   @apply text-slate-600 leading-relaxed;

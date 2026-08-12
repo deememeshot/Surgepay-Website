@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#fff;color:#0f172a;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;font-feature-settings:"kern" 1,"liga" 1}
+a{color:#25D366;text-decoration:none}a:hover{color:#128C7E}
+input{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height:100vh;font-family:'SF Pro Display','SF Pro Text',-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-variant-numeric:tabular-nums">
+
+  <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.72);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(15,23,42,0.07)">
+    <div style="max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between">
+      <a href="#hero" style="display:flex;align-items:center;gap:9px">
+        <div style="width:30px;height:30px;background:#25D366;border-radius:9px;display:flex;align-items:center;justify-content:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <span style="font-size:19px;font-weight:600;letter-spacing:-0.03em;color:#0f172a">Surgepay</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:34px">
+        <a href="#how-it-works" style="font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:0.1em">How it works</a>
+        <a href="#corridors" style="font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:0.1em">Corridors</a>
+        <a href="#faq" style="font-size:12px;font-weight:600;color:#334155;text-transform:uppercase;letter-spacing:0.1em">FAQ</a>
+        <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#fff;padding:10px 22px;border-radius:999px;font-size:14px;font-weight:500;box-shadow:0 8px 20px -10px rgba(37,211,102,0.7)" style-hover="background:#128C7E">Send Now</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="hero" data-screen-label="Hero" style="position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 12% 8%,rgba(236,253,245,0.85) 0%,transparent 62%),radial-gradient(ellipse 50% 50% at 88% 30%,rgba(240,253,244,0.7) 0%,transparent 60%),#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:72px 32px 56px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,0.7);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(15,23,42,0.07);box-shadow:0 1px 0 rgba(255,255,255,0.9) inset;margin-bottom:30px">
+          <span style="font-size:10px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.14em">Backed by</span>
+          <a href="https://www.antler.co" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:6px">
+            <div style="width:15px;height:15px;background:#FF4B4B;display:flex;align-items:center;justify-content:center;border-radius:2px">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M12 5L5 19H8.5L12 12L15.5 19H19L12 5Z" fill="white"></path></svg>
+            </div>
+            <span style="font-size:11px;font-weight:700;color:#FF4B4B;letter-spacing:0.1em;text-transform:uppercase">Antler</span>
+          </a>
+          <span style="font-size:11px;color:#94a3b8">&amp;</span>
+          <a href="https://www.yzilabs.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center">
+            <img src="assets/yzilabs-logo.png" alt="YZi Labs" style="height:15px;width:auto;object-fit:contain">
+          </a>
+        </div>
+
+        <h1 style="font-size:clamp(2.75rem,4.4vw,4.25rem);line-height:1.0;letter-spacing:-0.042em;font-weight:600;color:#0f172a;margin:0 0 26px;max-width:20ch;text-wrap:pretty">Sending money home should be as simple as a <span style="color:#25D366">WhatsApp chat.</span></h1>
+
+        <p style="font-size:19px;color:#475569;margin:0 0 34px;max-width:34rem;line-height:1.55">Instant transfers. Zero fees. Google rates.</p>
+
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" style="background:#25D366;color:#fff;padding:16px 30px;border-radius:999px;font-weight:600;font-size:17px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 14px 34px -14px rgba(37,211,102,0.8)" style-hover="background:#128C7E">
+            Send Now
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="#how-it-works" style="padding:16px 26px;border-radius:999px;font-weight:500;font-size:17px;color:#0f172a;background:rgba(255,255,255,0.62);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(15,23,42,0.09);box-shadow:0 1px 0 rgba(255,255,255,0.9) inset" style-hover="color:#128C7E;border-color:rgba(37,211,102,0.35)">See how it works</a>
+        </div>
+      </div>
+
+      <div style="position:relative">
+        <div style="position:absolute;inset:-40px;pointer-events:none;background:radial-gradient(circle at 60% 35%,rgba(37,211,102,0.16),transparent 62%);filter:blur(28px)"></div>
+        <div style="position:relative;border-radius:28px;padding:26px;background:linear-gradient(180deg,rgba(255,255,255,0.86),rgba(255,255,255,0.66));backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);border:1px solid rgba(255,255,255,0.85);box-shadow:0 1px 0 rgba(255,255,255,0.95) inset,0 26px 70px -30px rgba(15,23,42,0.3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+            <div style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.14em">Live quote</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(37,211,102,0.1);color:#128C7E;font-size:11px;font-weight:600">
+              <span style="width:6px;height:6px;border-radius:50%;background:#25D366;display:block"></span>$1 = ₹{{ rateText }}
+            </div>
+          </div>
+
+          <div style="border:1px solid rgba(15,23,42,0.08);border-radius:18px;overflow:hidden;background:rgba(255,255,255,0.6)">
+            <label style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;cursor:text">
+              <span style="font-size:13px;font-weight:500;color:#64748b;white-space:nowrap">You send</span>
+              <span style="display:flex;align-items:baseline;gap:6px;min-width:0">
+                <span style="font-size:30px;font-weight:600;color:#0f172a;letter-spacing:-0.03em">$</span>
+                <input type="text" inputmode="decimal" value="{{ amount }}" onChange="{{ onAmount }}" style="width:120px;border:none;outline:none;background:transparent;font-size:30px;font-weight:600;letter-spacing:-0.03em;color:#0f172a;text-align:right;font-variant-numeric:tabular-nums">
+              </span>
+            </label>
+            <div style="height:1px;background:rgba(15,23,42,0.08)"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;background:rgba(37,211,102,0.05)">
+              <span style="font-size:13px;font-weight:500;color:#64748b;white-space:nowrap">They receive</span>
+              <span style="font-size:30px;font-weight:600;color:#128C7E;letter-spacing:-0.03em">₹{{ receiveText }}</span>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin:18px 4px 0">
+            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#64748b">Transfer fee</span><span style="color:#0f172a;font-weight:600">$0.00</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#64748b">Rate</span><span style="color:#0f172a;font-weight:600">$1 = ₹{{ rateText }}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:#64748b">Arrives</span><span style="color:#0f172a;font-weight:600">In minutes</span></div>
+          </div>
+
+          <div style="margin-top:20px;padding:14px 18px;border-radius:16px;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.18);display:flex;align-items:center;gap:12px">
+            <div style="font-size:26px;font-weight:700;color:#25D366;letter-spacing:-0.03em;line-height:1">₹111</div>
+            <div style="font-size:12px;color:#334155;line-height:1.4">on your first 3 transfers up to $80<br><span style="color:#64748b">Limited time offer</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(15,23,42,0.08);background:rgba(255,255,255,0.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
+      <div style="max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px">
+        <sc-for list="{{ trustSignals }}" as="t" hint-placeholder-count="4">
+          <span style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.14em">{{ t }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="numbers" data-screen-label="Numbers" style="background:#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:80px 32px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:36px">
+        <span style="font-size:11px;font-weight:700;color:#25D366;letter-spacing:0.16em">01</span>
+        <span style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.16em">Trust &amp; security</span>
+      </div>
+      <h2 style="font-size:clamp(2rem,3.1vw,3rem);line-height:1.05;letter-spacing:-0.038em;font-weight:600;color:#0f172a;margin:0 0 12px;max-width:24ch">Your money and data are protected by bank-grade infrastructure.</h2>
+      <p style="font-size:17px;color:#64748b;margin:0 0 48px;max-width:52ch;line-height:1.6">Regulated partners, strict KYC on every user, and encryption end to end.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));border-top:1px solid #e8ecf1">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="padding:32px 28px 34px 0">
+            <div style="font-size:clamp(2.75rem,4vw,4rem);line-height:0.92;letter-spacing:-0.05em;font-weight:600;color:#0f172a;margin-bottom:14px">{{ s.value }}</div>
+            <div style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.13em">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:#e8ecf1;border-top:1px solid #e8ecf1">
+        <sc-for list="{{ securityCards }}" as="c" hint-placeholder-count="4">
+          <div style="background:#fff;padding:30px 26px 30px 0">
+            <div style="color:#25D366;margin-bottom:18px">{{ c.icon }}</div>
+            <h4 style="font-size:17px;font-weight:600;letter-spacing:-0.02em;color:#0f172a;margin:0 0 8px">{{ c.title }}</h4>
+            <p style="color:#64748b;font-size:14px;line-height:1.6;margin:0;max-width:26ch">{{ c.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" data-screen-label="How it works" style="position:relative;background:#f8fafc;height:320vh;border-top:1px solid #e8ecf1">
+    <div style="position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:56px 32px 32px;overflow:hidden">
+      <div style="max-width:1200px;margin:0 auto;width:100%">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:22px">
+          <span style="font-size:11px;font-weight:700;color:#25D366;letter-spacing:0.16em">02</span>
+          <span style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.16em">How it works</span>
+        </div>
+        <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:center">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div style="position:relative;width:100%;display:flex;justify-content:center;align-items:center;height:min(600px,60vh)">
+              <div style="position:relative;border-radius:3rem;border:6px solid #1a1a1a;background:#1a1a1a;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1),0 30px 70px -18px rgba(15,23,42,0.35);width:100%;max-width:292px;aspect-ratio:9/19.5;max-height:100%;overflow:hidden;display:flex;flex-direction:column">
+                <div style="position:absolute;left:-8px;width:3px;background:#2a2a2a;border-radius:2px 0 0 2px;top:80px;height:28px"></div>
+                <div style="position:absolute;left:-8px;width:3px;background:#2a2a2a;border-radius:2px 0 0 2px;top:120px;height:48px"></div>
+                <div style="position:absolute;left:-8px;width:3px;background:#2a2a2a;border-radius:2px 0 0 2px;top:178px;height:48px"></div>
+                <div style="position:absolute;right:-8px;width:3px;background:#2a2a2a;border-radius:0 2px 2px 0;top:130px;height:56px"></div>
+                <div style="width:100%;height:100%;border-radius:calc(3rem - 6px);overflow:hidden;display:flex;flex-direction:column;background:#efe7de">
+                  <div style="height:44px;background:#075e54;width:100%;display:flex;justify-content:space-between;align-items:flex-end;padding:0 20px 6px;position:relative;flex-shrink:0">
+                    <div style="position:absolute;top:6px;left:50%;transform:translateX(-50%);width:72px;height:20px;background:#000;border-radius:999px;z-index:10"></div>
+                    <div style="font-size:13px;color:#fff;font-weight:600;line-height:1">9:41</div>
+                    <div style="display:flex;gap:4px;align-items:center">
+                      <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="white"></rect><rect x="4" y="5" width="3" height="6" rx="0.5" fill="white"></rect><rect x="8" y="2" width="3" height="9" rx="0.5" fill="white"></rect><rect x="12" y="0" width="3" height="11" rx="0.5" fill="white"></rect></svg>
+                      <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M7 10.5a1 1 0 100-2 1 1 0 000 2z" fill="white"></path><path d="M4.5 7.5a3.5 3.5 0 015 0" stroke="white" stroke-width="1.2" stroke-linecap="round"></path><path d="M2 5a7 7 0 0110 0" stroke="white" stroke-width="1.2" stroke-linecap="round"></path></svg>
+                      <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x="0.5" y="0.5" width="18" height="10" rx="2" stroke="white" stroke-width="1"></rect><rect x="19.5" y="3" width="2" height="5" rx="1" fill="white"></rect><rect x="2" y="2" width="12" height="7" rx="1" fill="white"></rect></svg>
+                    </div>
+                  </div>
+                  <div style="background:#075e54;padding:6px 8px;display:flex;align-items:center;gap:6px;flex-shrink:0">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    <div style="width:32px;height:32px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <div style="flex:1;min-width:0">
+                      <div style="color:#fff;font-size:14px;font-weight:500;line-height:1.25">Surgepay</div>
+                      <div style="color:rgba(255,255,255,0.7);font-size:11px;line-height:1.25">online</div>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:12px">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="14" height="14" rx="2" stroke="white" stroke-width="1.5"></rect><path d="M16 10l4-2.5v9L16 14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="white" stroke-width="1.5"></path></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.5" fill="white"></circle><circle cx="12" cy="12" r="1.5" fill="white"></circle><circle cx="12" cy="19" r="1.5" fill="white"></circle></svg>
+                    </div>
+                  </div>
+                  <div style="flex:1;padding:10px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;background-color:#efeae2;background-image:url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');background-repeat:repeat;background-size:300px">
+                    {{ chatColumn }}
+                  </div>
+                  <div style="background:#f0f2f5;padding:4px 6px 22px;display:flex;align-items:center;gap:5px;flex-shrink:0">
+                    <div style="flex:1;background:#fff;border-radius:21px;height:38px;padding:0 10px;display:flex;align-items:center;gap:8px">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><circle cx="12" cy="12" r="10" stroke="#8696A0" stroke-width="1.5"></circle><circle cx="9" cy="10" r="1" fill="#8696A0"></circle><circle cx="15" cy="10" r="1" fill="#8696A0"></circle><path d="M8 14c1.333 1.333 2.667 2 4 2s2.667-.667 4-2" stroke="#8696A0" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                      <span style="flex:1;font-size:13px;color:#8696A0">Type a message</span>
+                      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" stroke="#8696A0" stroke-width="1.5" stroke-linecap="round"></path></svg>
+                    </div>
+                    <div style="width:38px;height:38px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="9" y="1" width="6" height="14" rx="3" fill="white"></rect><path d="M5 10v1a7 7 0 0014 0v-1" stroke="white" stroke-width="1.8" stroke-linecap="round"></path><line x1="12" y1="18" x2="12" y2="22" stroke="white" stroke-width="1.8" stroke-linecap="round"></line></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:20px">{{ dots }}</div>
+          </div>
+
+          <div>
+            <h2 style="font-size:clamp(2rem,3.1vw,3rem);line-height:1.05;letter-spacing:-0.038em;font-weight:600;color:#0f172a;margin:0 0 28px;max-width:22ch">Four messages from money sent to money received.</h2>
+            <div style="display:flex;flex-direction:column">{{ stepRows }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-whatsapp" data-screen-label="Why WhatsApp" style="background:#25D366;position:relative;overflow:hidden">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:26px">
+        <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.75);letter-spacing:0.16em">03</span>
+        <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:0.16em">Why WhatsApp</span>
+      </div>
+      <h2 style="font-size:clamp(2.25rem,3.6vw,3.5rem);line-height:1.02;letter-spacing:-0.04em;font-weight:600;color:#fff;margin:0 0 52px;max-width:20ch">No app. No forms. Just a conversation.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(255,255,255,0.22);border-top:1px solid rgba(255,255,255,0.22)">
+        <sc-for list="{{ whyItems }}" as="w" hint-placeholder-count="4">
+          <div style="background:#25D366;padding:30px 26px 30px 0">
+            <div style="color:#fff;margin-bottom:18px;opacity:0.9">{{ w.icon }}</div>
+            <h4 style="font-size:18px;font-weight:600;letter-spacing:-0.02em;color:#fff;margin:0 0 8px">{{ w.title }}</h4>
+            <p style="color:rgba(255,255,255,0.78);font-size:14px;line-height:1.6;margin:0;max-width:26ch">{{ w.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="corridors" data-screen-label="Corridors" style="background:#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:26px">
+        <span style="font-size:11px;font-weight:700;color:#25D366;letter-spacing:0.16em">04</span>
+        <span style="font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:0.16em">Available corridors</span>
+      </div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px">
+        <h2 style="font-size:clamp(2rem,3.1vw,3rem);line-height:1.05;letter-spacing:-0.038em;font-weight:600;color:#0f172a;margin:0;max-width:22ch">One corridor live, four on the way.</h2>
+        <p style="color:#64748b;margin:0;font-size:15px">WhatsApp us to get started: <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" style="font-weight:600">Send Now</a></p>
+      </div>
+      <div style="border-top:1px solid #e8ecf1">{{ corridorRows }}</div>
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="FAQ" style="background:#060D14;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-120px;right:-80px;width:640px;height:640px;background:rgba(37,211,102,0.06);border-radius:50%;filter:blur(100px);pointer-events:none"></div>
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;position:relative;z-index:10;display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px">
+      <div>
+        <div style="position:sticky;top:96px">
+          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:26px">
+            <span style="font-size:11px;font-weight:700;color:#25D366;letter-spacing:0.16em">05</span>
+            <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.16em">FAQ</span>
+          </div>
+          <h2 style="font-size:clamp(2.5rem,4vw,4rem);line-height:0.98;letter-spacing:-0.042em;font-weight:600;color:#fff;margin:0 0 22px">Find your answers <span style="color:#25D366">here</span></h2>
+          <p style="font-size:16px;color:#94a3b8;max-width:34ch;margin:0;line-height:1.6">Everything you need to know about Surgepay. Can't find the answer you're looking for? Feel free to <a href="https://wa.me/918884500283?text=Hi%2C%20I%20have%20questions%20around%20Surgepay.%20Could%20you%20please%20help%20me%3F" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#334155">contact our support team</a>.</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.1)">{{ faqRows }}</div>
+    </div>
+  </section>
+
+  <section data-screen-label="Final CTA" style="position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 60% at 50% 20%,rgba(236,253,245,0.9) 0%,transparent 65%),#fff">
+    <div style="max-width:1200px;margin:0 auto;padding:104px 32px;text-align:center;position:relative;z-index:10">
+      <h2 style="font-size:clamp(2.25rem,4.2vw,4rem);line-height:1.0;letter-spacing:-0.042em;font-weight:600;color:#0f172a;margin:0 auto 20px;max-width:22ch">Send money in minutes, not days.</h2>
+      <p style="font-size:19px;color:#64748b;margin:0 0 36px">No fees. No hassle. Just a simple chat.</p>
+      <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:18px 40px;border-radius:999px;font-weight:600;font-size:19px;box-shadow:0 20px 45px -18px rgba(37,211,102,0.85)" style-hover="background:#128C7E">
+        Send Now
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer style="background:#fff;border-top:1px solid #e8ecf1">
+    <div style="max-width:1200px;margin:0 auto;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 28px;font-size:13px;color:#64748b">
+        <a href="mailto:support@surgepay.xyz" style="color:#64748b">Contact</a>
+        <a href="#terms" style="color:#64748b">Terms</a>
+        <a href="#privacy" style="color:#64748b">Privacy Policy</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="https://www.linkedin.com/company/surgepay" target="_blank" rel="noopener noreferrer" aria-label="Surgepay on LinkedIn" style="width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(15,23,42,0.09);color:#334155;transition:all .3s" style-hover="color:#25D366;border-color:rgba(37,211,102,0.35)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.5-.54-2.5-1.9-2.5-1.15 0-1.83.77-2.13 1.51-.11.27-.14.64-.14 1.01V21h-4z"></path></svg>
+        </a>
+        <a href="https://x.com/surgepay" target="_blank" rel="noopener noreferrer" aria-label="Surgepay on X" style="width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(15,23,42,0.09);color:#334155;transition:all .3s" style-hover="color:#25D366;border-color:rgba(37,211,102,0.35)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.63l-5.2-6.8-5.94 6.8H1.74l7.5-8.58L1.08 2.25h6.8l4.71 6.23zm-1.16 17.52h1.83L6.99 4.13H5.03z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid #f1f5f9">
+      <div style="max-width:1200px;margin:0 auto;padding:22px 32px">
+        <p style="font-size:11px;color:#94a3b8;line-height:1.7;margin:0;max-width:90ch">Surgepay is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds. All money transmission, foreign exchange, payment processing, and identity verification services are provided by our licensed partner entities. Users must be 18 years or older to use the service. Transfers are subject to applicable laws, regulations, and partner terms. Additional terms and conditions may apply.</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid #f1f5f9">
+      <div style="max-width:1200px;margin:0 auto;padding:16px 32px;font-size:11px;color:#94a3b8;letter-spacing:0.04em">© 2026 SURGEPAY PTE. LTD. All rights reserved.</div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const G = '#25D366';
+const RATE = 85.40;
+const ic = (d, opts) => React.createElement('svg', Object.assign({width:24,height:24,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.6,strokeLinecap:'round',strokeLinejoin:'round',dangerouslySetInnerHTML:{__html:d}}, opts||{}));
+const icons = {
+  lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>',
+  shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C13.51 3.81 16 5 18 5a1 1 0 011 1z"/><path d="M9 12l2 2 4-4"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/>',
+  users: '<path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+  phone: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>',
+  msg: '<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>',
+  sparkles: '<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.7 1.8L21.5 18l-1.8.7L19 20.5l-.7-1.8L16.5 18l1.8-.7z"/>',
+  arrow: '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+  plus: '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>'
+};
+
+const bubbleIn = (children, time, key) => React.createElement('div', {key, style:{background:'#fff',borderRadius:'0 8px 8px 8px',padding:'6px 8px 4px',maxWidth:'85%',position:'relative',fontSize:13,lineHeight:1.35,color:'#111b21',alignSelf:'flex-start',boxShadow:'0 1px 0.5px rgba(11,20,26,0.13)'}},
+  React.createElement('div',{style:{position:'absolute',top:0,left:-6,width:8,height:13,background:'#fff',clipPath:'polygon(100% 0, 0 0, 100% 100%)'}}),
+  children,
+  React.createElement('div',{style:{fontSize:10,color:'#667781',textAlign:'right',marginTop:2,lineHeight:1}}, time));
+
+const bubbleOut = (children, time, key) => React.createElement('div', {key, style:{background:'#d9fdd3',borderRadius:'8px 0 8px 8px',padding:'6px 8px 4px',maxWidth:'85%',position:'relative',fontSize:13,lineHeight:1.35,color:'#111b21',alignSelf:'flex-end',boxShadow:'0 1px 0.5px rgba(11,20,26,0.13)'}},
+  React.createElement('div',{style:{position:'absolute',top:0,right:-6,width:8,height:13,background:'#d9fdd3',clipPath:'polygon(0 0, 100% 0, 0 100%)'}}),
+  children,
+  React.createElement('div',{style:{fontSize:10,color:'#667781',textAlign:'right',marginTop:2,lineHeight:1,display:'flex',justifyContent:'flex-end',alignItems:'center',gap:3}}, time,
+    React.createElement('span',{style:{color:'#53bdeb',fontSize:12,letterSpacing:'-3px',marginLeft:1}},'\u2713\u2713')));
+
+const opt = (label, i) => React.createElement('div',{key:i,style:{textAlign:'center',color:'#00a884',fontWeight:500,borderTop:'1px solid #e2e8f0',paddingTop:4}},label);
+const opts = (list) => React.createElement('div',{style:{marginTop:4,display:'flex',flexDirection:'column',gap:4}}, list.map(opt));
+const nl = (text) => text.split('\n').map((l,i)=>React.createElement(React.Fragment,{key:i}, l, React.createElement('br')));
+
+class Component extends DCLogic {
+  state = { active: 0, openFaq: 0, amount: '10' };
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const el = document.getElementById('how-it-works');
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const total = r.height - window.innerHeight;
+      if (total <= 0) return;
+      const p = Math.min(1, Math.max(0, -r.top / total));
+      const next = Math.min(3, Math.floor(p * 4.0001));
+      if (next !== this.state.active) this.setState({ active: next });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
+
+  goToStep(i) {
+    const el = document.getElementById('how-it-works');
+    if (!el) return this.setState({ active: i });
+    const total = el.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: el.offsetTop + (i / 4) * total * 1.02 + 8, behavior: 'smooth' });
+  }
+
+  chat() {
+    const a = this.state.active;
+    if (a === 0) return [
+      bubbleOut('Hi','10:28 AM','a'),
+      bubbleIn([nl("Hey! Surgepay helps you send money back home to India.\n\nZero fees. We transfer at Google rates.\n\nWhat would you like to do?"), React.createElement('div',{key:'m',style:{marginTop:8,textAlign:'center',color:'#00a884',fontWeight:500,borderTop:'1px solid #e2e8f0',paddingTop:6}},'\u2630 Choose an option')],'10:28 AM','b'),
+      bubbleOut([React.createElement('span',{key:1},'Send money'),React.createElement('br',{key:2}),React.createElement('span',{key:3,style:{fontSize:11,color:'#64748b'}},'Send USD to India')],'10:28 AM','c'),
+      bubbleIn([nl("How much would you like to send (in USD)?\nMin: $2 | Max: $500\nOr type any amount."), opts(['$10','$20','$50'])],'10:29 AM','d'),
+      bubbleOut('$10','10:29 AM','e'),
+      bubbleIn([nl("Here's your quote:\n\nYou send: $10.00\nYou receive: Rs.854.00\nRate: $1 = Rs.85.40\nFees: $0.00\n\nThis rate is valid for the next few minutes."), opts(['Continue','Change amount','Cancel'])],'10:29 AM','f')
+    ];
+    if (a === 1) return [
+      bubbleIn(nl("You don't have a verified Indian bank account.\nLet's add your Indian bank account.\n\nWhat is your Indian bank account number?\n\nNote: Currently we do not support NRE bank account."),'10:31 AM','a'),
+      bubbleOut('09845321876','10:31 AM','b'),
+      bubbleIn('Please type your account number again to confirm.','10:31 AM','c'),
+      bubbleOut('09845321876','10:31 AM','d'),
+      bubbleIn(nl("What is the IFSC code?\nExample: HDFC0001234\n\nYou can find this on your cheque book or bank statement."),'10:31 AM','e'),
+      bubbleOut('ICIC0009876','10:31 AM','f'),
+      bubbleIn([React.createElement('span',{key:1},'Is this a Savings or Current account?'), opts(['Savings','Current'])],'10:31 AM','g'),
+      bubbleOut('Savings','10:32 AM','h'),
+      bubbleIn([nl("Please review the bank details:\n\nAccount: ...1876\nIFSC: ICIC0009876\nType: Savings\n\nMake sure everything is correct. Incorrect details may cause delays."), opts(['Looks good','Edit details'])],'10:32 AM','i')
+    ];
+    if (a === 2) return [
+      bubbleIn(nl("Next step: KYC Verification\n\nBefore we proceed, please keep the following in mind:\n\u2022 Have one of these U.S. Identity documents ready\n\u2022 A liveness check will be conducted to verify your identity.\n\u2022 KYC process takes ~2 minutes"),'10:29 AM','a'),
+      bubbleIn([React.createElement('span',{key:1},'Persona'),React.createElement('br',{key:2}),React.createElement('span',{key:3,style:{color:'#00a884',fontSize:10}},'api-dev.surgepay.xyz'),React.createElement('br',{key:4}),React.createElement('br',{key:5}),React.createElement('span',{key:6},'Please use the following link to verify your identity:'),React.createElement('br',{key:7}),React.createElement('span',{key:8,style:{color:'#3b82f6',textDecoration:'underline',wordBreak:'break-all'}},'https://api-dev.surgepay.xyz/kyc/link'),React.createElement('br',{key:9}),React.createElement('br',{key:10}),React.createElement('span',{key:11},'Your data is safe. \u2713')],'10:29 AM','b'),
+      bubbleIn('Your identity has been verified \u2713\u2713','10:29 AM','c'),
+      bubbleIn(nl("Next step: Connect your U.S. Bank Account\n\nBefore we proceed, please keep the following in mind:\n\u2022 You'll be redirected to your bank's login page\n\u2022 Select a bank account.\n\u2022 Surgepay never sees or stores your bank login credentials."),'10:29 AM','d'),
+      bubbleIn([React.createElement('span',{key:1},'Please use the following link to connect your U.S. Bank Account:'),React.createElement('br',{key:2}),React.createElement('span',{key:3,style:{color:'#3b82f6',textDecoration:'underline',wordBreak:'break-all'}},'https://api-dev.surgepay.xyz/bank/link'),React.createElement('br',{key:4}),React.createElement('br',{key:5}),React.createElement('span',{key:6},'Important: This link is valid for 10 minutes.')],'10:29 AM','e'),
+      bubbleIn('Your US bank account has been connected!','10:30 AM','f')
+    ];
+    return [
+      bubbleIn([nl("Please confirm your transfer.\n\nYou send: $10.00\nYou receive: Rs.854.00\nFees: $0.00\nRate: $1 = Rs.85.40 (USD/INR)\nTo: ICIC"), opts(['Confirm & pay','Change amount','Cancel'])],'10:33 AM','a'),
+      bubbleOut('Confirm & pay','10:33 AM','b'),
+      bubbleIn(nl("Enter your 4-digit PIN to confirm this transfer.\n\nYour PIN is never stored in chat history."),'10:33 AM','c'),
+      bubbleOut('1234','10:33 AM','d'),
+      bubbleIn([nl("Your transfer SP-37800 has been created!\n\nYour payment is being processed. We'll notify you once it's confirmed.\n\nTracking ID: SP-37800"), opts(['Track transfer','Back to menu'])],'10:33 AM','e'),
+      bubbleIn(nl("Your transfer (SP-37800) has been delivered!\n\nRs.854.00 has been deposited into your Indian bank account."),'10:33 AM','f')
+    ];
+  }
+
+  renderVals() {
+    const a = this.state.active;
+    const screens = [
+      { title:'Enter amount', desc:"Tell us how much you want to send. We show exactly what lands in India at real-time Google rates." },
+      { title:'Add your Indian bank', desc:'Account number, IFSC, account type. All major Indian banks, savings and NRO.' },
+      { title:'Verify &amp; connect', desc:'A one-time KYC and a secure bank connection. We never see your bank login.' },
+      { title:'Confirm and send', desc:'Review, enter your PIN, and the money is on its way. Receipt arrives in the chat.' }
+    ];
+    const amt = parseFloat(String(this.state.amount).replace(/[^0-9.]/g,'')) || 0;
+    const faqs = [
+      ['What is Surgepay?','Surgepay is a WhatsApp first US to India remittance platform built for Indians in the US, offering instant transfers, Google matching rates, and zero hidden fees. No additional application downloads required.'],
+      ['How is Surgepay different from traditional banking systems?','Traditional providers often charge hidden FX markups and slower settlement times. Surgepay uses a mix of traditional banking and stablecoin infrastructure in a compliant manner to enable faster, more transparent transfers.'],
+      ['How fast are transfers?','Most transfers are completed within minutes depending on banking partner availability and verification status. Ideally, transfers are instant.'],
+      ['Are there any hidden fees?','No hidden fees. No surprise deductions. The rate you see is the rate you get. We aim to consistently offer rates matching or better than Google rates till December 31st 2027.'],
+      ['Is Surgepay safe?','Yes. We work with regulated banking and payment partners and follow strict KYC, AML, and compliance standards.'],
+      ['Can I send money to my own Indian account?','Yes. You can transfer money from your US bank account to your own Indian bank account.'],
+      ['Can I send money to a third party account?',"No. Currently, Surgepay supports transfers only to your own Indian bank account from your own US bank account. You cannot transfer to another person's bank account."],
+      ['Which Indian banks and account types are supported?','All major Indian banks are supported. We currently support savings and NRO accounts. NRE accounts are not supported at the moment.'],
+      ['Is it safe to use WhatsApp?','Yes, 100% safe. WhatsApp is only the interface layer. The actual transaction happens securely through our regulated banking partners in protected browser sessions. We also comply with strict data security and privacy standards.']
+    ];
+    const corridors = [['United States','us','LIVE'],['Canada','ca','Coming soon'],['UAE','ae','Coming soon'],['Saudi Arabia','sa','Coming soon'],['Singapore','sg','Coming soon']];
+
+    return {
+      rateText: RATE.toFixed(2),
+      amount: this.state.amount,
+      onAmount: (e) => this.setState({ amount: e.target.value.replace(/[^0-9.]/g,'').slice(0,7) }),
+      receiveText: (amt * RATE).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}),
+      trustSignals: ['REGULATED PARTNERS','BANK-LEVEL SECURITY','KYC COMPLIANT','END-TO-END ENCRYPTED'],
+      stats: [
+        { value:'$1M+', label:'Volume in pipeline' },
+        { value:'$0', label:'Fees, always' },
+        { value:'~2 min', label:'One-time KYC' },
+        { value:'All', label:'Major Indian banks' }
+      ],
+      securityCards: [
+        { icon: ic(icons.lock,{width:26,height:26}), title:'Bank-grade security', desc:'Your data is always encrypted.' },
+        { icon: ic(icons.shield,{width:26,height:26}), title:'Identity verification', desc:'Strict KYC for every user.' },
+        { icon: ic(icons.globe,{width:26,height:26}), title:'Encrypted comms', desc:'Pin-based login for every session.' },
+        { icon: ic(icons.users,{width:26,height:26}), title:'Trusted partners', desc:'Regulated financial infrastructure.' }
+      ],
+      whyItems: [
+        { icon: ic(icons.phone,{width:26,height:26}), title:'No app to download', desc:"Just send a message and you're done." },
+        { icon: ic(icons.msg,{width:26,height:26}), title:'A normal conversation', desc:'Simple, familiar, and fast.' },
+        { icon: ic(icons.users,{width:26,height:26}), title:'Built for real people', desc:'No complicated steps or forms.' },
+        { icon: ic(icons.sparkles,{width:26,height:26}), title:'AI powered transfers', desc:"Just type who you want to send again, and it's done." }
+      ],
+      chatColumn: React.createElement('div',{style:{display:'flex',flexDirection:'column',gap:6}}, this.chat()),
+      dots: screens.map((s,i)=>React.createElement('button',{key:i,onClick:()=>this.goToStep(i),style:{width:a===i?26:8,height:8,borderRadius:999,border:'none',padding:0,cursor:'pointer',background:a===i?G:'#cbd5e1',transition:'all .35s'}})),
+      stepRows: screens.map((s,i)=>{
+        const on = a===i;
+        return React.createElement('div',{key:i,onClick:()=>this.goToStep(i),style:{position:'relative',cursor:'pointer',padding:on?'22px 0 24px':'16px 0',borderTop:'1px solid '+(on?G:'#e2e8f0'),transition:'all .4s cubic-bezier(0.16,1,0.3,1)',opacity:on?1:0.5}},
+          React.createElement('div',{style:{display:'grid',gridTemplateColumns:'72px 1fr',gap:20,alignItems:'baseline'}},
+            React.createElement('div',{style:{fontSize:12,fontWeight:700,letterSpacing:'0.14em',color:on?G:'#94a3b8',transition:'color .4s'}}, 'STEP 0'+(i+1)),
+            React.createElement('div',null,
+              React.createElement('h3',{style:{fontSize:on?30:19,lineHeight:1.05,letterSpacing:'-0.035em',fontWeight:600,color:'#0f172a',margin:0,transition:'all .4s cubic-bezier(0.16,1,0.3,1)'}, dangerouslySetInnerHTML:{__html:s.title}}),
+              React.createElement('div',{style:{maxHeight:on?120:0,opacity:on?1:0,overflow:'hidden',transition:'max-height .4s cubic-bezier(0.16,1,0.3,1),opacity .3s'}},
+                React.createElement('p',{style:{margin:'10px 0 0',fontSize:15,color:'#64748b',lineHeight:1.65,maxWidth:'40ch'}}, s.desc)))));
+      }),
+      corridorRows: corridors.map(([name,code,status])=>{
+        const live = status==='LIVE';
+        return React.createElement('div',{key:name,style:{display:'grid',gridTemplateColumns:'auto 1fr auto',gap:22,alignItems:'center',padding:'22px 20px 22px '+(live?'20px':'20px'),borderBottom:'1px solid #e8ecf1',background:live?'linear-gradient(90deg,rgba(37,211,102,0.06),rgba(37,211,102,0))':'transparent',borderLeft:'2px solid '+(live?G:'transparent'),opacity:live?1:0.72}},
+          React.createElement('div',{style:{display:'flex',alignItems:'center',gap:12}},
+            React.createElement('div',{style:{width:34,height:34,borderRadius:999,overflow:'hidden',border:'1px solid rgba(15,23,42,0.08)'}}, React.createElement('img',{src:'https://flagcdn.com/'+code+'.svg',alt:name,referrerPolicy:'no-referrer',style:{width:'100%',height:'100%',objectFit:'cover'}})),
+            ic(icons.arrow,{width:16,height:16,style:{color:'#cbd5e1'}}),
+            React.createElement('div',{style:{width:34,height:34,borderRadius:999,overflow:'hidden',border:'1px solid rgba(15,23,42,0.08)'}}, React.createElement('img',{src:'https://flagcdn.com/in.svg',alt:'India',referrerPolicy:'no-referrer',style:{width:'100%',height:'100%',objectFit:'cover'}}))),
+          React.createElement('div',{style:{fontSize:19,fontWeight:600,letterSpacing:'-0.025em',color:'#0f172a'}}, name+' \u2192 India'),
+          React.createElement('span',{style:{fontSize:11,fontWeight:700,letterSpacing:'0.12em',padding:'6px 14px',borderRadius:999,background:live?G:'#f1f5f9',color:live?'#fff':'#64748b',whiteSpace:'nowrap'}}, status.toUpperCase()));
+      }),
+      faqRows: faqs.map(([q,ansr],i)=>{
+        const open = this.state.openFaq===i;
+        return React.createElement('div',{key:i,style:{borderBottom:'1px solid rgba(255,255,255,0.1)',background:open?'linear-gradient(90deg,rgba(37,211,102,0.06),rgba(37,211,102,0))':'transparent',transition:'background .3s'}},
+          React.createElement('button',{onClick:()=>this.setState({openFaq: open?null:i}),style:{display:'flex',width:'100%',alignItems:'center',justifyContent:'space-between',gap:20,textAlign:'left',padding:'22px 8px',background:'none',border:'none',cursor:'pointer'}},
+            React.createElement('h3',{style:{fontSize:18,fontWeight:500,letterSpacing:'-0.02em',margin:0,color:open?G:'#e2e8f0',transition:'color .2s'}}, q),
+            React.createElement('span',{style:{flexShrink:0,color:open?G:'#64748b',transition:'transform .35s',transform:open?'rotate(45deg)':'none',display:'flex'}}, ic(icons.plus,{width:18,height:18}))),
+          open ? React.createElement('p',{style:{padding:'0 60px 24px 8px',margin:0,fontSize:15,lineHeight:1.7,color:'#94a3b8'}}, ansr) : null);
+      })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

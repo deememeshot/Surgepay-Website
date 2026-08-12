@@ -93,7 +93,7 @@ export const FAQSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className={`border transition-all duration-300 rounded-2xl overflow-hidden ${isOpen ? 'bg-whatsapp/[0.03] border-whatsapp/30 ring-1 ring-whatsapp/10' : 'bg-white/[0.02] border-white/10 hover:bg-white/[0.04]'}`}
+                    className={`transition-all duration-300 rounded-2xl overflow-hidden ${isOpen ? 'bg-whatsapp/[0.05] backdrop-blur-md border border-whatsapp/20' : 'glass-dark hover:bg-white/[0.06]'}`}
                   >
                     <button
                       onClick={() => toggleFaq(index)}
