@@ -233,11 +233,11 @@ export default function App() {
   const dots = screens.map((s, i) => <button key={i} onClick={() => goToStep(i)} style={{ width: 8, height: active === i ? 26 : 8, borderRadius: 999, border: 'none', padding: 0, cursor: 'pointer', background: active === i ? G : '#cbd5e1', transition: 'all .35s' }} />);
   const stepRows = screens.map((s, i) => {
     const on = active === i;
-    return <div key={i} onClick={() => goToStep(i)} style={{ position: 'relative', cursor: 'pointer', padding: on ? '22px 0 24px 24px' : '16px 0 16px 24px', borderLeft: `2px solid ${on ? G : '#e2e8f0'}`, transition: 'all .4s cubic-bezier(0.16,1,0.3,1)', opacity: on ? 1 : 0.5 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '72px 1fr', gap: 20, alignItems: 'baseline' }}>
+    return <div key={i} className="step-row-item" onClick={() => goToStep(i)} style={{ position: 'relative', cursor: 'pointer', padding: on ? '22px 0 24px 24px' : '16px 0 16px 24px', borderLeft: `2px solid ${on ? G : '#e2e8f0'}`, transition: 'all .4s cubic-bezier(0.16,1,0.3,1)', opacity: on ? 1 : 0.5 }}>
+      <div className="step-inner-grid" style={{ display: 'grid', gridTemplateColumns: '72px 1fr', gap: 20, alignItems: 'baseline' }}>
         <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', color: on ? G : '#94a3b8', transition: 'color .4s' }}>{'STEP 0' + (i + 1)}</div>
         <div>
-          <h3 style={{ fontSize: on ? 30 : 19, lineHeight: 1.05, letterSpacing: '-0.035em', fontWeight: 600, color: '#0f172a', margin: 0, transition: 'all .4s cubic-bezier(0.16,1,0.3,1)' }} dangerouslySetInnerHTML={{ __html: s.title }} />
+          <h3 className={`step-title-text${on ? ' step-active' : ''}`} style={{ fontSize: on ? 30 : 19, lineHeight: 1.05, letterSpacing: '-0.035em', fontWeight: 600, color: '#0f172a', margin: 0, transition: 'all .4s cubic-bezier(0.16,1,0.3,1)' }} dangerouslySetInnerHTML={{ __html: s.title }} />
           <div style={{ maxHeight: on ? 120 : 0, opacity: on ? 1 : 0, overflow: 'hidden', transition: 'max-height .4s cubic-bezier(0.16,1,0.3,1),opacity .3s' }}>
             <p style={{ margin: '10px 0 0', fontSize: 15, color: '#64748b', lineHeight: 1.65, maxWidth: '40ch' }}>{s.desc}</p>
           </div>
@@ -304,7 +304,7 @@ export default function App() {
   });
 
   return (
-    <div style={{ minHeight: '100vh', fontFamily: "'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", fontVariantNumeric: 'tabular-nums' }}>
+    <div style={{ minHeight: '100vh', overflowX: 'hidden', fontFamily: "'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", fontVariantNumeric: 'tabular-nums' }}>
 
 
       <div style={{ "position": "fixed", "top": "20px", "left": "0", "right": "0", "zIndex": "50", "maxWidth": "1280px", "margin": "0 auto", "padding": "0 24px", "pointerEvents": "none" }}>
@@ -350,12 +350,12 @@ export default function App() {
             </p>
 
             <div className="flex flex-col items-center md:items-start gap-4 w-full">
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-start gap-4 w-full sm:w-auto">
                 <a href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group">
                   Send Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <HoverAnchor href="#how-it-works" style={{ "padding": "16px 26px", "borderRadius": "999px", "fontWeight": "500", "fontSize": "17px", "color": "#0f172a", "background": "rgba(255,255,255,0.62)", "backdropFilter": "blur(18px) saturate(160%)", "WebkitBackdropFilter": "blur(18px) saturate(160%)", "border": "1px solid rgba(15,23,42,0.09)", "boxShadow": "0 1px 0 rgba(255,255,255,0.9) inset" }} hoverStyle={{ "color": "#128C7E", "borderColor": "rgba(37,211,102,0.35)" }}>
+                <HoverAnchor href="#how-it-works" className="hero-see-how" style={{ "padding": "16px 26px", "borderRadius": "999px", "fontWeight": "500", "fontSize": "17px", "color": "#0f172a", "background": "rgba(255,255,255,0.62)", "backdropFilter": "blur(18px) saturate(160%)", "WebkitBackdropFilter": "blur(18px) saturate(160%)", "border": "1px solid rgba(15,23,42,0.09)", "boxShadow": "0 1px 0 rgba(255,255,255,0.9) inset" }} hoverStyle={{ "color": "#128C7E", "borderColor": "rgba(37,211,102,0.35)" }}>
                   See how it works
                 </HoverAnchor>
               </div>
@@ -376,9 +376,9 @@ export default function App() {
               <div style={{ "border": "1px solid rgba(15,23,42,0.08)", "borderRadius": "18px", "overflow": "hidden", "background": "rgba(255,255,255,0.6)" }}>
                 <label style={{ "display": "flex", "alignItems": "center", "justifyContent": "space-between", "gap": "14px", "padding": "18px 20px", "cursor": "text" }}>
                   <span style={{ "fontSize": "13px", "fontWeight": "500", "color": "#64748b", "whiteSpace": "nowrap" }}>You send</span>
-                  <span style={{ "display": "flex", "alignItems": "baseline", "gap": "6px", "minWidth": "0" }}>
+                  <span style={{ "display": "flex", "alignItems": "baseline", "gap": "2px", "minWidth": "0", "justifyContent": "flex-end" }}>
                     <span style={{ "fontSize": "30px", "fontWeight": "600", "color": "#0f172a", "letterSpacing": "-0.03em" }}>$</span>
-                    <input type="text" inputMode="decimal" value={amount} onChange={onAmount} style={{ "width": "120px", "border": "none", "outline": "none", "background": "transparent", "fontSize": "30px", "fontWeight": "600", "letterSpacing": "-0.03em", "color": "#0f172a", "textAlign": "right", "fontVariantNumeric": "tabular-nums" }} />
+                    <input type="text" inputMode="decimal" value={amount} onChange={onAmount} style={{ "width": `${Math.max(String(amount).length, 1)}ch`, "border": "none", "outline": "none", "background": "transparent", "fontSize": "30px", "fontWeight": "600", "letterSpacing": "-0.03em", "color": "#0f172a", "textAlign": "left", "fontVariantNumeric": "tabular-nums" }} />
                   </span>
                 </label>
                 <div style={{ "height": "1px", "background": "rgba(15,23,42,0.08)" }}></div>
@@ -430,7 +430,7 @@ export default function App() {
               {stats.map((s, i) => (
                 <React.Fragment key={i}>
 
-                  <div style={{ "padding": "32px 24px 34px 24px" }}>
+                  <div className="stat-item" style={{ "padding": "32px 24px 34px 24px" }}>
                     <div style={{ "fontSize": "clamp(2.75rem,4vw,4rem)", "lineHeight": "0.92", "letterSpacing": "-0.05em", "fontWeight": "600", "color": "#0f172a", "marginBottom": "14px" }}>{s.value}</div>
                     <div style={{ "fontSize": "13px", "fontWeight": "600", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.13em" }}>{s.label}</div>
                   </div>
@@ -445,7 +445,7 @@ export default function App() {
               {securityCards.map((c, i) => (
                 <React.Fragment key={i}>
 
-                  <div style={{
+                  <div className="security-card" style={{
                     "background": "#fff",
                     "padding": "30px 24px"
                   }}>
@@ -546,12 +546,12 @@ export default function App() {
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "rgba(255,255,255,0.85)", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>Why WhatsApp</span>
           </div>
           <h2 className="why-wa-heading" style={{ "fontSize": "clamp(2.25rem,3.6vw,3.5rem)", "lineHeight": "1.02", "letterSpacing": "-0.04em", "fontWeight": "600", "color": "#fff", "margin": "0 0 52px", "maxWidth": "20ch" }}>No app. No forms. Just a conversation.</h2>
-          <div style={{ "borderTop": "1px solid rgba(255,255,255,0.22)" }}>
+          <div className="why-wa-border-wrap" style={{ "borderTop": "1px solid rgba(255,255,255,0.22)" }}>
             <div className="why-wa-cards-grid" style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(240px,1fr))", "gap": "1px", "background": "rgba(255,255,255,0.22)", "margin": "0 -24px" }}>
               {whyItems.map((w, i) => (
                 <React.Fragment key={i}>
 
-                  <div style={{ "background": "#25D366", "padding": "30px 24px" }}>
+                  <div className="why-wa-card" style={{ "background": "#25D366", "padding": "30px 24px" }}>
                     <div style={{ "color": "#fff", "marginBottom": "18px", "opacity": "0.9" }}>{w.icon}</div>
                     <h4 style={{ "fontSize": "18px", "fontWeight": "600", "letterSpacing": "-0.02em", "color": "#fff", "margin": "0 0 8px" }}>{w.title}</h4>
                     <p style={{ "color": "rgba(255,255,255,0.78)", "fontSize": "14px", "lineHeight": "1.6", "margin": "0", "maxWidth": "26ch" }}>{w.desc}</p>
