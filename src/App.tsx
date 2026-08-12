@@ -139,10 +139,13 @@ export default function App() {
   }, [active]);
 
   const goToStep = (i: number) => {
+    setActive(i);
     const el = document.getElementById('how-it-works');
-    if (!el) return setActive(i);
+    if (!el) return;
     const total = el.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: el.offsetTop + (i / 4) * total * 1.02 + 8, behavior: 'smooth' });
+    if (total > 0) {
+      window.scrollTo({ top: el.offsetTop + (i / 4) * total * 1.02 + 8, behavior: 'smooth' });
+    }
   };
 
   const chat = () => {

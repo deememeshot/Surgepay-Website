@@ -464,10 +464,20 @@
 
 /* Phone mockup container on mobile */
 @media (max-width: 1023px) {
+  #how-it-works {
+    height: auto !important;
+  }
+  #how-it-works > div:first-child {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
   .phone-container {
     justify-content: center !important;
     max-width: 360px;
     margin: 0 auto;
+    position: relative !important;
+    top: 0 !important;
   }
   .phone-container .step-dots-desktop {
     display: none !important;
