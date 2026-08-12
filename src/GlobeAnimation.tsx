@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function GlobeAnimation() {
   return (
-    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', zIndex: 0, pointerEvents: 'none' }}>
+    <div className="globe-animation-wrapper" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '800px', height: '800px', zIndex: 0, pointerEvents: 'none' }}>
       <svg viewBox="0 0 800 800" style={{ width: '100%', height: '100%' }}>
         <defs>
           <linearGradient id="arc-gradient" x1="0%" y1="0%" x2="100%" y2="0%">

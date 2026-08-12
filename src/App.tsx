@@ -295,11 +295,11 @@ export default function App() {
   const faqRows = faqs.map(([q, ansr], i) => {
     const open = openFaq === i;
     return <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', background: open ? 'linear-gradient(90deg,rgba(37,211,102,0.06),rgba(37,211,102,0))' : 'transparent', transition: 'background .3s' }}>
-      <button onClick={() => setOpenFaq(open ? null : i)} style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between', gap: 20, textAlign: 'left', padding: '22px 8px', background: 'none', border: 'none', cursor: 'pointer' }}>
+      <button className="faq-question" onClick={() => setOpenFaq(open ? null : i)} style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between', gap: 20, textAlign: 'left', padding: '22px 8px', background: 'none', border: 'none', cursor: 'pointer' }}>
         <h3 style={{ fontSize: 18, fontWeight: 500, letterSpacing: '-0.02em', margin: 0, color: open ? G : '#e2e8f0', transition: 'color .2s' }}>{q}</h3>
         <span style={{ flexShrink: 0, color: open ? G : '#64748b', transition: 'transform .35s', transform: open ? 'rotate(45deg)' : 'none', display: 'flex' }}>{icons.plus}</span>
       </button>
-      {open ? <p style={{ padding: '0 60px 24px 8px', margin: 0, fontSize: 15, lineHeight: 1.7, color: '#94a3b8' }}>{ansr}</p> : null}
+      {open ? <p className="faq-answer" style={{ padding: '0 60px 24px 8px', margin: 0, fontSize: 15, lineHeight: 1.7, color: '#94a3b8' }}>{ansr}</p> : null}
     </div>;
   });
 
@@ -316,14 +316,14 @@ export default function App() {
             <span style={{ "fontSize": "20px", "fontWeight": "600", "letterSpacing": "-0.03em", "color": "#0f172a" }}>Surgepay</span>
           </a>
           <div style={{ "display": "flex", "alignItems": "center", "gap": "28px" }}>
-            <a href="#how-it-works" style={{ "fontSize": "15px", "fontWeight": "500", "color": "#475569" }}>How it works</a>
-            <HoverAnchor href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" style={{ "background": "#25D366", "color": "#fff", "padding": "10px 24px", "borderRadius": "999px", "fontSize": "15px", "fontWeight": "600", "boxShadow": "0 4px 14px rgba(37,211,102,0.4)" }} hoverStyle={{ "background": "#128C7E" }} >Send Now</HoverAnchor>
+            <a href="#how-it-works" className="nav-link-desktop" style={{ "fontSize": "15px", "fontWeight": "500", "color": "#475569" }}>How it works</a>
+            <HoverAnchor href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="nav-send-btn" style={{ "background": "#25D366", "color": "#fff", "padding": "10px 24px", "borderRadius": "999px", "fontSize": "15px", "fontWeight": "600", "boxShadow": "0 4px 14px rgba(37,211,102,0.4)" }} hoverStyle={{ "background": "#128C7E" }} >Send Now</HoverAnchor>
           </div>
         </div>
       </div>
 
       <section id="hero" data-screen-label="Hero" style={{ "minHeight": "100vh", "display": "flex", "flexDirection": "column", "position": "relative", "overflow": "hidden", "background": "radial-gradient(ellipse 70% 60% at 12% 8%,rgba(236,253,245,0.85) 0%,transparent 62%),radial-gradient(ellipse 50% 50% at 88% 30%,rgba(240,253,244,0.7) 0%,transparent 60%),#fff" }}>
-        <div style={{ "flex": "1", "width": "100%", "maxWidth": "1280px", "margin": "0 auto", "padding": "130px 32px 56px 32px", "display": "grid", "gridTemplateColumns": "1.1fr 0.9fr", "gap": "88px", "alignItems": "center", "alignContent": "center" }}>
+        <div className="hero-grid" style={{ "flex": "1", "width": "100%", "maxWidth": "1280px", "margin": "0 auto", "padding": "130px 32px 56px 32px" }}>
           <div>
             <div style={{ "display": "inline-flex", "alignItems": "center", "gap": "12px", "padding": "8px 16px", "borderRadius": "999px", "background": "rgba(255,255,255,0.7)", "backdropFilter": "blur(18px) saturate(160%)", "WebkitBackdropFilter": "blur(18px) saturate(160%)", "border": "1px solid rgba(15,23,42,0.07)", "boxShadow": "0 1px 0 rgba(255,255,255,0.9) inset", "marginBottom": "30px" }}>
               <span style={{ "fontSize": "13px", "fontWeight": "600", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>Backed by</span>
@@ -362,7 +362,7 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{ "position": "relative" }}>
+          <div className="hero-quote-wrapper" style={{ "position": "relative" }}>
             <GlobeAnimation />
             <div style={{ "position": "absolute", "inset": "-40px", "pointerEvents": "none", "background": "radial-gradient(circle at 60% 35%,rgba(37,211,102,0.16),transparent 62%)", "filter": "blur(28px)" }}></div>
             <div style={{ "position": "relative", "zIndex": "10", "borderRadius": "28px", "padding": "26px", "background": "linear-gradient(180deg,rgba(255,255,255,0.86),rgba(255,255,255,0.66))", "backdropFilter": "blur(26px) saturate(170%)", "WebkitBackdropFilter": "blur(26px) saturate(170%)", "border": "1px solid rgba(255,255,255,0.85)", "boxShadow": "0 1px 0 rgba(255,255,255,0.95) inset,0 26px 70px -30px rgba(15,23,42,0.3)" }}>
@@ -404,7 +404,7 @@ export default function App() {
         </div>
 
         <div style={{ "borderTop": "1px solid rgba(15,23,42,0.08)", "background": "rgba(255,255,255,0.5)", "backdropFilter": "blur(16px)", "WebkitBackdropFilter": "blur(16px)" }}>
-          <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "16px 32px", "display": "flex", "flexWrap": "wrap", "alignItems": "center", "justifyContent": "space-between", "gap": "12px 28px" }}>
+          <div className="trust-signals-bar" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "16px 32px" }}>
             {trustSignals.map((t, i) => (
               <React.Fragment key={i}>
 
@@ -417,16 +417,16 @@ export default function App() {
       </section>
 
       <section id="numbers" data-screen-label="Numbers" style={{ "background": "#fff" }}>
-        <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "80px 32px" }}>
+        <div className="numbers-section" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "80px 32px" }}>
           <div style={{ "display": "flex", "alignItems": "baseline", "gap": "14px", "marginBottom": "36px" }}>
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#25D366", "letterSpacing": "0.14em" }}>01</span>
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>Trust &amp; security</span>
           </div>
-          <h2 style={{ "fontSize": "clamp(2rem,3.1vw,3rem)", "lineHeight": "1.05", "letterSpacing": "-0.038em", "fontWeight": "600", "color": "#0f172a", "margin": "0 0 12px", "maxWidth": "24ch" }}>Your money and data are protected by bank-grade infrastructure.</h2>
+          <h2 className="numbers-heading" style={{ "fontSize": "clamp(2rem,3.1vw,3rem)", "lineHeight": "1.05", "letterSpacing": "-0.038em", "fontWeight": "600", "color": "#0f172a", "margin": "0 0 12px", "maxWidth": "24ch" }}>Your money and data are protected by bank-grade infrastructure.</h2>
           <p style={{ "fontSize": "17px", "color": "#64748b", "margin": "0 0 48px", "maxWidth": "none", "lineHeight": "1.6" }}>Regulated partners, strict KYC on every user, and encryption end to end.</p>
 
           <div style={{ "borderTop": "1px solid #e8ecf1" }}>
-            <div style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(190px,1fr))", "margin": "0 -24px" }}>
+            <div className="stats-grid" style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(190px,1fr))", "margin": "0 -24px" }}>
               {stats.map((s, i) => (
                 <React.Fragment key={i}>
 
@@ -441,7 +441,7 @@ export default function App() {
           </div>
 
           <div style={{ "borderTop": "1px solid #e8ecf1" }}>
-            <div style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(230px,1fr))", "gap": "1px", "background": "#e8ecf1", "margin": "0 -24px" }}>
+            <div className="security-cards-grid" style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(230px,1fr))", "gap": "1px", "background": "#e8ecf1", "margin": "0 -24px" }}>
               {securityCards.map((c, i) => (
                 <React.Fragment key={i}>
 
@@ -472,14 +472,14 @@ export default function App() {
 
       <section id="how-it-works" data-screen-label="How it works" style={{ "position": "relative", "background": "#f8fafc", "height": "320vh", "borderTop": "1px solid #e8ecf1" }}>
         <div style={{ "position": "sticky", "top": "0", "height": "100vh", "display": "flex", "flexDirection": "column", "justifyContent": "center", "overflow": "hidden" }}>
-          <div style={{ "maxWidth": "1280px", "margin": "0 auto", "width": "100%", "padding": "56px 32px 32px 32px" }}>
+          <div className="section-padding" style={{ "maxWidth": "1280px", "margin": "0 auto", "width": "100%", "padding": "56px 32px 32px 32px" }}>
             <div style={{ "display": "flex", "alignItems": "baseline", "gap": "14px", "marginBottom": "22px" }}>
               <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#25D366", "letterSpacing": "0.14em" }}>02</span>
               <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>How it works</span>
             </div>
-            <div style={{ "display": "grid", "gridTemplateColumns": "0.85fr 1.15fr", "gap": "48px", "alignItems": "center" }}>
-              <div style={{ "display": "flex", "alignItems": "center", "justifyContent": "center", "gap": "32px" }}>
-                <div style={{ "display": "flex", "flexDirection": "column", "gap": "8px" }}>{dots}</div>
+            <div className="how-it-works-grid">
+              <div className="phone-container" style={{ "display": "flex", "alignItems": "center", "justifyContent": "center", "gap": "32px" }}>
+                <div className="step-dots-desktop" style={{ "display": "flex", "flexDirection": "column", "gap": "8px" }}>{dots}</div>
                 <div style={{ "position": "relative", "width": "100%", "display": "flex", "justifyContent": "center", "alignItems": "center", "height": "min(600px,60vh)" }}>
                   <div style={{ "position": "relative", "borderRadius": "3rem", "border": "6px solid #1a1a1a", "background": "#1a1a1a", "boxShadow": "inset 0 0 0 1px rgba(255,255,255,0.1),0 30px 70px -18px rgba(15,23,42,0.35)", "width": "100%", "maxWidth": "292px", "aspectRatio": "9/19.5", "maxHeight": "100%", "overflow": "hidden", "display": "flex", "flexDirection": "column" }}>
                     <div style={{ "position": "absolute", "left": "-8px", "width": "3px", "background": "#2a2a2a", "borderRadius": "2px 0 0 2px", "top": "80px", "height": "28px" }}></div>
@@ -531,6 +531,7 @@ export default function App() {
 
               <div>
                 <h2 style={{ "fontSize": "clamp(2rem,3.1vw,3rem)", "lineHeight": "1.05", "letterSpacing": "-0.038em", "fontWeight": "600", "color": "#0f172a", "margin": "0 0 28px", "maxWidth": "22ch" }}>Four messages from money sent to money received.</h2>
+                <div className="mobile-step-dots">{dots}</div>
                 <div style={{ "display": "flex", "flexDirection": "column" }}>{stepRows}</div>
               </div>
             </div>
@@ -539,14 +540,14 @@ export default function App() {
       </section>
 
       <section id="why-whatsapp" data-screen-label="Why WhatsApp" style={{ "background": "#25D366", "position": "relative", "overflow": "hidden" }}>
-        <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "88px 32px" }}>
+        <div className="why-wa-section" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "88px 32px" }}>
           <div style={{ "display": "flex", "alignItems": "baseline", "gap": "14px", "marginBottom": "26px" }}>
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "rgba(255,255,255,0.85)", "letterSpacing": "0.14em" }}>03</span>
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "rgba(255,255,255,0.85)", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>Why WhatsApp</span>
           </div>
-          <h2 style={{ "fontSize": "clamp(2.25rem,3.6vw,3.5rem)", "lineHeight": "1.02", "letterSpacing": "-0.04em", "fontWeight": "600", "color": "#fff", "margin": "0 0 52px", "maxWidth": "20ch" }}>No app. No forms. Just a conversation.</h2>
+          <h2 className="why-wa-heading" style={{ "fontSize": "clamp(2.25rem,3.6vw,3.5rem)", "lineHeight": "1.02", "letterSpacing": "-0.04em", "fontWeight": "600", "color": "#fff", "margin": "0 0 52px", "maxWidth": "20ch" }}>No app. No forms. Just a conversation.</h2>
           <div style={{ "borderTop": "1px solid rgba(255,255,255,0.22)" }}>
-            <div style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(240px,1fr))", "gap": "1px", "background": "rgba(255,255,255,0.22)", "margin": "0 -24px" }}>
+            <div className="why-wa-cards-grid" style={{ "display": "grid", "gridTemplateColumns": "repeat(auto-fit,minmax(240px,1fr))", "gap": "1px", "background": "rgba(255,255,255,0.22)", "margin": "0 -24px" }}>
               {whyItems.map((w, i) => (
                 <React.Fragment key={i}>
 
@@ -564,7 +565,7 @@ export default function App() {
       </section>
 
       <section id="corridors" data-screen-label="Corridors" style={{ "background": "#fff" }}>
-        <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "88px 32px" }}>
+        <div className="corridor-section" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "88px 32px" }}>
           <div style={{ "display": "flex", "alignItems": "baseline", "gap": "14px", "marginBottom": "26px" }}>
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#25D366", "letterSpacing": "0.14em" }}>04</span>
             <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>Available corridors</span>
@@ -579,14 +580,14 @@ export default function App() {
 
       <section id="faq" data-screen-label="FAQ" style={{ "background": "#060D14", "position": "relative", "overflow": "hidden" }}>
         <div style={{ "position": "absolute", "top": "-120px", "right": "-80px", "width": "640px", "height": "640px", "background": "rgba(37,211,102,0.06)", "borderRadius": "50%", "filter": "blur(100px)", "pointerEvents": "none" }}></div>
-        <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "96px 32px", "position": "relative", "zIndex": "10", "display": "grid", "gridTemplateColumns": "0.85fr 1.15fr", "gap": "64px" }}>
+        <div className="faq-grid" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "96px 32px", "position": "relative", "zIndex": "10" }}>
           <div>
-            <div style={{ "position": "sticky", "top": "96px" }}>
+            <div className="faq-sticky" style={{ "position": "sticky", "top": "96px" }}>
               <div style={{ "display": "flex", "alignItems": "baseline", "gap": "14px", "marginBottom": "26px" }}>
                 <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "#25D366", "letterSpacing": "0.14em" }}>05</span>
                 <span style={{ "fontSize": "14px", "fontWeight": "700", "color": "rgba(255,255,255,0.7)", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>FAQ</span>
               </div>
-              <h2 style={{ "fontSize": "clamp(2.5rem,4vw,4rem)", "lineHeight": "0.98", "letterSpacing": "-0.042em", "fontWeight": "600", "color": "#fff", "margin": "0 0 22px" }}>Find your answers <span style={{ "color": "#25D366" }}>here</span></h2>
+              <h2 className="faq-heading" style={{ "fontSize": "clamp(2.5rem,4vw,4rem)", "lineHeight": "0.98", "letterSpacing": "-0.042em", "fontWeight": "600", "color": "#fff", "margin": "0 0 22px" }}>Find your answers <span style={{ "color": "#25D366" }}>here</span></h2>
               <p style={{ "fontSize": "16px", "color": "#94a3b8", "maxWidth": "34ch", "margin": "0", "lineHeight": "1.6" }}>Everything you need to know about Surgepay. Can't find the answer you're looking for? Feel free to <a href="https://wa.me/918884500283?text=Hi%2C%20I%20have%20questions%20around%20Surgepay.%20Could%20you%20please%20help%20me%3F" target="_blank" rel="noopener noreferrer" style={{ "color": "#fff", "fontWeight": "500", "textDecoration": "underline", "textUnderlineOffset": "4px", "textDecorationColor": "#334155" }}>contact our support team</a>.</p>
             </div>
           </div>
@@ -595,10 +596,10 @@ export default function App() {
       </section>
 
       <section data-screen-label="Final CTA" style={{ "position": "relative", "overflow": "hidden", "background": "radial-gradient(ellipse 60% 60% at 50% 20%,rgba(236,253,245,0.9) 0%,transparent 65%),#fff" }}>
-        <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "104px 32px", "textAlign": "center", "position": "relative", "zIndex": "10" }}>
-          <h2 style={{ "fontSize": "clamp(2rem,3.5vw,3.2rem)", "lineHeight": "1.0", "letterSpacing": "-0.042em", "fontWeight": "600", "color": "#0f172a", "margin": "0 auto 20px", "maxWidth": "22ch" }}>Send money in minutes, not days.</h2>
+        <div className="cta-section" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "104px 32px", "textAlign": "center", "position": "relative", "zIndex": "10" }}>
+          <h2 className="cta-heading" style={{ "fontSize": "clamp(2rem,3.5vw,3.2rem)", "lineHeight": "1.0", "letterSpacing": "-0.042em", "fontWeight": "600", "color": "#0f172a", "margin": "0 auto 20px", "maxWidth": "22ch" }}>Send money in minutes, not days.</h2>
           <p style={{ "fontSize": "19px", "color": "#64748b", "margin": "0 0 36px" }}>No fees. No hassle. Just a simple chat.</p>
-          <HoverAnchor href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" style={{ "display": "inline-flex", "alignItems": "center", "gap": "12px", "background": "#25D366", "color": "#fff", "padding": "18px 40px", "borderRadius": "999px", "fontWeight": "600", "fontSize": "19px", "boxShadow": "0 20px 45px -18px rgba(37,211,102,0.85)" }} hoverStyle={{ "background": "#128C7E" }} >
+          <HoverAnchor href="https://wa.me/18723127867?text=hi" target="_blank" rel="noopener noreferrer" className="cta-btn" style={{ "display": "inline-flex", "alignItems": "center", "gap": "12px", "background": "#25D366", "color": "#fff", "padding": "18px 40px", "borderRadius": "999px", "fontWeight": "600", "fontSize": "19px", "boxShadow": "0 20px 45px -18px rgba(37,211,102,0.85)" }} hoverStyle={{ "background": "#128C7E" }} >
             Send Now
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </HoverAnchor>
@@ -606,7 +607,7 @@ export default function App() {
       </section>
 
       <footer style={{ "background": "#fff", "borderTop": "1px solid #e8ecf1" }}>
-        <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "28px 32px", "display": "flex", "alignItems": "center", "justifyContent": "space-between", "gap": "20px", "flexWrap": "wrap" }}>
+        <div className="footer-main" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "28px 32px", "display": "flex", "alignItems": "center", "justifyContent": "space-between", "gap": "20px", "flexWrap": "wrap" }}>
           <div style={{ "display": "flex", "flexWrap": "wrap", "gap": "8px 28px", "fontSize": "13px", "color": "#64748b" }}>
             <a href="mailto:support@surgepay.xyz" style={{ "color": "#64748b" }}>Contact</a>
             <a href="#terms" style={{ "color": "#64748b" }}>Terms</a>
@@ -622,12 +623,12 @@ export default function App() {
           </div>
         </div>
         <div style={{ "borderTop": "1px solid #f1f5f9" }}>
-          <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "22px 32px" }}>
+            <div className="footer-disclaimer" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "22px 32px" }}>
             <p style={{ "fontSize": "11px", "color": "#94a3b8", "lineHeight": "1.7", "margin": "0", "maxWidth": "90ch" }}>Surgepay is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds. All money transmission, foreign exchange, payment processing, and identity verification services are provided by our licensed partner entities. Users must be 18 years or older to use the service. Transfers are subject to applicable laws, regulations, and partner terms. Additional terms and conditions may apply.</p>
           </div>
         </div>
         <div style={{ "borderTop": "1px solid #f1f5f9" }}>
-          <div style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "16px 32px", "fontSize": "11px", "color": "#94a3b8", "letterSpacing": "0.04em" }}>© 2026 SURGEPAY PTE. LTD. All rights reserved.</div>
+          <div className="footer-copyright" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "16px 32px", "fontSize": "11px", "color": "#94a3b8", "letterSpacing": "0.04em" }}>© 2026 SURGEPAY PTE. LTD. All rights reserved.</div>
         </div>
       </footer>
 

@@ -349,3 +349,269 @@
 .legal-content a {
   @apply text-whatsapp hover:underline transition-colors;
 }
+
+/* ──────────────────────────────────────
+   Mobile Responsive Overrides
+   ────────────────────────────────────── */
+
+/* Nav: hide "How it works" link on small screens */
+@media (max-width: 639px) {
+  .nav-link-desktop {
+    display: none !important;
+  }
+  .nav-send-btn {
+    padding: 8px 18px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Hero section mobile layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 88px;
+  align-items: center;
+  align-content: center;
+}
+
+@media (max-width: 767px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding-top: 110px !important;
+    padding-bottom: 40px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
+/* Quote card: ensure it doesn't overflow on mobile */
+.hero-quote-wrapper {
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .hero-quote-wrapper {
+    max-width: 100% !important;
+  }
+}
+
+/* Globe animation: hide on mobile, scale on tablet */
+@media (max-width: 767px) {
+  .globe-animation-wrapper {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .globe-animation-wrapper {
+    width: 500px !important;
+    height: 500px !important;
+  }
+}
+
+/* Trust signals bar: scroll horizontally on mobile */
+.trust-signals-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+}
+
+@media (max-width: 767px) {
+  .trust-signals-bar {
+    justify-content: center !important;
+    gap: 8px 16px !important;
+    padding: 14px 16px !important;
+  }
+  .trust-signals-bar span {
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+  }
+}
+
+/* How it works section: stack on mobile */
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 1023px) {
+  .how-it-works-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* Phone mockup container on mobile */
+@media (max-width: 1023px) {
+  .phone-container {
+    justify-content: center !important;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .phone-container .step-dots-desktop {
+    display: none !important;
+  }
+}
+
+/* Step rows: mobile adjustments */
+@media (max-width: 639px) {
+  .step-row-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .step-label {
+    font-size: 11px !important;
+  }
+  .step-title {
+    font-size: 22px !important;
+  }
+  .step-title.active {
+    font-size: 26px !important;
+  }
+}
+
+/* Mobile dots for how-it-works: horizontal */
+.mobile-step-dots {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .mobile-step-dots {
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+}
+
+/* FAQ section: stack on mobile */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+}
+
+@media (max-width: 1023px) {
+  .faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .faq-sticky {
+    position: static !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .faq-grid {
+    gap: 24px !important;
+    padding: 64px 16px !important;
+  }
+  .faq-heading {
+    font-size: clamp(2rem, 8vw, 2.5rem) !important;
+  }
+  .faq-question {
+    font-size: 16px !important;
+    padding: 18px 4px !important;
+  }
+  .faq-answer {
+    padding: 0 4px 20px 4px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Corridors grid on mobile */
+@media (max-width: 639px) {
+  .corridor-section {
+    padding: 64px 16px !important;
+  }
+}
+
+/* Section padding adjustments for mobile */
+@media (max-width: 767px) {
+  .section-padding {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .section-padding-vertical {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+/* Footer mobile */
+@media (max-width: 639px) {
+  .footer-main {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 24px 16px !important;
+  }
+  .footer-disclaimer {
+    padding: 16px !important;
+  }
+  .footer-copyright {
+    padding: 12px 16px !important;
+  }
+}
+
+/* CTA section mobile */
+@media (max-width: 767px) {
+  .cta-section {
+    padding: 64px 16px !important;
+  }
+  .cta-heading {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+  .cta-btn {
+    padding: 16px 32px !important;
+    font-size: 17px !important;
+  }
+}
+
+/* Stats grid mobile */
+@media (max-width: 639px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .security-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Why WhatsApp section mobile */
+@media (max-width: 767px) {
+  .why-wa-section {
+    padding: 56px 16px !important;
+  }
+  .why-wa-heading {
+    font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+    margin-bottom: 32px !important;
+  }
+  .why-wa-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Numbers / Trust section mobile */
+@media (max-width: 767px) {
+  .numbers-section {
+    padding: 56px 16px !important;
+  }
+  .numbers-heading {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+  }
+}
