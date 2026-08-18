@@ -236,7 +236,7 @@ export default function App() {
   const dots = screens.map((s, i) => <button key={i} onClick={() => goToStep(i)} style={{ width: 8, height: active === i ? 26 : 8, borderRadius: 999, border: 'none', padding: 0, cursor: 'pointer', background: active === i ? G : '#cbd5e1', transition: 'all .35s' }} />);
   const stepRows = screens.map((s, i) => {
     const on = active === i;
-    return <div key={i} className="step-row-item" onClick={() => goToStep(i)} style={{ position: 'relative', cursor: 'pointer', padding: on ? '22px 0 24px 24px' : '16px 0 16px 24px', borderLeft: `2px solid ${on ? G : '#e2e8f0'}`, transition: 'all .4s cubic-bezier(0.16,1,0.3,1)', opacity: on ? 1 : 0.5 }}>
+    return <div key={i} className={`step-row-item${on ? ' is-active' : ''}`} onClick={() => goToStep(i)} style={{ position: 'relative', cursor: 'pointer', padding: on ? '22px 0 24px 24px' : '16px 0 16px 24px', borderLeft: `2px solid ${on ? G : '#e2e8f0'}`, transition: 'all .4s cubic-bezier(0.16,1,0.3,1)', opacity: on ? 1 : 0.5 }}>
       <div className="step-inner-grid" style={{ display: 'grid', gridTemplateColumns: '72px 1fr', gap: 20, alignItems: 'baseline' }}>
         <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', color: on ? G : '#94a3b8', transition: 'color .4s' }}>{'STEP 0' + (i + 1)}</div>
         <div>
@@ -307,7 +307,7 @@ export default function App() {
   });
 
   return (
-    <div style={{ minHeight: '100vh', overflowX: 'hidden', fontFamily: "'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", fontVariantNumeric: 'tabular-nums' }}>
+    <div style={{ minHeight: '100vh', overflowX: 'clip', fontFamily: "'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif", fontVariantNumeric: 'tabular-nums' }}>
 
 
       <div style={{ "position": "fixed", "top": "20px", "left": "0", "right": "0", "zIndex": "50", "maxWidth": "1280px", "margin": "0 auto", "padding": "0 24px", "pointerEvents": "none" }}>
@@ -327,7 +327,7 @@ export default function App() {
 
       <section id="hero" data-screen-label="Hero" style={{ "minHeight": "100vh", "display": "flex", "flexDirection": "column", "position": "relative", "overflow": "hidden", "background": "radial-gradient(ellipse 70% 60% at 12% 8%,rgba(236,253,245,0.85) 0%,transparent 62%),radial-gradient(ellipse 50% 50% at 88% 30%,rgba(240,253,244,0.7) 0%,transparent 60%),#fff" }}>
         <div className="hero-grid" style={{ "flex": "1", "width": "100%", "maxWidth": "1280px", "margin": "0 auto", "padding": "130px 32px 56px 32px" }}>
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div style={{ "display": "inline-flex", "alignItems": "center", "gap": "12px", "padding": "8px 16px", "borderRadius": "999px", "background": "rgba(255,255,255,0.7)", "backdropFilter": "blur(18px) saturate(160%)", "WebkitBackdropFilter": "blur(18px) saturate(160%)", "border": "1px solid rgba(15,23,42,0.07)", "boxShadow": "0 1px 0 rgba(255,255,255,0.9) inset", "marginBottom": "30px" }}>
               <span style={{ "fontSize": "13px", "fontWeight": "600", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>Backed by</span>
               <a href="https://www.antler.co" target="_blank" rel="noopener noreferrer" style={{ "display": "flex", "alignItems": "center", "gap": "6px" }}>
@@ -504,9 +504,9 @@ export default function App() {
                         <div style={{ "width": "32px", "height": "32px", "background": "#25D366", "borderRadius": "50%", "display": "flex", "alignItems": "center", "justifyContent": "center", "flexShrink": "0" }}>
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                         </div>
-                        <div style={{ "flex": "1", "minWidth": "0" }}>
-                          <div style={{ "color": "#fff", "fontSize": "14px", "fontWeight": "500", "lineHeight": "1.25" }}>Surgepay</div>
-                          <div style={{ "color": "rgba(255,255,255,0.7)", "fontSize": "11px", "lineHeight": "1.25" }}>online</div>
+                        <div style={{ "flex": "1", "minWidth": "0", "overflow": "hidden" }}>
+                          <div style={{ "color": "#fff", "fontSize": "14px", "fontWeight": "500", "lineHeight": "1.25", "whiteSpace": "nowrap", "overflow": "hidden", "textOverflow": "ellipsis" }}>Surgepay</div>
+                          <div style={{ "color": "rgba(255,255,255,0.7)", "fontSize": "11px", "lineHeight": "1.25", "whiteSpace": "nowrap", "overflow": "hidden", "textOverflow": "ellipsis" }}>online</div>
                         </div>
                         <div style={{ "display": "flex", "alignItems": "center", "gap": "12px" }}>
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="14" height="14" rx="2" stroke="white" strokeWidth="1.5"></rect><path d="M16 10l4-2.5v9L16 14" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>

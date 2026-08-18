@@ -458,28 +458,28 @@
 @media (max-width: 1023px) {
   .how-it-works-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 16px !important;
+    height: calc(100vh - 120px);
+    align-content: center;
   }
 }
 
 /* Phone mockup container on mobile */
 @media (max-width: 1023px) {
-  #how-it-works {
-    height: auto !important;
-  }
-  #how-it-works > div:first-child {
-    position: relative !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
   .phone-container {
     justify-content: center !important;
-    max-width: 360px;
+    max-width: 320px;
     margin: 0 auto;
     position: relative !important;
-    top: 0 !important;
   }
   .phone-container .step-dots-desktop {
+    display: none !important;
+  }
+  .phone-container > div:last-child {
+    height: 58vh !important;
+    min-height: 500px !important;
+  }
+  .how-it-works-grid > div:last-child > h2 {
     display: none !important;
   }
 }
@@ -509,10 +509,10 @@
 @media (max-width: 1023px) {
   .mobile-step-dots {
     display: flex !important;
-    justify-content: flex-start;
+    justify-content: center !important;
     gap: 8px;
-    margin-bottom: 24px;
-    margin-top: -12px;
+    margin-bottom: 16px !important;
+    margin-top: 0 !important;
   }
 }
 
@@ -654,20 +654,33 @@
 }
 
 /* How-it-works step rows on mobile */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .step-row-item {
-    padding-left: 16px !important;
-    margin-left: -16px !important;
-    margin-right: -16px !important;
+    display: none !important;
   }
-  .step-row-item .step-inner-grid {
-    grid-template-columns: 54px 1fr !important;
-    gap: 12px !important;
+  .step-row-item.is-active {
+    display: block !important;
+    border-left: none !important;
+    padding: 0 !important;
+    text-align: center;
+    margin: 0 !important;
   }
-  .step-row-item .step-title-text {
-    font-size: 22px !important;
+  .step-row-item.is-active .step-inner-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
   }
-  .step-row-item .step-title-text.step-active {
-    font-size: 26px !important;
+  .step-row-item.is-active .step-inner-grid > div:first-child {
+    display: none !important;
+  }
+  .step-row-item.is-active .step-title-text {
+    font-size: 20px !important;
+  }
+  .step-row-item.is-active p {
+    font-size: 14px !important;
+    margin: 0 auto !important;
+    max-width: 280px !important;
+    line-height: 1.5 !important;
   }
 }
