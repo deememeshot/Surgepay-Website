@@ -437,13 +437,15 @@
 
 @media (max-width: 767px) {
   .trust-signals-bar {
-    justify-content: center !important;
-    gap: 8px 16px !important;
-    padding: 14px 16px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    text-align: center;
+    gap: 12px 8px !important;
+    padding: 16px !important;
   }
   .trust-signals-bar span {
     font-size: 10px !important;
-    letter-spacing: 0.1em !important;
+    letter-spacing: 0.08em !important;
   }
 }
 
