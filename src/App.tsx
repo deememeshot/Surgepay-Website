@@ -100,7 +100,7 @@ export default function App() {
           const data = await res.json();
           if (data?.rate) return Number(data.rate);
         }
-      } catch {}
+      } catch { }
       return null;
     };
 
@@ -398,7 +398,7 @@ export default function App() {
 
               <div style={{ "display": "flex", "flexDirection": "column", "gap": "10px", "margin": "18px 4px 0" }}>
                 <div style={{ "display": "flex", "justifyContent": "space-between", "fontSize": "13px" }}><span style={{ "color": "#64748b" }}>Google rate</span><span style={{ "color": "#0f172a", "fontWeight": "600" }}>$1 = ₹{googleRateText}</span></div>
-                <div style={{ "display": "flex", "justifyContent": "space-between", "fontSize": "13px" }}><span style={{ "color": "#64748b" }}>Surgepay rate</span><span style={{ "color": "#25D366", "fontWeight": "700" }}>$1 = ₹{rateText}</span></div>
+                <div style={{ "display": "flex", "justifyContent": "space-between", "fontSize": "13px" }}><span style={{ "color": "#25D366", "fontWeight": "600" }}>Surgepay rate</span><span style={{ "color": "#25D366", "fontWeight": "700" }}>$1 = ₹{rateText}</span></div>
                 <div style={{ "display": "flex", "justifyContent": "space-between", "fontSize": "13px" }}><span style={{ "color": "#64748b" }}>Transfer fee</span><span style={{ "color": "#0f172a", "fontWeight": "600" }}>$0.00</span></div>
                 <div style={{ "display": "flex", "justifyContent": "space-between", "fontSize": "13px" }}><span style={{ "color": "#64748b" }}>Arrives</span><span style={{ "color": "#0f172a", "fontWeight": "600" }}>In 3 minutes</span></div>
               </div>
@@ -414,15 +414,15 @@ export default function App() {
         <div style={{ "borderTop": "1px solid rgba(15,23,42,0.08)", "background": "rgba(255,255,255,0.5)", "backdropFilter": "blur(16px)", "WebkitBackdropFilter": "blur(16px)" }}>
           <div className="trust-signals-bar" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "24px 32px" }}>
             {trustSignals.map((t, i) => (
-              <div key={i} style={{ 
-                "display": "flex", 
-                "alignItems": "center", 
-                "gap": "10px", 
-                "padding": "10px 20px", 
-                "background": "#fff", 
-                "borderRadius": "999px", 
-                "border": "1px solid #e2e8f0", 
-                "boxShadow": "0 2px 8px rgba(15,23,42,0.04)" 
+              <div key={i} style={{
+                "display": "flex",
+                "alignItems": "center",
+                "gap": "10px",
+                "padding": "10px 20px",
+                "background": "#fff",
+                "borderRadius": "999px",
+                "border": "1px solid #e2e8f0",
+                "boxShadow": "0 2px 8px rgba(15,23,42,0.04)"
               }}>
                 <t.icon size={18} style={{ "color": "#25D366" }} strokeWidth={2} />
                 <span style={{ "fontSize": "14px", "fontWeight": "600", "color": "#334155" }}>{t.label}</span>
@@ -639,7 +639,7 @@ export default function App() {
           </div>
         </div>
         <div style={{ "borderTop": "1px solid #f1f5f9" }}>
-            <div className="footer-disclaimer" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "22px 32px" }}>
+          <div className="footer-disclaimer" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "22px 32px" }}>
             <p style={{ "fontSize": "11px", "color": "#94a3b8", "lineHeight": "1.7", "margin": "0", "maxWidth": "90ch" }}>Surgepay is a financial technology company, not a bank. We provide technology solutions that enable users to send money internationally through regulated financial partners. Surgepay does not hold or custody customer funds. All money transmission, foreign exchange, payment processing, and identity verification services are provided by our licensed partner entities. Users must be 18 years or older to use the service. Transfers are subject to applicable laws, regulations, and partner terms. Additional terms and conditions may apply.</p>
           </div>
         </div>
