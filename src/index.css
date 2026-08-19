@@ -426,26 +426,32 @@
   }
 }
 
-/* Trust signals bar: scroll horizontally on mobile */
+/* Trust signals bar */
 .trust-signals-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px 28px;
+  justify-content: center;
+  gap: 24px 40px;
 }
 
 @media (max-width: 767px) {
   .trust-signals-bar {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    text-align: center;
-    gap: 12px 8px !important;
-    padding: 16px !important;
+    gap: 12px !important;
+    padding: 24px 16px !important;
+  }
+  .trust-signals-bar > div {
+    display: flex !important;
+    justify-content: flex-start !important;
+    padding: 10px 12px !important;
+    width: 100% !important;
   }
   .trust-signals-bar span {
-    font-size: 10px !important;
-    letter-spacing: 0.08em !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    letter-spacing: normal !important;
   }
 }
 

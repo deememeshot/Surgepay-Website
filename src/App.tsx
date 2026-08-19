@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Building2, ShieldCheck, UserCheck, Lock } from "lucide-react";
 import GlobeAnimation from "./GlobeAnimation";
 
 const G = '#25D366';
@@ -214,7 +214,12 @@ export default function App() {
   const googleRateText = googleRate !== null ? googleRate.toFixed(2) : '--.--';
   const onAmount = (e: any) => setAmount(e.target.value.replace(/[^0-9.]/g, '').slice(0, 7));
   const receiveText = rate !== null ? (amt * rate).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '--.--';
-  const trustSignals = ['REGULATED PARTNERS', 'BANK-LEVEL SECURITY', 'KYC COMPLIANT', 'END-TO-END ENCRYPTED'];
+  const trustSignals = [
+    { label: 'Regulated Partners', icon: Building2 },
+    { label: 'Bank-Level Security', icon: ShieldCheck },
+    { label: 'KYC Compliant', icon: UserCheck },
+    { label: 'End-to-End Encrypted', icon: Lock }
+  ];
   const stats = [
     { value: '$1M+', label: 'Volume in pipeline' },
     { value: '$0', label: 'Fees, always' },
@@ -407,13 +412,21 @@ export default function App() {
         </div>
 
         <div style={{ "borderTop": "1px solid rgba(15,23,42,0.08)", "background": "rgba(255,255,255,0.5)", "backdropFilter": "blur(16px)", "WebkitBackdropFilter": "blur(16px)" }}>
-          <div className="trust-signals-bar" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "16px 32px" }}>
+          <div className="trust-signals-bar" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "24px 32px" }}>
             {trustSignals.map((t, i) => (
-              <React.Fragment key={i}>
-
-                <span style={{ "fontSize": "13px", "fontWeight": "600", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.14em" }}>{t}</span>
-
-              </React.Fragment>
+              <div key={i} style={{ 
+                "display": "flex", 
+                "alignItems": "center", 
+                "gap": "10px", 
+                "padding": "10px 20px", 
+                "background": "#fff", 
+                "borderRadius": "999px", 
+                "border": "1px solid #e2e8f0", 
+                "boxShadow": "0 2px 8px rgba(15,23,42,0.04)" 
+              }}>
+                <t.icon size={18} style={{ "color": "#25D366" }} strokeWidth={2} />
+                <span style={{ "fontSize": "14px", "fontWeight": "600", "color": "#334155" }}>{t.label}</span>
+              </div>
             ))}
           </div>
         </div>
