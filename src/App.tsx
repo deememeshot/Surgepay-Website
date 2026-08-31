@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Building2, ShieldCheck, UserCheck, Lock } from "lucide-react";
 import GlobeAnimation from "./GlobeAnimation";
 
@@ -626,8 +627,8 @@ export default function App() {
         <div className="footer-main" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "28px 32px", "display": "flex", "alignItems": "center", "justifyContent": "space-between", "gap": "20px", "flexWrap": "wrap" }}>
           <div style={{ "display": "flex", "flexWrap": "wrap", "gap": "8px 28px", "fontSize": "13px", "color": "#64748b" }}>
             <a href="mailto:support@surgepay.xyz" style={{ "color": "#64748b" }}>Contact</a>
-            <a href="#terms" style={{ "color": "#64748b" }}>Terms</a>
-            <a href="#privacy" style={{ "color": "#64748b" }}>Privacy Policy</a>
+            <Link to="/terms" style={{ "color": "#64748b" }}>Terms</Link>
+            <Link to="/privacy" style={{ "color": "#64748b" }}>Privacy Policy</Link>
           </div>
           <div style={{ "display": "flex", "alignItems": "center", "gap": "10px" }}>
             <HoverAnchor href="https://www.linkedin.com/company/surgepayxyz" target="_blank" rel="noopener noreferrer" aria-label="Surgepay on LinkedIn" style={{ "width": "34px", "height": "34px", "borderRadius": "999px", "display": "flex", "alignItems": "center", "justifyContent": "center", "border": "1px solid rgba(15,23,42,0.09)", "color": "#334155", "transition": "all .3s" }} hoverStyle={{ "color": "#25D366", "borderColor": "rgba(37,211,102,0.35)" }} >
