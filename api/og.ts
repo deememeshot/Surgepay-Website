@@ -40,6 +40,11 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   <title>${meta.title}</title>
   <meta name="description" content="${meta.description}" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="${meta.url}" />
@@ -54,6 +59,17 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   <meta name="twitter:description" content="${meta.description}" />
 
   <link rel="canonical" href="${meta.url}" />
+
+  <!-- WebSite structured data for Google site name -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Surgepay",
+    "alternateName": ["SurgePay", "Surge Pay"],
+    "url": "https://www.surgepay.money/"
+  }
+  </script>
 </head>
 <body>
   <p>Redirecting…</p>
