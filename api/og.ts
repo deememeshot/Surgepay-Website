@@ -11,19 +11,19 @@ const PAGE_META: Record<string, PageMeta> = {
     title: 'Surgepay — Send Money on WhatsApp, Instantly',
     description:
       'Send money from the US to India in seconds using WhatsApp. Instant transfers, no fees, Google rates.',
-    url: 'https://www.surgepay.xyz/',
+    url: 'https://www.surgepay.money/',
   },
   '/terms': {
     title: 'Terms and Conditions — Surgepay',
     description:
       'Read the terms and conditions governing the use of Surgepay\'s cross-border money transfer services via WhatsApp.',
-    url: 'https://www.surgepay.xyz/terms',
+    url: 'https://www.surgepay.money/terms',
   },
   '/privacy': {
     title: 'Privacy Policy — Surgepay',
     description:
       'Learn how Surgepay collects, uses, and protects your personal information when using our WhatsApp-based money transfer service.',
-    url: 'https://www.surgepay.xyz/privacy',
+    url: 'https://www.surgepay.money/privacy',
   },
 };
 

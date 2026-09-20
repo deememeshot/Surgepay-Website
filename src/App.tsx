@@ -626,7 +626,7 @@ export default function App() {
       <footer style={{ "background": "#fff", "borderTop": "1px solid #e8ecf1" }}>
         <div className="footer-main" style={{ "maxWidth": "1280px", "margin": "0 auto", "padding": "28px 32px", "display": "flex", "alignItems": "center", "justifyContent": "space-between", "gap": "20px", "flexWrap": "wrap" }}>
           <div style={{ "display": "flex", "flexWrap": "wrap", "gap": "8px 28px", "fontSize": "13px", "color": "#64748b" }}>
-            <a href="mailto:support@surgepay.xyz" style={{ "color": "#64748b" }}>Contact</a>
+            <a href="mailto:support@surgepay.money" style={{ "color": "#64748b" }}>Contact</a>
             <Link to="/terms" style={{ "color": "#64748b" }}>Terms</Link>
             <Link to="/privacy" style={{ "color": "#64748b" }}>Privacy Policy</Link>
           </div>
