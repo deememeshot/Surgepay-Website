@@ -5,7 +5,11 @@ import { Zap, ArrowLeft } from 'lucide-react';
 export default function PrivacyPage() {
   useEffect(() => {
     document.title = 'Privacy Policy — Surgepay';
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://www.surgepay.money/privacy');
     window.scrollTo(0, 0);
+    return () => {
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://www.surgepay.money/');
+    };
   }, []);
 
   return (

@@ -5,7 +5,11 @@ import { Zap, ArrowLeft } from 'lucide-react';
 export default function TermsPage() {
   useEffect(() => {
     document.title = 'Terms and Conditions — Surgepay';
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://www.surgepay.money/terms');
     window.scrollTo(0, 0);
+    return () => {
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://www.surgepay.money/');
+    };
   }, []);
 
   return (

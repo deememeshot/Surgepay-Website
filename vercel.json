@@ -35,7 +35,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/api/not-found"
     }
   ]
 }
