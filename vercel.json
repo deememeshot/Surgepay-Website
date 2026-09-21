@@ -34,7 +34,15 @@
       "destination": "/api/og?path=/"
     },
     {
-      "source": "/(.*)",
+      "source": "/terms",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/((?!.*\\.(ico|svg|png|jpg|jpeg|gif|webp|css|js|txt|xml|json|woff|woff2|ttf|eot|map)$).*)",
       "destination": "/api/not-found"
     }
   ]
