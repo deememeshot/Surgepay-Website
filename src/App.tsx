@@ -406,7 +406,7 @@ export default function App() {
 
               <div style={{ "marginTop": "20px", "padding": "14px 18px", "borderRadius": "16px", "background": "rgba(37,211,102,0.08)", "border": "1px solid rgba(37,211,102,0.18)", "display": "flex", "alignItems": "center", "gap": "12px" }}>
                 <div style={{ "fontSize": "26px", "fontWeight": "700", "color": "#25D366", "letterSpacing": "-0.03em", "lineHeight": "1" }}>₹111</div>
-                <div style={{ "fontSize": "12px", "color": "#334155", "lineHeight": "1.4" }}>on your first 3 transfers up to $80<br /><span style={{ "color": "#64748b" }}>Limited time offer</span></div>
+                <div style={{ "fontSize": "12px", "color": "#334155", "lineHeight": "1.4" }}>on your first 3 transfers up to $100<br /><span style={{ "color": "#64748b" }}>Limited time offer</span></div>
               </div>
             </div>
           </div>
