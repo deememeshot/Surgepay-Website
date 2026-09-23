@@ -47,7 +47,7 @@ export default function PrivacyPage() {
 </section>
 <section>
 <h2>1. Introduction</h2>
-<p>This Privacy Policy (&quot;Policy&quot;) describes how SURGEPAY PTE. LTD., a private company limited by shares doing business as Surgepay (&quot;Surgepay,&quot; &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;), collects, uses, discloses, retains, and protects your personal information when you access or use our website (<a href="https://www.surgepay.money">https://www.surgepay.money</a>), our WhatsApp-based interface, and all related services (collectively, the &quot;Services&quot;).</p>
+<p>This Privacy Policy (&quot;Policy&quot;) describes how SURGEPAYXYZ, LLC, doing business as Surgepay (&quot;Surgepay,&quot; &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;), collects, uses, discloses, retains, and protects your personal information when you access or use our website (<a href="https://www.surgepay.money">https://www.surgepay.money</a>), our WhatsApp-based interface, and all related services (collectively, the &quot;Services&quot;).</p>
 <p>By accessing or using our Services, you acknowledge that you have read, understood, and agree to the practices described in this Policy. If you do not agree to this Policy, you must not access or use the Services.</p>
 <p>This Policy should be read in conjunction with our Terms and Conditions of Service, and with the privacy documents of our licensed partner Cybrid, which are linked in Sections 5.1 and 9.4 and which describe how Cybrid handles information about you in its own right.</p>
 </section>
@@ -312,10 +312,10 @@ export default function PrivacyPage() {
 </section>
 <section>
 <h2>16. Data Controller and Contact Information</h2>
-<p><strong>SURGEPAY PTE. LTD.</strong> (d/b/a Surgepay)</p>
-<p>20A Tanjong Pagar Road
-Singapore 088443</p>
-<p>Email: <a href="mailto:support@surgepay.money">support@surgepay.money</a>
+<p><strong>SURGEPAYXYZ, LLC</strong> (d/b/a Surgepay)</p>
+<p>1111B S Governors Ave<br />
+Dover, Delaware 19904, USA</p>
+<p>Email: <a href="mailto:support@surgepay.money">support@surgepay.money</a><br />
 Website: <a href="https://www.surgepay.money">https://www.surgepay.money</a></p>
 <p>For questions about how Cybrid handles your information, you may contact Cybrid directly at <a href="mailto:legal@cybrid.app">legal@cybrid.app</a>, or <a href="mailto:support@cybrid.app">support@cybrid.app</a> for general enquiries.</p>
 <p>If you are not satisfied with our response, you may also contact the Consumer Financial Protection Bureau (CFPB) at consumerfinance.gov or your state&#39;s attorney general&#39;s office.</p>
@@ -327,7 +327,7 @@ Website: <a href="https://www.surgepay.money">https://www.surgepay.money</a></p>
       {/* Minimal Footer */}
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <span>© 2026 SURGEPAY PTE. LTD. All rights reserved.</span>
+          <span>© 2026 SURGEPAYXYZ, LLC All rights reserved.</span>
           <div className="flex gap-6">
             <Link to="/terms" className="hover:text-whatsapp transition-colors font-medium">Terms</Link>
             <Link to="/privacy" className="hover:text-whatsapp transition-colors font-medium">Privacy</Link>

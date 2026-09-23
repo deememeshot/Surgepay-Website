@@ -47,7 +47,7 @@ export default function TermsPage() {
 </section>
 <section>
 <h2>1. Introduction and Acceptance</h2>
-<p>These Terms and Conditions of Service (&quot;Terms,&quot; &quot;Agreement&quot;) constitute a legally binding agreement between you (&quot;User,&quot; &quot;you,&quot; &quot;your&quot;) and SURGEPAY PTE. LTD., a private company limited by shares doing business as Surgepay (&quot;Surgepay,&quot; &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;), for governing your access to and use of the Surgepay platform, including our website located at <a href="https://www.surgepay.money">https://www.surgepay.money</a>, our WhatsApp-based interface, and all related services (collectively, the &quot;Services&quot;).</p>
+<p>These Terms and Conditions of Service (&quot;Terms,&quot; &quot;Agreement&quot;) constitute a legally binding agreement between you (&quot;User,&quot; &quot;you,&quot; &quot;your&quot;) and SURGEPAYXYZ, LLC, doing business as Surgepay (&quot;Surgepay,&quot; &quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; &quot;our&quot;), for governing your access to and use of the Surgepay platform, including our website located at <a href="https://www.surgepay.money">https://www.surgepay.money</a>, our WhatsApp-based interface, and all related services (collectively, the &quot;Services&quot;).</p>
 <p><strong>IMPORTANT:</strong> By accessing, registering for, or using any of our Services, you acknowledge that you have read, understood, and agree to be bound by:</p>
 <ul>
 <li>these Terms;</li>
@@ -326,10 +326,10 @@ export default function TermsPage() {
 </section>
 <section>
 <h2>28. Contact Information</h2>
-<p><strong>SURGEPAY PTE. LTD.</strong> (d/b/a Surgepay)</p>
-<p>20A Tanjong Pagar Road
-Singapore 088443</p>
-<p>Email: <a href="mailto:support@surgepay.money">support@surgepay.money</a>
+<p><strong>SURGEPAYXYZ, LLC</strong> (d/b/a Surgepay)</p>
+<p>1111B S Governors Ave<br />
+Dover, Delaware 19904, USA</p>
+<p>Email: <a href="mailto:support@surgepay.money">support@surgepay.money</a><br />
 Website: <a href="https://www.surgepay.money">https://www.surgepay.money</a></p>
 <p>For questions concerning the Cybrid User Agreement, you may contact Cybrid at <a href="mailto:legal@cybrid.app">legal@cybrid.app</a>, or <a href="mailto:support@cybrid.app">support@cybrid.app</a> for general enquiries.</p>
 </section>
@@ -340,7 +340,7 @@ Website: <a href="https://www.surgepay.money">https://www.surgepay.money</a></p>
       {/* Minimal Footer */}
       <footer className="border-t border-slate-100 py-8 px-6">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <span>© 2026 SURGEPAY PTE. LTD. All rights reserved.</span>
+          <span>© 2026 SURGEPAYXYZ, LLC All rights reserved.</span>
           <div className="flex gap-6">
             <Link to="/terms" className="hover:text-whatsapp transition-colors font-medium">Terms</Link>
             <Link to="/privacy" className="hover:text-whatsapp transition-colors font-medium">Privacy</Link>
