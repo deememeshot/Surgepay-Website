@@ -191,7 +191,7 @@ export default function PrivacyPage() {
 <p>Where you provide us with information about another person, you confirm that you have obtained any consent required for us and our partners to use it for these purposes.</p>
 </section>
 <section>
-<h2>6. Data Retention</h2>
+<h2>6. Data Retention and Deletion</h2>
 <p>We retain your personal information for as long as necessary to fulfill the purposes for which it was collected. Specific retention periods include:</p>
 <ul>
 <li><strong>Account Information:</strong> Retained for the duration of your account and for a minimum of five (5) years following account closure, as required by the BSA and FinCEN regulations.</li>
@@ -201,6 +201,8 @@ export default function PrivacyPage() {
 <li><strong>Website Analytics Data:</strong> Retained in accordance with Google Analytics&#39; data retention settings (currently twenty-six (26) months).</li>
 </ul>
 <p>Our licensed partners retain information independently under their own retention policies, and may retain information after your Surgepay account is closed where required by law or for legitimate business purposes.</p>
+<h3>6.1 Data Deletion Requests (How to exercise your rights)</h3>
+<p>You have the right to request the deletion of your personal data, subject to legal and regulatory retention requirements (such as anti-money laundering regulations). To submit a data deletion request or exercise your rights regarding your data, please contact us by emailing <a href="mailto:support@surgepay.money">support@surgepay.money</a> with the subject line "Data Deletion Request". We will process and respond to your request within the timeframes required by applicable laws.</p>
 </section>
 <section>
 <h2>7. Data Security</h2>
