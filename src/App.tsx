@@ -60,7 +60,7 @@ const nl = (text: string) => text.split('\n').map((l, i) => <React.Fragment key=
 export default function App() {
   const [active, setActive] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [amount, setAmount] = useState('10');
+  const [amount, setAmount] = useState('1000');
   const [rate, setRate] = useState<number | null>(null);
   const [googleRate, setGoogleRate] = useState<number | null>(null);
 
